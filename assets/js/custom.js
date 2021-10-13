@@ -43,6 +43,16 @@ jQuery(document).ready(function($) {
   console.log(arr);
   $('#image-grid').empty().append(arr);
 
+
+  
+
+  // hide on hover
+  $('.grid-item').hover(function(i, el) {
+    $(this).addClass('hidden');
+
+
+  });
+
 // --- header behaviour
 	
   // scroll events

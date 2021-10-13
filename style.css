@@ -292,6 +292,8 @@ a {
   text-decoration: none; }
   a:hover {
     border-bottom: 1px solid; }
+  a.no-border:hover, #header a:hover {
+    border-bottom: none; }
 
 ul {
   margin: 0;
@@ -319,12 +321,29 @@ svg {
   z-index: 100; }
 
 #header {
-  margin-top: 20px; }
+  margin-top: 20px;
+  height: initial;
+  align-items: end;
+  position: relative; }
+  #header.intro {
+    height: 50vh; }
+    #header.intro #logo svg {
+      width: 100%; }
+  #header a {
+    display: block; }
   #header #logo {
     text-align: center; }
+    #header #logo svg {
+      width: 400px;
+      -webkit-transition: width 0.3s;
+      -moz-transition: width 0.3s;
+      -ms-transition: width 0.3s;
+      -o-transition: width 0.3s;
+      transition: width 0.3s; }
   #header div[class*="menu-1"] {
     width: 100%;
     position: fixed;
+    top: 0;
     left: 0;
     z-index: 99;
     background-color: white;
@@ -333,23 +352,11 @@ svg {
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
-    transition: all 0.5s; }
+    transition: all 0.5s;
+    opacity: 0; }
     #header div[class*="menu-1"] ul li {
       text-align: center;
       margin-bottom: 10px; }
-  #header .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100; }
-    #header .icon a:hover {
-      border-bottom: none; }
-    #header .icon svg {
-      width: 30px;
-      height: 55px;
-      fill: #79fc96; }
-    #header .icon.white svg {
-      fill: white; }
   #header .menu-toggle {
     border: 1px solid transparent;
     width: 30px;
@@ -409,14 +416,24 @@ svg {
       width: 32px; }
 
 #content-home #image-grid-container {
-  overflow: hidden; }
+  overflow: hidden;
+  display: none; }
   #content-home #image-grid-container #image-grid {
     width: calc(100vw - 1rem);
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
     #content-home #image-grid-container #image-grid .grid-item {
       border: 1rem solid #79fc96;
       margin-right: -1rem;
-      margin-bottom: -1rem; }
+      margin-bottom: -1rem;
+      opacity: 1;
+      -webkit-transition: opacity 0.2s;
+      -moz-transition: opacity 0.2s;
+      -ms-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s; }
+      #content-home #image-grid-container #image-grid .grid-item.hidden {
+        opacity: 0;
+        pointer-events: none; }
       #content-home #image-grid-container #image-grid .grid-item img {
         width: 100%;
         height: 100%;
@@ -440,6 +457,10 @@ svg {
   .show:last-of-type {
     border-bottom: 1px dotted #79fc96; }
 
+@media screen and (max-width: 1440px) {
+  .container {
+    margin: 10px;
+    width: calc(100% - 20px); } }
 @media screen and (max-width: 768px) {
   .t-hidden {
     display: none; }
@@ -465,7 +486,10 @@ svg {
 
   .t-two-twelfth {
     width: calc(8.3333%*2 - 20px);
-    margin: 0 10px; } }
+    margin: 0 10px; }
+
+  #content-home #image-grid-container #image-grid {
+    grid-template-columns: repeat(6, 1fr); } }
 @media screen and (max-width: 640px) {
   .m-hidden {
     display: none; }
@@ -486,6 +510,9 @@ svg {
   .m-half {
     width: calc(50% - 20px);
     margin: 0 10px;
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+
+  #content-home #image-grid-container #image-grid {
+    grid-template-columns: repeat(4, 1fr); } }
 
 /*# sourceMappingURL=style.css.map */
