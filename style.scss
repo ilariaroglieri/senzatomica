@@ -290,18 +290,24 @@ svg {
 }
 
 #content-home {
-  #image-grid {
-    width: calc(100vw - 1rem);
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
-    .grid-item {
-      border: 1rem solid $primaryColor;
-      margin-right: - 1rem;
-      margin-bottom: - 1rem;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+  #image-grid-container {
+    overflow: hidden;
+    // border: 1rem solid $primaryColor;
+    #image-grid {
+      width: calc(100vw - 1rem);
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      // grid-template-columns: repeat(8, 1fr);
+      // grid-auto-rows: 1fr;
+      .grid-item {
+        // aspect-ratio: 1 / 1; /* a square ratio */
+        border: 1rem solid $primaryColor;
+        margin-right: - 1rem;
+        margin-bottom: - 1rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }

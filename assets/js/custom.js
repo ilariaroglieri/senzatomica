@@ -10,9 +10,38 @@ function checkScroll() {
   }
 }
 
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+// Used like so
+
+
+
 //-----------DOCUMENT.READY----------------
 
 jQuery(document).ready(function($) {
+
+  //home
+  // shuffle images
+  var arr = $('.grid-item');
+  shuffle(arr);
+  console.log(arr);
+  $('#image-grid').empty().append(arr);
 
 // --- header behaviour
 	
@@ -49,19 +78,6 @@ jQuery(document).ready(function($) {
     }
   });
 
-// --- slider init
-  $('.slider').slick({
-    arrows: false,
-    dots: false,
-    autoplay: true,
-    infinite: true,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    autoplaySpeed: 3000,
-    speed: 1000,
-    cssEase: 'ease',
-    useTransform: false
-  });
 
 
 //----------END JQUERY -----------

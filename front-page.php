@@ -6,12 +6,44 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <?php $images = get_field('immagini_griglia');
       if( $images ): ?>
-        <div id="image-grid" class="d-grid container-fluid p-absolute full-width full-height">
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
+        <div id="image-grid-container" class="container-fluid p-absolute full-width full-height">
+          <div id="image-grid" class="d-grid">
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+            <?php foreach( $images as $image ): ?>
+              <div class="grid-item">
+                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+              </div>
+            <?php endforeach; ?>
+          </div>
         </div>
       <?php endif; ?>
     </article>

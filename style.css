@@ -408,18 +408,19 @@ svg {
       top: 50%;
       width: 32px; }
 
-#content-home #image-grid {
-  width: calc(100vw - 1rem);
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr)); }
-  #content-home #image-grid .grid-item {
-    border: 1rem solid #79fc96;
-    margin-right: -1rem;
-    margin-bottom: -1rem; }
-    #content-home #image-grid .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+#content-home #image-grid-container {
+  overflow: hidden; }
+  #content-home #image-grid-container #image-grid {
+    width: calc(100vw - 1rem);
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+    #content-home #image-grid-container #image-grid .grid-item {
+      border: 1rem solid #79fc96;
+      margin-right: -1rem;
+      margin-bottom: -1rem; }
+      #content-home #image-grid-container #image-grid .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
 
 .slider .slick-list, .slider .slick-track {
   -webkit-transform: none !important;
