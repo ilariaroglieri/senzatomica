@@ -6,43 +6,148 @@ $tablet: 768px;
 $mobile: 640px;
 
 //colors
-$primaryColor: #7d4d66;
+$primaryColor: #79fc96;
 
 // Typography
 @font-face {
-  font-family: 'Basis Grotesque';
-  src:url('assets/fonts/BasisGrotesque-Regular.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesque-Regular.woff') format('woff'),
-      url('assets/fonts/BasisGrotesque-Regular.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesque-Regular.svg') format('svg'),
-      url('assets/fonts/BasisGrotesque-Regular.eot') format('eot');
+  font-family: 'GT Flexa';
+  src:url('assets/fonts/GTFlexaTrial-Lt.woff2') format('woff2'),
+      url('assets/fonts/GTFlexaTrial-Lt.woff') format('woff'),
+      url('assets/fonts/GTFlexaTrial-Lt.ttf') format('ttf'),
+      url('assets/fonts/GTFlexaTrial-Lt.svg') format('svg');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'GT Flexa';
+  src:url('assets/fonts/GTFlexaTrial-LtIt.woff2') format('woff2'),
+      url('assets/fonts/GTFlexaTrial-LtIt.woff') format('woff'),
+      url('assets/fonts/GTFlexaTrial-LtIt.ttf') format('ttf'),
+      url('assets/fonts/GTFlexaTrial-LtIt.svg') format('svg');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GT Flexa Mono';
+  src:url('assets/fonts/GTFlexaMonoTrial-Rg.woff2') format('woff2'),
+      url('assets/fonts/GTFlexaMonoTrial-Rg.woff') format('woff'),
+      url('assets/fonts/GTFlexaMonoTrial-Rg.ttf') format('ttf'),
+      url('assets/fonts/GTFlexaMonoTrial-Rg.svg') format('svg');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Basis Grotesque';
-  src:url('assets/fonts/BasisGrotesque-Italic.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesque-Italic.woff') format('woff'),
-      url('assets/fonts/BasisGrotesque-Italic.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesque-Italic.svg') format('svg'),
-      url('assets/fonts/BasisGrotesque-Italic.eot') format('eot');
+  font-family: 'Editorial New';
+  src:url('assets/fonts/EditorialNew-Light.woff2') format('woff2'),
+      url('assets/fonts/EditorialNew-Light.woff') format('woff'),
+      url('assets/fonts/EditorialNew-Light.ttf') format('ttf'),
+      url('assets/fonts/EditorialNew-Light.svg') format('svg');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Media Sans';
+  src:url('assets/fonts/MediaSans-Black.woff2') format('woff2'),
+      url('assets/fonts/MediaSans-Black.woff') format('woff'),
+      url('assets/fonts/MediaSans-Black.ttf') format('ttf'),
+      url('assets/fonts/MediaSans-Black.svg') format('svg');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Media Sans';
+  src:url('assets/fonts/MediaSans-BlackItalic.woff2') format('woff2'),
+      url('assets/fonts/MediaSans-BlackItalic.woff') format('woff'),
+      url('assets/fonts/MediaSans-BlackItalic.ttf') format('ttf'),
+      url('assets/fonts/MediaSans-BlackItalic.svg') format('svg');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Media Sans Extended';
+  src:url('assets/fonts/MediaSansExtended-Ultra.woff2') format('woff2'),
+      url('assets/fonts/MediaSansExtended-Ultra.woff') format('woff'),
+      url('assets/fonts/MediaSansExtended-Ultra.ttf') format('ttf'),
+      url('assets/fonts/MediaSansExtended-Ultra.svg') format('svg');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Media Sans Extended';
+  src:url('assets/fonts/MediaSansExtended-UltraItalic.woff2') format('woff2'),
+      url('assets/fonts/MediaSansExtended-UltraItalic.woff') format('woff'),
+      url('assets/fonts/MediaSansExtended-UltraItalic.ttf') format('ttf'),
+      url('assets/fonts/MediaSansExtended-UltraItalic.svg') format('svg');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Media Sans Condensed';
+  src:url('assets/fonts/MediaSansCondensed-Regular.woff2') format('woff2'),
+      url('assets/fonts/MediaSansCondensed-Regular.woff') format('woff'),
+      url('assets/fonts/MediaSansCondensed-Regular.ttf') format('ttf'),
+      url('assets/fonts/MediaSansCondensed-Regular.svg') format('svg');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Media Sans Condensed';
+  src:url('assets/fonts/MediaSansCondensed-Italic.woff2') format('woff2'),
+      url('assets/fonts/MediaSansCondensed-Italic.woff') format('woff'),
+      url('assets/fonts/MediaSansCondensed-Italic.ttf') format('ttf'),
+      url('assets/fonts/MediaSansCondensed-Italic.svg') format('svg');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Basis Grotesque Mono';
-  src:url('assets/fonts/BasisGrotesqueMono-Regular.woff2') format('woff2'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.woff') format('woff'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.ttf') format('ttf'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.svg') format('svg'),
-      url('assets/fonts/BasisGrotesqueMono-Regular.eot') format('eot');
-  font-weight: 400;
+  font-family: 'Media Sans Extra Condensed';
+  src:url('assets/fonts/MediaSansExtraCondensed-Black.woff2') format('woff2'),
+      url('assets/fonts/MediaSansExtraCondensed-Black.woff') format('woff'),
+      url('assets/fonts/MediaSansExtraCondensed-Black.ttf') format('ttf'),
+      url('assets/fonts/MediaSansExtraCondensed-Black.svg') format('svg');
+  font-weight: 900;
 }
 
+@font-face {
+  font-family: 'Media Sans Extra Condensed';
+  src:url('assets/fonts/MediaSansExtraCondensed-BlackItalic.woff2') format('woff2'),
+      url('assets/fonts/MediaSansExtraCondensed-BlackItalic.woff') format('woff'),
+      url('assets/fonts/MediaSansExtraCondensed-BlackItalic.ttf') format('ttf'),
+      url('assets/fonts/MediaSansExtraCondensed-BlackItalic.svg') format('svg');
+  font-weight: 900;
+  font-style: italic;
+}
 
-.monospaced {
-  font-family: 'Basis Grotesque Mono';
+.serif {
+  font-family: 'Editorial New';
+}
+
+.sans {
+  font-family: 'GT Flexa';
+}
+
+.mono {
+  font-family: 'GT Flexa Mono';
+}
+
+.extended {
+  font-family: 'Media Sans Extended';
+}
+
+.normal {
+  font-family: 'Media Sans';
+}
+
+.condensed {
+  font-family: 'Media Sans Condensed';
+}
+
+.condensed {
+  font-family: 'Media Sans Extra Condensed';
 }
 
 .s-large { 
