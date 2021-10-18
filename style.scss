@@ -221,6 +221,13 @@ svg {
       text-align: center;
       margin-bottom: $half-spacing;
       @extend .s-large;
+      a {
+        color: black;
+        @include transition(color .3s);
+        &:hover {
+          color: $primaryColor;
+        }
+      }
     }
   }
   .menu-toggle {
