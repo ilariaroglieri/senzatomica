@@ -180,7 +180,7 @@ Version: 1.0
 .spacing-p-b-3 {
   padding-bottom: 40px; }
 
-.spacing-p-b-4 {
+.spacing-p-b-4, #header {
   padding-bottom: 60px; }
 
 .spacing-p-t-half {
@@ -305,6 +305,10 @@ ul {
 svg {
   fill: #79fc96; }
 
+img {
+  width: 100%;
+  height: auto; }
+
 .container {
   width: 1200px;
   margin: 0 auto; }
@@ -336,7 +340,7 @@ svg {
   #header #logo {
     text-align: center; }
     #header #logo svg {
-      width: 400px;
+      width: 250px;
       -webkit-transition: width 0.3s;
       -moz-transition: width 0.3s;
       -ms-transition: width 0.3s;
@@ -369,6 +373,8 @@ svg {
         #header div[class*="menu-main"] ul li.very-big a {
           font-size: 20vh;
           font-style: italic; }
+          #header div[class*="menu-main"] ul li.very-big a:hover {
+            color: white; }
       #header div[class*="menu-main"] ul li.gigantic {
         margin-bottom: 0;
         background-color: #FABAF0;
@@ -378,6 +384,8 @@ svg {
         #header div[class*="menu-main"] ul li.gigantic a {
           font-size: 15vh;
           font-style: italic; }
+          #header div[class*="menu-main"] ul li.gigantic a:hover {
+            color: white; }
       #header div[class*="menu-main"] ul li a {
         color: black;
         -webkit-transition: color 0.3s;
@@ -395,7 +403,7 @@ svg {
     margin: 0;
     text-indent: -1000px;
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
     overflow: hidden;
     padding: 0;
@@ -408,7 +416,7 @@ svg {
       position: absolute;
       height: 2px;
       width: 30px;
-      background: #79fc96;
+      background: black;
       opacity: 1;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -468,6 +476,20 @@ svg {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-100%); } }
+.page-title {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap; }
+  .page-title h1 {
+    margin-right: 10px;
+    transform: translateX(0);
+    animation: marquee 15s linear infinite; }
 
 .variable-type div {
   display: inline-block;

@@ -162,6 +162,11 @@ svg {
   fill: $primaryColor;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 .container {
   width: $desktop;
   margin: 0 auto;
@@ -187,6 +192,7 @@ svg {
   height: initial;
   align-items: end;
   position: relative;
+  @extend .spacing-p-b-4;
   &.intro {
     height: 50vh;
     #logo svg {
@@ -200,7 +206,7 @@ svg {
   #logo {
     text-align: center;
     svg {
-      width: 400px;
+      width: 250px;
       @include transition(width .3s);
     }
   }
@@ -234,6 +240,9 @@ svg {
           font-style: italic;
           @extend .condensed;
           @extend .uppercase;
+          &:hover {
+            color: white;
+          }
         }
       }
       &.gigantic {
@@ -247,6 +256,9 @@ svg {
           font-style: italic;
           @extend .uppercase;
           @extend .extended;
+          &:hover {
+            color: white;
+          }
         }
       }
       a {
@@ -266,7 +278,7 @@ svg {
     margin: 0;
     text-indent: -1000px;
     position: absolute;
-    top: 0;
+    top: $half-spacing;
     right: 0;
     overflow: hidden;
     padding: 0;
@@ -279,7 +291,7 @@ svg {
       position: absolute;
       height: 2px;
       width: 30px;
-      background: $primaryColor;
+      background: black;
       opacity: 1;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
@@ -361,6 +373,27 @@ svg {
         }
       }
     }
+  }
+}
+
+// page headers
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.page-title {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  h1 {
+    margin-right: $half-spacing;
+    transform: translateX(0);
+    animation: marquee 15s linear infinite;
   }
 }
 
