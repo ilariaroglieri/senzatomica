@@ -1,7 +1,7 @@
 // Commons
 
 //Breakpoint
-$desktop: 1440px;
+$desktop: 1200px;
 $tablet: 768px;
 $mobile: 640px;
 
@@ -86,20 +86,20 @@ $primaryColor: #79fc96;
 
 @font-face {
   font-family: 'Media Sans Condensed';
-  src:url('assets/fonts/MediaSansCondensed-Regular.woff2') format('woff2'),
-      url('assets/fonts/MediaSansCondensed-Regular.woff') format('woff'),
-      url('assets/fonts/MediaSansCondensed-Regular.ttf') format('ttf'),
-      url('assets/fonts/MediaSansCondensed-Regular.svg') format('svg');
-  font-weight: 400;
+  src:url('assets/fonts/MediaSansCondensed-Black.woff2') format('woff2'),
+      url('assets/fonts/MediaSansCondensed-Black.woff') format('woff'),
+      url('assets/fonts/MediaSansCondensed-Black.ttf') format('ttf'),
+      url('assets/fonts/MediaSansCondensed-Black.svg') format('svg');
+  font-weight: 900;
 }
 
 @font-face {
   font-family: 'Media Sans Condensed';
-  src:url('assets/fonts/MediaSansCondensed-Italic.woff2') format('woff2'),
-      url('assets/fonts/MediaSansCondensed-Italic.woff') format('woff'),
-      url('assets/fonts/MediaSansCondensed-Italic.ttf') format('ttf'),
-      url('assets/fonts/MediaSansCondensed-Italic.svg') format('svg');
-  font-weight: 400;
+  src:url('assets/fonts/MediaSansCondensed-BlackItalic.woff2') format('woff2'),
+      url('assets/fonts/MediaSansCondensed-BlackItalic.woff') format('woff'),
+      url('assets/fonts/MediaSansCondensed-BlackItalic.ttf') format('ttf'),
+      url('assets/fonts/MediaSansCondensed-BlackItalic.svg') format('svg');
+  font-weight: 900;
   font-style: italic;
 }
 
@@ -146,12 +146,16 @@ $primaryColor: #79fc96;
   font-family: 'Media Sans Condensed';
 }
 
-.condensed {
+.xcondensed {
   font-family: 'Media Sans Extra Condensed';
 }
 
+.s-huge { 
+  font-size: 20vh;
+}
+
 .s-large { 
-  font-size: 35px;
+  font-size: 7vh;
 }
 
 .s-medium { 

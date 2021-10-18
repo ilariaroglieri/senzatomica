@@ -40,12 +40,12 @@ Version: 1.0
   font-style: italic; }
 @font-face {
   font-family: 'Media Sans Condensed';
-  src: url("assets/fonts/MediaSansCondensed-Regular.woff2") format("woff2"), url("assets/fonts/MediaSansCondensed-Regular.woff") format("woff"), url("assets/fonts/MediaSansCondensed-Regular.ttf") format("ttf"), url("assets/fonts/MediaSansCondensed-Regular.svg") format("svg");
-  font-weight: 400; }
+  src: url("assets/fonts/MediaSansCondensed-Black.woff2") format("woff2"), url("assets/fonts/MediaSansCondensed-Black.woff") format("woff"), url("assets/fonts/MediaSansCondensed-Black.ttf") format("ttf"), url("assets/fonts/MediaSansCondensed-Black.svg") format("svg");
+  font-weight: 900; }
 @font-face {
   font-family: 'Media Sans Condensed';
-  src: url("assets/fonts/MediaSansCondensed-Italic.woff2") format("woff2"), url("assets/fonts/MediaSansCondensed-Italic.woff") format("woff"), url("assets/fonts/MediaSansCondensed-Italic.ttf") format("ttf"), url("assets/fonts/MediaSansCondensed-Italic.svg") format("svg");
-  font-weight: 400;
+  src: url("assets/fonts/MediaSansCondensed-BlackItalic.woff2") format("woff2"), url("assets/fonts/MediaSansCondensed-BlackItalic.woff") format("woff"), url("assets/fonts/MediaSansCondensed-BlackItalic.ttf") format("ttf"), url("assets/fonts/MediaSansCondensed-BlackItalic.svg") format("svg");
+  font-weight: 900;
   font-style: italic; }
 @font-face {
   font-family: 'Media Sans Extra Condensed';
@@ -74,11 +74,14 @@ Version: 1.0
 .condensed {
   font-family: 'Media Sans Condensed'; }
 
-.condensed {
+.xcondensed {
   font-family: 'Media Sans Extra Condensed'; }
 
-.s-large {
-  font-size: 35px; }
+.s-huge {
+  font-size: 20vh; }
+
+.s-large, #header div[class*="menu-main"] ul li {
+  font-size: 7vh; }
 
 .s-medium {
   font-size: 24px; }
@@ -224,13 +227,12 @@ Version: 1.0
     align-items: baseline; }
   .d-flex.end {
     justify-content: flex-end; }
-  .d-flex.column {
+  .d-flex.d-column {
     flex-flow: column; }
-    .d-flex.column.center {
-      align-items: unset;
-      justify-content: center; }
-    .d-flex.column.space-between {
-      justify-content: space-between; }
+  .d-flex.center {
+    justify-content: center; }
+  .d-flex.space-between {
+    justify-content: space-between; }
   .d-flex.wrap {
     flex-wrap: wrap; }
 
@@ -304,7 +306,7 @@ svg {
   fill: #79fc96; }
 
 .container {
-  width: 1440px;
+  width: 1200px;
   margin: 0 auto; }
 
 .container-fluid {
@@ -340,21 +342,23 @@ svg {
       -ms-transition: width 0.3s;
       -o-transition: width 0.3s;
       transition: width 0.3s; }
-  #header div[class*="menu-1"] {
+  #header div[class*="menu-main"] {
     width: 100%;
+    height: 100vh;
     position: fixed;
-    top: 0;
+    top: -100vh;
     left: 0;
-    z-index: 99;
+    z-index: 10000;
     background-color: white;
     padding-top: 80px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
-    transition: all 0.5s;
-    opacity: 0; }
-    #header div[class*="menu-1"] ul li {
+    transition: all 0.5s; }
+    #header div[class*="menu-main"].active {
+      top: 0; }
+    #header div[class*="menu-main"] ul li {
       text-align: center;
       margin-bottom: 10px; }
   #header .menu-toggle {
@@ -417,7 +421,7 @@ svg {
 
 #content-home #image-grid-container {
   overflow: hidden;
-  display: none; }
+  z-index: 1000; }
   #content-home #image-grid-container #image-grid {
     width: calc(100vw - 1rem);
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
@@ -439,6 +443,11 @@ svg {
         height: 100%;
         object-fit: cover; }
 
+.variable-type div {
+  display: inline-block;
+  margin-right: 10px;
+  font-style: italic; }
+
 .slider .slick-list, .slider .slick-track {
   -webkit-transform: none !important;
   -moz-transform: none !important;
@@ -457,7 +466,10 @@ svg {
   .show:last-of-type {
     border-bottom: 1px dotted #79fc96; }
 
-@media screen and (max-width: 1440px) {
+#footer {
+  display: none; }
+
+@media screen and (max-width: 1200px) {
   .container {
     margin: 10px;
     width: calc(100% - 20px); } }
