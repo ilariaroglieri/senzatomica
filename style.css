@@ -65,13 +65,13 @@ Version: 1.0
 .mono, a {
   font-family: 'GT Flexa Mono'; }
 
-.extended {
+.extended, #header div[class*="menu-main"] ul li.gigantic a {
   font-family: 'Media Sans Extended'; }
 
 .normal {
   font-family: 'Media Sans'; }
 
-.condensed {
+.condensed, #header div[class*="menu-main"] ul li.very-big a {
   font-family: 'Media Sans Condensed'; }
 
 .xcondensed {
@@ -217,23 +217,23 @@ Version: 1.0
 .d-grid {
   display: grid; }
 
-.d-flex {
+.d-flex, #header div[class*="menu-main"] ul li {
   display: flex; }
-  .d-flex.center {
+  .d-flex.center, #header div[class*="menu-main"] ul li {
     align-items: center; }
-  .d-flex.top {
+  .d-flex.top, #header div[class*="menu-main"] ul li.top {
     align-items: flex-start; }
-  .d-flex.baseline {
+  .d-flex.baseline, #header div[class*="menu-main"] ul li.baseline {
     align-items: baseline; }
-  .d-flex.end {
+  .d-flex.end, #header div[class*="menu-main"] ul li.end {
     justify-content: flex-end; }
-  .d-flex.d-column {
+  .d-flex.d-column, #header div[class*="menu-main"] ul li.d-column {
     flex-flow: column; }
-  .d-flex.center {
+  .d-flex.v-center, #header div[class*="menu-main"] ul li {
     justify-content: center; }
-  .d-flex.space-between {
+  .d-flex.space-between, #header div[class*="menu-main"] ul li.space-between {
     justify-content: space-between; }
-  .d-flex.wrap {
+  .d-flex.wrap, #header div[class*="menu-main"] ul li.wrap {
     flex-wrap: wrap; }
 
 .mob-only {
@@ -270,7 +270,7 @@ Version: 1.0
 .t-center {
   text-align: center; }
 
-.uppercase {
+.uppercase, #header div[class*="menu-main"] ul li.very-big a, #header div[class*="menu-main"] ul li.gigantic a {
   text-transform: uppercase; }
 
 .button {
@@ -350,7 +350,7 @@ svg {
     left: 0;
     z-index: 10000;
     background-color: white;
-    padding-top: 80px;
+    padding-top: 15vh;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -360,7 +360,24 @@ svg {
       top: 0; }
     #header div[class*="menu-main"] ul li {
       text-align: center;
-      margin-bottom: 10px; }
+      height: 10vh; }
+      #header div[class*="menu-main"] ul li.very-big {
+        margin-bottom: 0;
+        background-color: #FC9251;
+        border-top: 1px solid black;
+        height: 25vh; }
+        #header div[class*="menu-main"] ul li.very-big a {
+          font-size: 20vh;
+          font-style: italic; }
+      #header div[class*="menu-main"] ul li.gigantic {
+        margin-bottom: 0;
+        background-color: #FABAF0;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        height: 20vh; }
+        #header div[class*="menu-main"] ul li.gigantic a {
+          font-size: 15vh;
+          font-style: italic; }
       #header div[class*="menu-main"] ul li a {
         color: black;
         -webkit-transition: color 0.3s;
@@ -486,9 +503,9 @@ svg {
   .t-hidden {
     display: none; }
 
-  .d-flex.t-column {
+  .d-flex.t-column, #header div[class*="menu-main"] ul li.t-column {
     flex-flow: column; }
-  .d-flex.t-column-reverse {
+  .d-flex.t-column-reverse, #header div[class*="menu-main"] ul li.t-column-reverse {
     flex-flow: column-reverse; }
 
   .t-whole {
@@ -518,9 +535,9 @@ svg {
   .m-visible {
     display: inline-block; }
 
-  .d-flex.m-column {
+  .d-flex.m-column, #header div[class*="menu-main"] ul li.m-column {
     flex-flow: column; }
-  .d-flex.m-column-reverse {
+  .d-flex.m-column-reverse, #header div[class*="menu-main"] ul li.m-column-reverse {
     flex-flow: column-reverse; }
 
   .m-whole {
