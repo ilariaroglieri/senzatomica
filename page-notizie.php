@@ -4,7 +4,7 @@
 $cptQuery = new WP_Query( array(
   'post_type'         => 'post',
   'posts_per_page'    => -1,
-  'order'             => 'ASC',
+  'order'             => 'DESC',
   ));
 ?>
 
@@ -13,6 +13,26 @@ $cptQuery = new WP_Query( array(
     <h1 class="extended uppercase s-medium"> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?></h1>
     <h1 class="extended uppercase s-medium"> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?></h1>
   </div>
+
+  <?php if( have_rows('parole_chiave') ): ?>
+    <div class="page-keywords container-fluid">
+      <h3 class="normal uppercase s-huge">
+        <?php while( have_rows('parole_chiave') ) : the_row(); ?>
+          <?php $keyword = get_sub_field('parola_chiave'); ?>
+
+          <span><?php echo $keyword; ?></span>
+        <?php endwhile; ?>
+      </h3>
+      <h3 class="normal uppercase s-huge">
+        <?php while( have_rows('parole_chiave') ) : the_row(); ?>
+          <?php $keyword = get_sub_field('parola_chiave'); ?>
+
+          <span><?php echo $keyword; ?></span>
+        <?php endwhile; ?>
+      </h3>
+    </div>
+  <?php endif; ?>
+
   <?php if ( $cptQuery->have_posts() ) : ?>
     <div class="container d-flex wrap">
       <?php while ( $cptQuery->have_posts() ) : $cptQuery->the_post(); ?>

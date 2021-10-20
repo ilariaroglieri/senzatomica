@@ -10,25 +10,40 @@ function checkScroll() {
   }
 }
 
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
+function shuffle(arr) {
+  arr.sort(function() {return .5 - Math.random()});
+  return arr;
 }
 
-// Used like so
+function setIntervalNtimes(callback, delay, repetitions) {
+  var x = 0;
+  var intervalID = window.setInterval(function () {
+  
+    callback();
+
+    if (++x === repetitions) {
+      window.clearInterval(intervalID);
+    }
+  }, delay);
+}
+
+
+function hideRandomImg(arr, n) {
+  shuffle(state.visibleImg);
+
+  var indexes = state.visibleImg.splice(0,n);
+  state.hiddenImg = state.hiddenImg.concat(indexes);
+  
+  indexes.forEach(function(index) {
+    $(index).addClass('hidden');
+  });
+}
+
+var state = {
+  "visibleImg": [],
+  "hiddenImg": [],
+  "currentRow": 0,
+};
 
 
 
@@ -38,14 +53,49 @@ jQuery(document).ready(function($) {
 
   //home
   // shuffle images
-  var arr = $('.grid-item');
-  shuffle(arr);
-  $('#image-grid').empty().append(arr);
+  var imagesGrid = $('.grid-item');
+  shuffle(imagesGrid);
+  $('#image-grid').empty().append(imagesGrid);
+
+  imagesGrid.each(function(el, i) {
+    state.visibleImg.push(i);
+  });
 
   // hide on hover
   $('.grid-item').hover(function(i, el) {
     $(this).addClass('hidden');
   });
+
+      // setIntervalNtimes(function() {
+      //   hideRandomImg(imagesGrid, imagesGrid.length/3);
+      // }, 150, 3);
+      
+  
+  // scroll effect on home
+  var viewportH = window.innerHeight;
+  $(window).scroll(function() {
+    var currentScrollPos = Math.round( $(document).scrollTop() );
+    var rows = Math.round(viewportH/6);
+    var newRow = 0;
+    // console.log(rows);
+    // console.log(currentScrollPos);
+
+    for (var i = 1; i <= 3; i++) {
+      if ( currentScrollPos > rows*i + viewportH/2 ) {
+        newRow = i;
+      } 
+    }
+
+    // update SECTION state
+    if (newRow != state.currentRow) {
+      state.currentRow = newRow;
+      console.log(state.currentRow);
+
+      hideRandomImg(imagesGrid, imagesGrid.length/3);
+      // handleSectionChange(state.activeSection);
+    }
+  });
+
 
 
 

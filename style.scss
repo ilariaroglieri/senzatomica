@@ -343,15 +343,14 @@ img {
 }
 
 #content-home {
+  min-height: 300vh;
   #image-grid-container {
-    overflow: hidden;
+    // overflow: hidden;
     z-index: 1000;
-    // display: none;
-    // pointer-events: none;
-    // border: 1rem solid $primaryColor;
+    // height: calc(70vw - 1rem);
     #image-grid {
       width: calc(100vw - 1rem);
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
       // grid-template-columns: repeat(10, 1fr);
       // grid-template-columns: repeat(8, 1fr);
       // grid-auto-rows: 1fr;
@@ -386,6 +385,15 @@ img {
   }
 }
 
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .page-title {
   display: flex;
   overflow: hidden;
@@ -394,6 +402,21 @@ img {
     margin-right: $half-spacing;
     transform: translateX(0);
     animation: marquee 15s linear infinite;
+  }
+}
+
+.page-keywords {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  h3 {
+    color: $primaryColor;
+    transform: translateX(0);
+    animation: marquee2 10s linear infinite;
+    span {
+      margin-right: $spacing;
+      display: inline-block;
+    }
   }
 }
 

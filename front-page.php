@@ -49,13 +49,14 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class('container t-center d-flex d-column'); ?>>
       <?php
         $subtitle = get_field('sottotitolo');
+        $payoff = get_field('payoff');
         $sommario = get_field('sommario');
       ?>
 
-      <div class="variable-type spacing-t-2 d-flex flex-row">
+      <div class="spacing-t-2 d-flex flex-row">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole">
-          <h2 class="normal s-large uppercase"><?= $subtitle; ?></h2>
+          <img src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
         </div>
         <div class="d-one-twelfth t-whole"></div>
       </div>
