@@ -150,7 +150,7 @@ Version: 1.0
 .spacing-b-2 {
   margin-bottom: 20px; }
 
-.spacing-b-3 {
+.spacing-b-3, #header #logo {
   margin-bottom: 40px; }
 
 .spacing-b-4 {
@@ -180,7 +180,7 @@ Version: 1.0
 .spacing-p-b-3 {
   padding-bottom: 40px; }
 
-.spacing-p-b-4, #header {
+.spacing-p-b-4 {
   padding-bottom: 60px; }
 
 .spacing-p-t-half {
@@ -249,6 +249,9 @@ Version: 1.0
   position: absolute;
   top: 0;
   left: 0; }
+
+.p-relative {
+  position: relative; }
 
 .p-fixed {
   position: fixed; }
@@ -327,13 +330,24 @@ img {
   z-index: 100; }
 
 #header {
-  margin-top: 20px;
+  padding-top: 20px;
   height: initial;
-  align-items: end;
-  position: relative; }
-  #header.intro {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100; }
+  #header .container {
+    height: 65px;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s; }
+  #header.huge .container {
+    align-items: end;
     height: 50vh; }
-    #header.intro #logo svg {
+    #header.huge .container #logo svg {
       width: 100%; }
   #header a {
     display: block; }
@@ -411,7 +425,14 @@ img {
     background: transparent;
     opacity: 1;
     cursor: pointer;
-    display: flex; }
+    display: flex;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    #header .menu-toggle.hidden {
+      opacity: 0; }
     #header .menu-toggle span {
       position: absolute;
       height: 2px;
@@ -454,6 +475,7 @@ img {
       width: 32px; }
 
 #content-home {
+  margin-top: 50vh;
   min-height: 300vh; }
   #content-home #image-grid-container {
     z-index: 1000; }

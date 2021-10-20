@@ -65,34 +65,36 @@ jQuery(document).ready(function($) {
   $('.grid-item').hover(function(i, el) {
     $(this).addClass('hidden');
   });
-
-      // setIntervalNtimes(function() {
-      //   hideRandomImg(imagesGrid, imagesGrid.length/3);
-      // }, 150, 3);
-      
   
   // scroll effect on home
   var viewportH = window.innerHeight;
   $(window).scroll(function() {
     var currentScrollPos = Math.round( $(document).scrollTop() );
-    var rows = Math.round(viewportH/6);
+    var rows = Math.round(viewportH/3);
     var newRow = 0;
-    // console.log(rows);
-    // console.log(currentScrollPos);
 
+    // update row below half viewpoer
     for (var i = 1; i <= 3; i++) {
-      if ( currentScrollPos > rows*i + viewportH/2 ) {
+      if ( currentScrollPos > rows*i ) {
         newRow = i;
       } 
     }
 
-    // update SECTION state
+    // hide grid images
     if (newRow != state.currentRow) {
       state.currentRow = newRow;
-      console.log(state.currentRow);
 
       hideRandomImg(imagesGrid, imagesGrid.length/3);
-      // handleSectionChange(state.activeSection);
+    }
+
+    // show menu and scale logo 
+    if (currentScrollPos > viewportH) {
+      $('.menu-toggle').removeClass('hidden');
+      $('#header').removeClass('huge');
+      $('#image-grid-container').hide();
+    } else {
+      $('.menu-toggle').addClass('hidden');
+      $('#header').addClass('huge');
     }
   });
 
