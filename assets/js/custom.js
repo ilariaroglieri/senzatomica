@@ -53,87 +53,90 @@ jQuery(document).ready(function($) {
 
   //home
   // shuffle images
-  var imagesGrid = $('.grid-item');
-  shuffle(imagesGrid);
-  $('#image-grid').empty().append(imagesGrid);
+  if ( $('body').hasClass('home')) {
+    var imagesGrid = $('.grid-item');
+    shuffle(imagesGrid);
+    $('#image-grid').empty().append(imagesGrid);
 
-  imagesGrid.each(function(el, i) {
-    state.visibleImg.push(i);
-  });
+    imagesGrid.each(function(el, i) {
+      state.visibleImg.push(i);
+    });
 
-  // hide on hover
-  $('.grid-item').hover(function(i, el) {
-    $(this).addClass('hidden');
-  });
-  
-  // scroll effect on home
-  var viewportH = window.innerHeight;
-  $(window).scroll(function() {
-    var currentScrollPos = Math.round( $(document).scrollTop() );
-    var rows = Math.round(viewportH/3);
-    var newRow = 0;
+    // hide on hover
+    $('.grid-item').hover(function(i, el) {
+      $(this).addClass('hidden');
+    });
 
-    // update row below half viewpoer
-    for (var i = 1; i <= 3; i++) {
-      if ( currentScrollPos > rows*i ) {
-        newRow = i;
-      } 
+
+    var viewportH = window.innerHeight;
+    function scaleOnScroll(el, scroll, maxVal, minVal, property, unit) {
+      var percentScroll = scroll/(viewportH/3);
+      
+      var minWidth = 100;
+      var maxWidth = 20;
+      var val = percentScroll * (maxVal - minVal) + minVal;
+
+      if (val < maxVal) {
+        val = maxVal;
+      };
+
+      el.css(property, val + unit);
     }
+    
+    // scroll effect on home
+    $(window).scroll(function() {
+      var currentScrollPos = Math.round( $(document).scrollTop() );
+      var rows = Math.round(viewportH/20);
+      var newRow = 0;
+     
+      //scale logo and header
+      scaleOnScroll($('#logo svg'), currentScrollPos, 16, 100, 'width', '%');
+      scaleOnScroll($('#header .container'), currentScrollPos, 5, 50, 'height', 'vh');
 
-    // hide grid images
-    if (newRow != state.currentRow) {
-      state.currentRow = newRow;
+      // update row below half viewpoer
+      for (var i = 1; i <= 3; i++) {
+        if ( currentScrollPos > rows*i ) {
+          newRow = i;
+        } 
+      }
 
-      hideRandomImg(imagesGrid, imagesGrid.length/3);
-    }
+      // hide grid images
+      if (newRow != state.currentRow) {
+        state.currentRow = newRow;
 
-    // show menu and scale logo 
-    if (currentScrollPos > viewportH) {
-      $('.menu-toggle').removeClass('hidden');
-      $('#header').removeClass('huge');
-      $('#image-grid-container').hide();
-    } else {
-      $('.menu-toggle').addClass('hidden');
-      $('#header').addClass('huge');
-    }
-  });
+        hideRandomImg(imagesGrid, imagesGrid.length/3);
+      }
+
+      // show menu and hide grid 
+      if (currentScrollPos > viewportH/3) {
+        $('.menu-toggle').removeClass('hidden');
+        $('#image-grid-container').hide();
+      } else {
+        // $('.menu-toggle').addClass('hidden');
+      }
+    });
+  }
 
 
-
-
- 
-
-// --- header behaviour
-	
-  // scroll events
-  // var prevScrollPos = $(window).scrollTop();
-  // $(window).scroll(function() {
-  //   checkScroll();
-
-  //   var currentScrollPos = $(window).scrollTop();
-  //   if (prevScrollPos > currentScrollPos && prevScrollPos > 0) {
-	 //    $('#logo').addClass('visible')
-	 //  } else {
-	 //    $('#logo').removeClass('visible')
-	 //  }
-
-	 //  prevScrollPos = currentScrollPos;
-  // });
-
-// --- Hamburger menu
+  // --- Hamburger menu
   $('.menu-toggle').click(function() {
+    // save dimensions of header
+    
+
     $(this).toggleClass('open');
     $('div[class*="menu-main"]').toggleClass('active');
     // check if it's on slider
   	if ( $('body').hasClass('home') && $(window).scrollTop() < window.innerHeight ) {
-  		$('#logo').addClass('visible')
+      if ($(this).hasClass('open') == true) {
+        $('#header .container').css('height', '5vh');
+        $('#header #logo svg').css('width', '16%');
+        $('html, body').addClass('overflow-hidden');
+        var headerH = $('#header .container').css('height');
+      } else {
+        $('#header .container').css('height', headerH);
+        $('html, body').removeClass('overflow-hidden');
+      }
   	}
-
-    if ($(this).hasClass('open') == true) {
-    	$('#logo').addClass('visible');
-    } else {
-    	$('#logo').removeClass('visible');
-    }
   });
 
 

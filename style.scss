@@ -36,6 +36,10 @@ Version: 1.0
   display: none;
 }
 
+.d-block {
+  display: block;
+}
+
 .d-grid {
   display: grid;
 }
@@ -120,13 +124,13 @@ Version: 1.0
   text-transform: uppercase;
 }
 
-.button {
-  border: 1px solid;
-  padding: 5px 0;
-  cursor: pointer;
+/* basic elements */
+html, body {
+  &.overflow-hidden {
+    overflow: hidden;
+  }
 }
 
-/* basic elements */
 body {
   overflow-x: hidden;
 }
@@ -138,18 +142,19 @@ p {
 
 h1, h2, h3, h4 {
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 a {
   @extend .mono;
   color: black;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
   &:hover {
     border-bottom: 1px solid;
   }
   &.no-border:hover {
-    border-bottom: none;
+    border-bottom: 1px solid transparent;
   }
 }
 
@@ -187,12 +192,24 @@ img {
   position: relative;
 }
 
+.button {
+  display: inline-block;
+  padding: 8px $half-spacing;
+  border-radius: $spacing;
+  border: 1px solid transparent;
+  background-color: $primaryColor;
+  margin: $spacing 0;
+  @extend .s-xsmall;
+  @extend .mono;
+}
+
 #header-container {
   position: fixed;
   z-index: 100;
 }
 #header {
   padding-top:$spacing;
+  padding-bottom:$spacing;
   height: initial;
   position: fixed;
   top: 0;
@@ -200,28 +217,32 @@ img {
   background-color: white;
   z-index: 100;
   .container  {
-    height: 65px;
-    @include transition(height .5s);
+    height: 5vh;
+    // @include transition(height .3s);
   }
   &.huge {
     .container {
       align-items: end;
       height: 50vh;
-      #logo svg {
+      #logo a svg {
         width: 100%;
       }
     }
   }
-  a {
-    display: block;
-    @extend .no-border;
-  }
   #logo {
     text-align: center;
-    @extend .spacing-b-3;
-    svg {
-      width: 250px;
-      @include transition(width .3s);
+    position: relative;
+    z-index: 100001;
+    height: 100%;
+    a {
+      height: 100%;
+      align-items: flex-end;
+      justify-content: center;
+      @extend .no-border;
+      svg {
+        width: 16%;
+        // @include transition(width .3s);
+      }
     }
   }
   div[class*="menu-main"]{
@@ -232,14 +253,14 @@ img {
     left: 0;
     z-index:10000;
     background-color: white;
-    padding-top: 15vh;
+    padding-top: calc(5vh + #{$triple-spacing}); 
     @include transition(all .5s);
     &.active {
       top: 0;
     }
     ul li {
       text-align: center;
-      height: 10vh;
+      height: calc(8.7vh - #{$spacing});
       @extend .s-large;
       @extend .d-flex;
       @extend .center;
@@ -248,12 +269,14 @@ img {
         margin-bottom: 0;
         background-color:#FC9251;
         border-top: 1px solid black;
-        height: 25vh;
+        height: 36vh;
+        margin-top: $triple-spacing;
         a {
-          font-size: 20vh;
+          font-size: 32vh;
           font-style: italic;
           @extend .condensed;
           @extend .uppercase;
+          @extend .no-border;
           &:hover {
             color: white;
           }
@@ -270,12 +293,14 @@ img {
           font-style: italic;
           @extend .uppercase;
           @extend .extended;
+          @extend .no-border;
           &:hover {
             color: white;
           }
         }
       }
       a {
+        @extend .sans;
         color: black;
         @include transition(color .3s);
         &:hover {
@@ -296,7 +321,7 @@ img {
     right: 0;
     overflow: hidden;
     padding: 0;
-    z-index: 14000;
+    z-index: 140000;
     background: transparent;
     opacity: 1;
     cursor: pointer;
@@ -361,7 +386,7 @@ img {
 }
 
 #content-home {
-  margin-top: 50vh;
+  padding-top: 50vh;
   min-height: 300vh;
   #image-grid-container {
     // overflow: hidden;
@@ -394,6 +419,46 @@ img {
   }
 }
 
+.content {
+  padding-top: 15vh;
+  .posts-flow {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-column-gap: $spacing;
+    grid-row-gap: $spacing;
+    align-items: flex-start;
+    .post {
+      grid-column: span 3;
+      margin-bottom: $double-spacing;
+      // &:nth-child(3n+2) {
+      //   grid-column: span 4;
+      // }
+      &.category-rassegna-stampa {
+        background-color: $primaryColor;
+        a.img-link {
+          display: none;
+        }
+        .entry-title {
+          padding: $spacing;
+          margin-bottom: $spacing;
+          a {
+            @extend .sans;
+          }
+        }
+        .button {
+          background-color: black;
+          color: white;
+          margin-left: $spacing;
+        }
+      }
+      &.category-documenti-storici {
+        grid-column: span 6;
+      }
+    }
+  }
+}
+
 // page headers
 @keyframes marquee {
   0% {
@@ -420,7 +485,7 @@ img {
   h1 {
     margin-right: $half-spacing;
     transform: translateX(0);
-    animation: marquee 15s linear infinite;
+    animation: marquee2 10s linear infinite;
   }
 }
 
@@ -430,10 +495,11 @@ img {
   white-space: nowrap;
   h3 {
     color: $primaryColor;
+    line-height: 1;
     transform: translateX(0);
-    animation: marquee2 10s linear infinite;
+    animation: marquee2 15s linear infinite;
     span {
-      margin-right: $spacing;
+      margin-right: $double-spacing;
       display: inline-block;
     }
   }

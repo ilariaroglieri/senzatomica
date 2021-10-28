@@ -59,10 +59,10 @@ Version: 1.0
 .serif, p {
   font-family: 'Editorial New'; }
 
-.sans {
+.sans, #header div[class*="menu-main"] ul li a, .content .posts-flow .post.category-rassegna-stampa .entry-title a {
   font-family: 'GT Flexa'; }
 
-.mono, a {
+.mono, a, .button {
   font-family: 'GT Flexa Mono'; }
 
 .extended, #header div[class*="menu-main"] ul li.gigantic a {
@@ -81,7 +81,7 @@ Version: 1.0
   font-size: 20vh; }
 
 .s-large, #header div[class*="menu-main"] ul li {
-  font-size: 7vh; }
+  font-size: 5vh; }
 
 .s-medium {
   font-size: 24px; }
@@ -91,6 +91,9 @@ Version: 1.0
 
 .s-small {
   font-size: 14px; }
+
+.s-xsmall, .button {
+  font-size: 11px; }
 
 .d-one-third {
   width: calc(8.3333%*4 - 20px);
@@ -150,7 +153,7 @@ Version: 1.0
 .spacing-b-2 {
   margin-bottom: 20px; }
 
-.spacing-b-3, #header #logo {
+.spacing-b-3 {
   margin-bottom: 40px; }
 
 .spacing-b-4 {
@@ -214,6 +217,9 @@ Version: 1.0
 .d-none {
   display: none; }
 
+.d-block {
+  display: block; }
+
 .d-grid {
   display: grid; }
 
@@ -276,12 +282,10 @@ Version: 1.0
 .uppercase, #header div[class*="menu-main"] ul li.very-big a, #header div[class*="menu-main"] ul li.gigantic a {
   text-transform: uppercase; }
 
-.button {
-  border: 1px solid;
-  padding: 5px 0;
-  cursor: pointer; }
-
 /* basic elements */
+html.overflow-hidden, body.overflow-hidden {
+  overflow: hidden; }
+
 body {
   overflow-x: hidden; }
 
@@ -290,15 +294,16 @@ p {
 
 h1, h2, h3, h4 {
   font-weight: normal;
-  line-height: 1; }
+  line-height: 1.25; }
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: 1px solid transparent; }
   a:hover {
     border-bottom: 1px solid; }
-  a.no-border:hover, #header a:hover {
-    border-bottom: none; }
+  a.no-border:hover, #header #logo a:hover, #header div[class*="menu-main"] ul li.very-big a:hover, #header div[class*="menu-main"] ul li.gigantic a:hover {
+    border-bottom: 1px solid transparent; }
 
 ul {
   margin: 0;
@@ -325,12 +330,21 @@ img {
   margin-left: -10px;
   position: relative; }
 
+.button {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-color: #79fc96;
+  margin: 20px 0; }
+
 #header-container {
   position: fixed;
   z-index: 100; }
 
 #header {
   padding-top: 20px;
+  padding-bottom: 20px;
   height: initial;
   position: fixed;
   top: 0;
@@ -338,28 +352,23 @@ img {
   background-color: white;
   z-index: 100; }
   #header .container {
-    height: 65px;
-    -webkit-transition: height 0.5s;
-    -moz-transition: height 0.5s;
-    -ms-transition: height 0.5s;
-    -o-transition: height 0.5s;
-    transition: height 0.5s; }
+    height: 5vh; }
   #header.huge .container {
     align-items: end;
     height: 50vh; }
-    #header.huge .container #logo svg {
+    #header.huge .container #logo a svg {
       width: 100%; }
-  #header a {
-    display: block; }
   #header #logo {
-    text-align: center; }
-    #header #logo svg {
-      width: 250px;
-      -webkit-transition: width 0.3s;
-      -moz-transition: width 0.3s;
-      -ms-transition: width 0.3s;
-      -o-transition: width 0.3s;
-      transition: width 0.3s; }
+    text-align: center;
+    position: relative;
+    z-index: 100001;
+    height: 100%; }
+    #header #logo a {
+      height: 100%;
+      align-items: flex-end;
+      justify-content: center; }
+      #header #logo a svg {
+        width: 16%; }
   #header div[class*="menu-main"] {
     width: 100%;
     height: 100vh;
@@ -368,7 +377,7 @@ img {
     left: 0;
     z-index: 10000;
     background-color: white;
-    padding-top: 15vh;
+    padding-top: calc(5vh + 60px);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -378,14 +387,15 @@ img {
       top: 0; }
     #header div[class*="menu-main"] ul li {
       text-align: center;
-      height: 10vh; }
+      height: calc(8.7vh - 20px); }
       #header div[class*="menu-main"] ul li.very-big {
         margin-bottom: 0;
         background-color: #FC9251;
         border-top: 1px solid black;
-        height: 25vh; }
+        height: 36vh;
+        margin-top: 60px; }
         #header div[class*="menu-main"] ul li.very-big a {
-          font-size: 20vh;
+          font-size: 32vh;
           font-style: italic; }
           #header div[class*="menu-main"] ul li.very-big a:hover {
             color: white; }
@@ -421,7 +431,7 @@ img {
     right: 0;
     overflow: hidden;
     padding: 0;
-    z-index: 14000;
+    z-index: 140000;
     background: transparent;
     opacity: 1;
     cursor: pointer;
@@ -475,7 +485,7 @@ img {
       width: 32px; }
 
 #content-home {
-  margin-top: 50vh;
+  padding-top: 50vh;
   min-height: 300vh; }
   #content-home #image-grid-container {
     z-index: 1000; }
@@ -500,6 +510,32 @@ img {
           height: 100%;
           object-fit: cover; }
 
+.content {
+  padding-top: 15vh; }
+  .content .posts-flow {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: flex-start; }
+    .content .posts-flow .post {
+      grid-column: span 3;
+      margin-bottom: 40px; }
+      .content .posts-flow .post.category-rassegna-stampa {
+        background-color: #79fc96; }
+        .content .posts-flow .post.category-rassegna-stampa a.img-link {
+          display: none; }
+        .content .posts-flow .post.category-rassegna-stampa .entry-title {
+          padding: 20px;
+          margin-bottom: 20px; }
+        .content .posts-flow .post.category-rassegna-stampa .button {
+          background-color: black;
+          color: white;
+          margin-left: 20px; }
+      .content .posts-flow .post.category-documenti-storici {
+        grid-column: span 6; }
+
 @keyframes marquee {
   0% {
     transform: translateX(0); }
@@ -517,7 +553,7 @@ img {
   .page-title h1 {
     margin-right: 10px;
     transform: translateX(0);
-    animation: marquee 15s linear infinite; }
+    animation: marquee2 10s linear infinite; }
 
 .page-keywords {
   display: flex;
@@ -525,10 +561,11 @@ img {
   white-space: nowrap; }
   .page-keywords h3 {
     color: #79fc96;
+    line-height: 1;
     transform: translateX(0);
-    animation: marquee2 10s linear infinite; }
+    animation: marquee2 15s linear infinite; }
     .page-keywords h3 span {
-      margin-right: 20px;
+      margin-right: 40px;
       display: inline-block; }
 
 .variable-type div {

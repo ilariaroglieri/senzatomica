@@ -53,7 +53,7 @@
         $sommario = get_field('sommario');
       ?>
 
-      <div class="spacing-t-2 d-flex flex-row">
+      <div class="spacing-t-4 d-flex flex-row">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole">
           <img src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
