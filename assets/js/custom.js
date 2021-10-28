@@ -140,6 +140,9 @@ jQuery(document).ready(function($) {
   });
 
 
+  // MARQUEE
+  console.log($('.page-keywords h3').outerWidth());
+
   // BREAK SENTENCE IN WORDS
   var variableType = $('.variable-type').find('h2').text();
 

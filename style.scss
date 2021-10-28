@@ -460,48 +460,34 @@ img {
 }
 
 // page headers
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
-@keyframes marquee2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
+.marquee {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  transform-origin: 50% 100%;
+  transition: transform 0.25s;
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
   }
 }
 
 .page-title {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  h1 {
-    margin-right: $half-spacing;
-    transform: translateX(0);
-    animation: marquee2 10s linear infinite;
-  }
+  height: 24px;
 }
 
 .page-keywords {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
+  height: 20vh;
   h3 {
     color: $primaryColor;
     line-height: 1;
-    transform: translateX(0);
-    animation: marquee2 15s linear infinite;
-    span {
-      margin-right: $double-spacing;
-      display: inline-block;
-    }
   }
 }
 

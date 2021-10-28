@@ -10,27 +10,24 @@ $cptQuery = new WP_Query( array(
 ?>
 
 <section class="content" id="content-archive-page">
-  <div class="page-title container-fluid">
-    <h1 class="extended uppercase s-medium"> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?></h1>
-    <h1 class="extended uppercase s-medium"> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?> <?php the_title(); ?></h1>
+  <div class="page-title container-fluid marquee" data-speed="-2">
+    <div class="inner">
+      <h1 class="extended uppercase s-medium"><?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;</h1>
+    </div>
   </div>
 
   <?php if( have_rows('parole_chiave') ): ?>
-    <div class="page-keywords container-fluid">
-      <h3 class="normal uppercase s-huge">
-        <?php while( have_rows('parole_chiave') ) : the_row(); ?>
-          <?php $keyword = get_sub_field('parola_chiave'); ?>
+    <div class="page-keywords container-fluid marquee" data-speed="-3">
+      <div class="inner">
+        <h3 class="normal uppercase s-huge">
+          <?php while( have_rows('parole_chiave') ) : the_row(); ?>
+            <?php $keyword = get_sub_field('parola_chiave'); ?>
 
-          <span><?php echo $keyword; ?></span>
-        <?php endwhile; ?>
-      </h3>
-      <h3 class="normal uppercase s-huge">
-        <?php while( have_rows('parole_chiave') ) : the_row(); ?>
-          <?php $keyword = get_sub_field('parola_chiave'); ?>
-
-          <span><?php echo $keyword; ?></span>
-        <?php endwhile; ?>
-      </h3>
+            <?php echo $keyword; ?>&nbsp;
+          <?php endwhile; ?>
+        </h3>
+      </div>
+      
     </div>
   <?php endif; ?>
 
