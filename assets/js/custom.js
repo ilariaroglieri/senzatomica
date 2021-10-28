@@ -122,7 +122,6 @@ jQuery(document).ready(function($) {
   $('.menu-toggle').click(function() {
     // save dimensions of header
     
-
     $(this).toggleClass('open');
     $('div[class*="menu-main"]').toggleClass('active');
     // check if it's on slider
@@ -140,50 +139,56 @@ jQuery(document).ready(function($) {
   });
 
 
-  // MARQUEE
-  console.log($('.page-keywords h3').outerWidth());
-
-  // BREAK SENTENCE IN WORDS
-  var variableType = $('.variable-type').find('h2').text();
-
-  var splitWords = variableType.split(" ");
-  $('.variable-type').find('h2').empty();
-
-  for (var i = 0; i < splitWords.length; i++) {
-    $('.variable-type').find('h2').append('<div>'+splitWords[i]+'</div>');
-    // var splitLetters = splitWords[i].split('');
-  }
-
   // BREAK WORDS IN LETTERS
-  $('.variable-type div h2 > div').each(function(i, el) {
+  $('.variable-type > span').each(function(i, el) {
     var splitLetters = $(el).text().split("");
     console.log(splitLetters);
 
     if (splitLetters.length <= 3) {
       $(el).addClass('condensed');
     } else if (splitLetters.length >= 4 && splitLetters.length < 6) {
-      $(el).addClass('extended');
-    } else if (splitLetters.length >= 6 && splitLetters.length <= 8) {
-      $(el).addClass('regular');
-    } else if (splitLetters.length > 8) {
       $(el).empty();
 
       for (var i = 0; i < splitLetters.length; i++) {
-        $(el).append('<span class="extended">'+splitLetters[i]+'</span>');
+        $(el).append('<span class="variable regular">'+splitLetters[i]+'</span>');
 
-        var weights = ['xcondensed','condensed','regular','extended'];
-
-        var letters = $(el).find('span');
+        var letters = $(el).find('.variable');
         var randomLetters = letters[Math.floor(Math.random() * (letters.length - 1))];
 
-        $(letters[0]).removeClass('extended').addClass('xcondensed');
-        $(letters[1]).removeClass('extended').addClass('xcondensed');
-        $(letters[2]).removeClass('extended').addClass('condensed');
-        $(letters[3]).removeClass('extended').addClass('condensed');
-        $(letters[4]).removeClass('extended').addClass('regular');
-        $(letters[5]).removeClass('extended').addClass('regular');
+        $(letters[1]).removeClass('regular').addClass('condensed');
+        $(letters[2]).removeClass('regular').addClass('condensed');
+      }
+    } else if (splitLetters.length >= 6 && splitLetters.length < 8) {
+      $(el).empty();
 
-        // $(randomLetters).addClass(weights[Math.floor(Math.random() * weights.length)]);
+      for (var i = 0; i < splitLetters.length; i++) {
+        $(el).append('<span class="variable condensed">'+splitLetters[i]+'</span>');
+
+        var letters = $(el).find('.variable');
+        var randomLetters = letters[Math.floor(Math.random() * (letters.length - 1))];
+
+
+        $(letters[2]).removeClass('condensed').addClass('extendend');
+        $(letters[3]).removeClass('condensed').addClass('extended');
+        $(letters[4]).removeClass('condensed').addClass('normal');
+
+      }
+    } else {
+      $(el).empty();
+
+      for (var i = 0; i < splitLetters.length; i++) {
+        $(el).append('<span class="variable extended">'+splitLetters[i]+'</span>');
+
+        var letters = $(el).find('.variable');
+        var randomLetters = letters[Math.floor(Math.random() * (letters.length - 1))];
+
+        $(letters[7]).removeClass('extended').addClass('xcondensed');
+        $(letters[6]).removeClass('extended').addClass('xcondensed');
+        $(letters[5]).removeClass('extended').addClass('condensed');
+        $(letters[4]).removeClass('extended').addClass('condensed');
+        $(letters[3]).removeClass('extended').addClass('regular');
+        $(letters[2]).removeClass('extended').addClass('regular');
+
       }
     }
   });
