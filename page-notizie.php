@@ -35,32 +35,10 @@ $cptQuery = new WP_Query( array(
     <?php $i = 0; ?>
     <div class="posts-flow container d-grid spacing-p-t-4">
       <?php while ( $cptQuery->have_posts() ) : $cptQuery->the_post(); ?>
-        <?php $classes = get_post_class($post); ?>
 
-          <!-- <?php if ($i == 0) : ?>
-            <div class="three-row">
-          <?php endif; ?>
 
-              <?php if (in_array('category-documenti-storici', $classes)) : ?>
-                <?php echo 'sono speciale'; ?>
-              <?php endif; ?> -->
-
-              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php if ( has_post_thumbnail() ) : ?>  
-                  <a class="img-link d-block no-border spacing-b-1" href="<?php the_permalink() ?>">          
-                    <?php the_post_thumbnail(); ?>
-                  </a>
-                <?php endif; ?>
-                <h2 class="entry-title"><a class="serif s-medium" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <a class="button no-border" href="<?php the_permalink(); ?>"><?php _e ("Leggi l'articolo", 'senzatomica_theme'); ?></a>
-              </article>
-
-          <!-- <?php $i++; ?>
-          <?php if ($i == 3) : $i = 0; ?>
-            </div>
-          <?php endif; ?>
- -->
-       
+        <?php include('loop-single-post.php'); ?>
+     
     
       <?php endwhile; ?>
     </div>

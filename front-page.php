@@ -46,7 +46,7 @@
       </div>
     <?php endif; ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('container t-center d-flex d-column'); ?>>
+    <div class="intro half-height container t-center d-flex d-column">
       <?php
         $subtitle = get_field('sottotitolo');
         $payoff = get_field('payoff');
@@ -68,7 +68,32 @@
         </div>
         <div class="d-two-twelfth t-whole"></div>
       </div>
-    </article>
+    </div>
+
+    <!-- news IN EVIDENZA -->
+
+    <?php if( have_rows('latest_news') ): ?>
+      <div class="news border-top spacing-p-t-1">  
+        <div class="page-title container-fluid marquee" data-speed="-2">
+          <div class="inner">
+            <h1 class="extended uppercase s-medium">Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;</h1>
+          </div>
+        </div>
+
+        <div id="latest_news" class="container t-center posts-flow spacing-p-t-2">
+          <?php while( have_rows('latest_news') ) : the_row(); ?>
+            <?php 
+
+            $post = get_sub_field('news');
+            setup_postdata($post);
+
+            include('loop-single-post.php');
+
+            wp_reset_postdata(); ?>
+          <?php endwhile; ?>
+        </div>
+      </div>
+    <?php endif; ?>
   
   <?php endwhile; else: ?>
 
