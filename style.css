@@ -89,7 +89,7 @@ Version: 1.0
 .s-regular {
   font-size: 18px; }
 
-.s-small {
+.s-small, .button.bigger {
   font-size: 14px; }
 
 .s-xsmall, .button {
@@ -337,9 +337,28 @@ img {
   display: inline-block;
   padding: 8px 10px;
   border-radius: 20px;
-  border: 1px solid transparent;
+  border: 1px solid #79fc96;
   background-color: #79fc96;
-  margin: 20px 0; }
+  margin: 20px 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .button.bigger {
+    padding: 8px 20px; }
+  .button.black, .posts-flow .post.category-rassegna-stampa .button {
+    background-color: black;
+    color: white;
+    border: 1px solid black; }
+    .button.black:hover, .posts-flow .post.category-rassegna-stampa .button:hover {
+      border: 1px solid white;
+      background-color: white;
+      color: black; }
+  .button:hover {
+    background-color: black;
+    color: #79fc96;
+    border: 1px solid black; }
 
 .border-top {
   border-top: 1px solid #79fc96; }
@@ -536,10 +555,6 @@ img {
       .posts-flow .post.category-rassegna-stampa .entry-title {
         padding: 20px;
         margin-bottom: 20px; }
-      .posts-flow .post.category-rassegna-stampa .button {
-        background-color: black;
-        color: white;
-        margin-left: 20px; }
     .posts-flow .post.category-documenti-storici {
       grid-column: span 6; }
 

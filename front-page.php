@@ -91,6 +91,10 @@
 
             wp_reset_postdata(); ?>
           <?php endwhile; ?>
+
+        </div>
+        <div class="container t-center spacing-p-t-2">
+          <a href="" class="button bigger uppercase">Vai alle news</a>
         </div>
       </div>
     <?php endif; ?>

@@ -200,11 +200,32 @@ img {
   display: inline-block;
   padding: 8px $half-spacing;
   border-radius: $spacing;
-  border: 1px solid transparent;
+  border: 1px solid $primaryColor;
   background-color: $primaryColor;
   margin: $spacing 0;
   @extend .s-xsmall;
   @extend .mono;
+  @include transition(all .3s);
+  &.bigger {
+    @extend .s-small;
+    padding: 8px $spacing;
+  }
+  &.black {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    &:hover {
+      border: 1px solid white;
+      background-color: white;
+      color: black;
+    }
+
+  }
+  &:hover { 
+    background-color: black;
+    color: $primaryColor;
+    border: 1px solid black;
+  }
 }
 
 .border-top {
@@ -457,9 +478,7 @@ img {
         }
       }
       .button {
-        background-color: black;
-        color: white;
-        margin-left: $spacing;
+        @extend .black;
       }
     }
     &.category-documenti-storici {
