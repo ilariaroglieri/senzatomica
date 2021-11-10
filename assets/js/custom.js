@@ -142,7 +142,6 @@ jQuery(document).ready(function($) {
   // BREAK WORDS IN LETTERS
   $('.variable-type > span').each(function(i, el) {
     var splitLetters = $(el).text().split("");
-    console.log(splitLetters);
 
     if (splitLetters.length <= 3) {
       $(el).addClass('condensed');
@@ -188,12 +187,50 @@ jQuery(document).ready(function($) {
         $(letters[4]).removeClass('extended').addClass('condensed');
         $(letters[3]).removeClass('extended').addClass('regular');
         $(letters[2]).removeClass('extended').addClass('regular');
-
       }
     }
+
+    $('')
   });
 
-  // ASSIGN RANDOM CLASSES TO SOME LETTERS
+  // divide posts into rows
+  var posts = $('#content-archive-news').find($('.post'));
+  var elements = [];
+
+  posts.each(function(i, el) {
+    var obj = {
+      'id' : [],
+      'offsetTop' : []
+    };
+    var topPos = $(el).offset().top;
+    obj.offsetTop.push(topPos);
+    obj.id.push($(el).attr('id'));
+
+    elements.push(obj);
+  });
+
+  var elGroups = {};
+
+  for (const el of elements) {
+    if (!elGroups[el.offsetTop]) {
+      elGroups[el.offsetTop] = []
+    }
+    elGroups[el.offsetTop].push(el);
+  }
+
+  var elGrouped = Object.values(elGroups);
+
+  for (var i = 0; i < elGrouped.length; i++) {
+    for (var j = 0; j < elGrouped[i].length; j++) {
+      console.log(i);
+      var ids = elGrouped[i][j].id;
+      var post = $('#'+ ids);
+      post.attr('data-group', i);
+    }
+    $('.post[data-group="'+i+'"').wrapAll('<div class="d-flex flex-row" />');
+  }
+
+
 
 
 

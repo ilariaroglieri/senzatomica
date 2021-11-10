@@ -71,9 +71,8 @@
     </div>
 
     <!-- news IN EVIDENZA -->
-
     <?php if( have_rows('latest_news') ): ?>
-      <div class="news border-top spacing-p-t-1">  
+      <div class="news border-top spacing-p-t-1 spacing-p-b-2">  
         <div class="page-title container-fluid marquee" data-speed="-2">
           <div class="inner">
             <h1 class="extended uppercase s-medium">Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;</h1>
@@ -91,11 +90,36 @@
 
             wp_reset_postdata(); ?>
           <?php endwhile; ?>
+        </div>
+        <div class="container t-center">
+          <a href="<?php echo get_page_link( get_page_by_title( 'Notizie' )->ID ); ?>" class="button bigger uppercase">Vai alle news</a>
+        </div>
+      </div>
+    <?php endif; ?>
 
-        </div>
-        <div class="container t-center spacing-p-t-2">
-          <a href="" class="button bigger uppercase">Vai alle news</a>
-        </div>
+    <!-- editor content -->
+    <div id="main-claim" class="container-fluid border-top">
+      <div class="container wysiwyg serif s-large spacing-t-3 spacing-b-4 paragraph-space">
+          <?php the_content(); ?>
+      </div>
+    </div>
+
+    <!-- striscia dinamica -->
+    <?php if (have_rows('striscia_dinamica')):?>
+      <div class="dynamic-stripe container-fluid marquee spacing-b-3" data-speed="-3">
+        <?php while( have_rows('striscia_dinamica') ) : the_row(); ?>
+          <?php 
+          $text = get_sub_field('testo_striscia');
+          $link = get_sub_field('link_alla_pagina');
+          ?>
+
+          <div class="inner">
+            <a class="no-border sans extended uppercase s-regular" href="<?php echo $link['url'];?>" aria-label="Link to page: <?php echo $text; ?>" aria-describedby="<?php echo $text; ?>">
+              <?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+          </div>
+
+        <?php endwhile; ?>
       </div>
     <?php endif; ?>
   

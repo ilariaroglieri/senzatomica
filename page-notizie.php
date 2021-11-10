@@ -3,13 +3,13 @@
 <?php 
 $cptQuery = new WP_Query( array(
   'post_type'         => 'post',
-  'posts_per_page'    => 20,
+  'posts_per_page'    => -1,
   'order'             => 'DESC',
   'ignore_sticky_posts' => 1
   ));
 ?>
 
-<section class="content" id="content-archive-page">
+<section class="content" id="content-archive-news">
   <div class="page-title container-fluid marquee" data-speed="-2">
     <div class="inner">
       <h1 class="extended uppercase s-medium"><?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;<?php the_title(); ?>&nbsp;</h1>
@@ -33,7 +33,7 @@ $cptQuery = new WP_Query( array(
 
   <?php if ( $cptQuery->have_posts() ) : ?>
     <?php $i = 0; ?>
-    <div class="posts-flow container d-grid spacing-p-t-4">
+    <div class="posts-flow container d-flex wrap spacing-p-t-4">
       <?php while ( $cptQuery->have_posts() ) : $cptQuery->the_post(); ?>
 
 

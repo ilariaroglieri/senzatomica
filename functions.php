@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', 'jquery_scripts' );
 
 add_theme_support( 'post-thumbnails' ); 
 
-remove_filter('the_content', 'wpautop');
+// remove_filter('the_content', 'wpautop');
 
 // img attachment defaults
 
