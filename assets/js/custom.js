@@ -227,9 +227,14 @@ jQuery(document).ready(function($) {
       var post = $('#'+ ids);
       post.attr('data-group', i);
     }
-    $('.post[data-group="'+i+'"').wrapAll('<div class="d-flex flex-row" />');
+    $('#content-archive-news .post[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
   }
 
+
+  // copy dynamic stripes every three rows
+  $('#content-archive-news .dynamic-stripe').clone().addClass('added').insertAfter('.row-container:nth-of-type(3n+3)');
+
+  // marquee('div.marquee.added');
 
 
 

@@ -104,24 +104,7 @@
       </div>
     </div>
 
-    <!-- striscia dinamica -->
-    <?php if (have_rows('striscia_dinamica')):?>
-      <div class="dynamic-stripe container-fluid marquee spacing-b-3" data-speed="-3">
-        <?php while( have_rows('striscia_dinamica') ) : the_row(); ?>
-          <?php 
-          $text = get_sub_field('testo_striscia');
-          $link = get_sub_field('link_alla_pagina');
-          ?>
-
-          <div class="inner">
-            <a class="no-border sans extended uppercase s-regular" href="<?php echo $link['url'];?>" aria-label="Link to page: <?php echo $text; ?>" aria-describedby="<?php echo $text; ?>">
-              <?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;
-            </a>
-          </div>
-
-        <?php endwhile; ?>
-      </div>
-    <?php endif; ?>
+    <?php include('dynamic-stripe.php') ?>
   
   <?php endwhile; else: ?>
 
