@@ -50,6 +50,8 @@ var state = {
 //-----------DOCUMENT.READY----------------
 
 jQuery(document).ready(function($) {
+  // fade in effect on conent
+  $('body').addClass('loaded');
 
   //home
   // shuffle images
@@ -90,8 +92,8 @@ jQuery(document).ready(function($) {
       var newRow = 0;
      
       //scale logo and header
-      scaleOnScroll($('#logo svg'), currentScrollPos, 16, 100, 'width', '%');
-      scaleOnScroll($('#header .container'), currentScrollPos, 5, 50, 'height', 'vh');
+      scaleOnScroll($('#logo svg'), currentScrollPos, 20, 100, 'width', '%');
+      scaleOnScroll($('#header .container'), currentScrollPos, 6, 50, 'height', 'vh');
 
       // update row below half viewpoer
       for (var i = 1; i <= 3; i++) {
@@ -110,11 +112,16 @@ jQuery(document).ready(function($) {
       // show menu and hide grid 
       if (currentScrollPos > viewportH/3) {
         $('.menu-toggle').removeClass('hidden');
+        imagesGrid.addClass('hidden');
         $('#image-grid-container').hide();
-      } else {
-        // $('.menu-toggle').addClass('hidden');
-      }
+      } 
     });
+  }
+
+  var currentScrollPos = Math.round( $(document).scrollTop() );
+  if (currentScrollPos > 0) {
+    $('.menu-toggle').removeClass('hidden');
+    $('#image-grid-container').hide();
   }
 
 
@@ -127,7 +134,7 @@ jQuery(document).ready(function($) {
     // check if it's on slider
   	if ( $('body').hasClass('home') && $(window).scrollTop() < window.innerHeight ) {
       if ($(this).hasClass('open') == true) {
-        $('#header .container').css('height', '5vh');
+        $('#header .container').css('height', '6vh');
         $('#header #logo svg').css('width', '20%');
         $('html, body').addClass('overflow-hidden');
         var headerH = $('#header .container').css('height');

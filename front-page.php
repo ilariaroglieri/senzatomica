@@ -53,7 +53,7 @@
         $sommario = get_field('sommario');
       ?>
 
-      <div class="spacing-t-4 d-flex flex-row">
+      <div class="spacing-t-4 d-flex t-column flex-row">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole">
           <img src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
@@ -61,7 +61,7 @@
         <div class="d-one-twelfth t-whole"></div>
       </div>
 
-      <div class="summary spacing-t-2 d-flex flex-row">
+      <div class="summary spacing-t-2 d-flex t-column flex-row">
         <div class="d-two-twelfth t-whole"></div>
         <div class="d-eight-twelfth t-whole">
           <p class="sans s-regular"><?= $sommario; ?></p>
@@ -79,17 +79,19 @@
           </div>
         </div>
 
-        <div id="latest_news" class="container t-center posts-flow spacing-p-t-2">
-          <?php while( have_rows('latest_news') ) : the_row(); ?>
-            <?php 
+        <div id="latest_news" class="container posts-flow spacing-p-t-3">
+          <div class="d-flex flex-row">
+            <?php while( have_rows('latest_news') ) : the_row(); ?>
+              <?php 
 
-            $post = get_sub_field('news');
-            setup_postdata($post);
+              $post = get_sub_field('news');
+              setup_postdata($post);
 
-            include('loop-single-post.php');
+              include('loop-single-post.php');
 
-            wp_reset_postdata(); ?>
-          <?php endwhile; ?>
+              wp_reset_postdata(); ?>
+            <?php endwhile; ?>
+          </div>
         </div>
         <div class="container t-center">
           <a href="<?php echo get_page_link( get_page_by_title( 'Notizie' )->ID ); ?>" class="button bigger uppercase">Vai alle news</a>

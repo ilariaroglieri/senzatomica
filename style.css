@@ -59,7 +59,7 @@ Version: 1.0
 .serif, p {
   font-family: 'Editorial New'; }
 
-.sans, #header div[class*="menu-main"] ul li a, .posts-flow .post.category-rassegna-stampa .entry-title a {
+.sans, #header div[class*="menu-main"] ul li a, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
 
 .mono, a, .button {
@@ -99,7 +99,7 @@ Version: 1.0
   width: calc(8.3333%*4 - 20px);
   margin: 0 10px; }
 
-.d-half, .posts-flow .post.category-documenti-storici {
+.d-half, .posts-flow .post.posts_type-notizia-grande-in-evidenza {
   width: calc(8.3333%*6 - 20px);
   margin: 0 10px; }
 
@@ -119,7 +119,7 @@ Version: 1.0
   width: calc(8.3333%*2 - 20px);
   margin: 0 10px; }
 
-.d-three-twelfth, .posts-flow .post {
+.d-three-twelfth {
   width: calc(8.3333%*3 - 20px);
   margin: 0 10px; }
 
@@ -349,11 +349,11 @@ img {
   transition: all 0.3s; }
   .button.bigger {
     padding: 8px 20px; }
-  .button.black, .posts-flow .post.category-rassegna-stampa .button {
+  .button.black, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .button {
     background-color: black;
     color: white;
     border: 1px solid black; }
-    .button.black:hover, .posts-flow .post.category-rassegna-stampa .button:hover {
+    .button.black:hover, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .button:hover {
       border: 1px solid white;
       background-color: white;
       color: black; }
@@ -382,7 +382,7 @@ img {
   background-color: white;
   z-index: 100; }
   #header .container {
-    height: 5vh; }
+    height: 6vh; }
   #header.huge .container {
     align-items: end;
     height: 50vh; }
@@ -434,6 +434,8 @@ img {
           font-style: italic; }
         #header div[class*="menu-main"] ul li.very-big:hover {
           background-color: #79fc96; }
+          #header div[class*="menu-main"] ul li.very-big:hover a {
+            color: black; }
       #header div[class*="menu-main"] ul li.gigantic {
         margin-bottom: 0;
         background-color: #FABAF0;
@@ -445,6 +447,8 @@ img {
           font-style: italic; }
         #header div[class*="menu-main"] ul li.gigantic:hover {
           background-color: #79fc96; }
+          #header div[class*="menu-main"] ul li.gigantic:hover a {
+            color: black; }
       #header div[class*="menu-main"] ul li a {
         color: black;
         -webkit-transition: color 0.3s;
@@ -519,9 +523,21 @@ img {
       top: 50%;
       width: 32px; }
 
+body {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+  body.loaded {
+    opacity: 1; }
+
+.content {
+  padding-top: 15vh; }
+
 #content-home {
-  padding-top: 50vh;
-  min-height: 300vh; }
+  margin-top: 50vh; }
   #content-home #image-grid-container {
     z-index: 1000; }
     #content-home #image-grid-container #image-grid {
@@ -548,20 +564,31 @@ img {
 .wysiwyg.paragraph-space p {
   margin-bottom: 20px; }
 
-.content {
-  padding-top: 15vh; }
-
 .posts-flow .flex-row {
   align-items: start;
   margin-bottom: 40px; }
-.posts-flow .post.category-rassegna-stampa {
+.posts-flow .post.posts_height-superlandscape a.img-link {
+  padding-bottom: 50%; }
+.posts-flow .post.posts_height-landscape a.img-link {
+  padding-bottom: 64%; }
+.posts-flow .post.posts_height-quadrata a.img-link {
+  padding-bottom: 97%; }
+.posts-flow .post.posts_height-verticale a.img-link {
+  padding-bottom: 128%; }
+.posts-flow .post.posts_height-superverticale a.img-link {
+  padding-bottom: 150%; }
+.posts-flow .post a.img-link {
+  height: 0;
+  overflow: hidden;
+  background-size: cover !important; }
+.posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine {
   background-color: #79fc96; }
-  .posts-flow .post.category-rassegna-stampa a.img-link {
+  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine a.img-link {
     display: none; }
-  .posts-flow .post.category-rassegna-stampa .entry-title {
+  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title {
     padding: 20px;
     margin-bottom: 20px; }
-  .posts-flow .post.category-rassegna-stampa .button {
+  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .button {
     margin-left: 20px; }
 
 @keyframes marquee {
@@ -600,19 +627,18 @@ img {
   font-style: italic; }
 
 .dynamic-stripe {
-  background-color: #FABAF0; }
+  background-color: #FABAF0;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  position: static; }
+  .dynamic-stripe .inner {
+    position: static;
+    transform: translateX(0);
+    animation: marquee 15s linear infinite; }
   .dynamic-stripe.primaryColor {
     background-color: #79fc96; }
-  .dynamic-stripe.added {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px 0;
-    position: static; }
-    .dynamic-stripe.added .inner {
-      position: static;
-      transform: translateX(0);
-      animation: marquee 15s linear infinite; }
 
 .page-keywords ~ .dynamic-stripe {
   display: none; }
@@ -632,7 +658,8 @@ img {
 
 @media screen and (max-width: 1200px) {
   .container {
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: calc(100% - 20px); } }
 @media screen and (max-width: 768px) {
   .t-hidden {
@@ -643,11 +670,11 @@ img {
   .d-flex.t-column-reverse, #header div[class*="menu-main"] ul li.t-column-reverse, .t-column-reverse.posts-flow {
     flex-flow: column-reverse; }
 
-  .t-whole {
+  .t-whole, .posts-flow .post.category-documenti-storici {
     width: calc(100% - 20px);
     margin: 0 10px;
     margin-bottom: 5px; }
-    .t-whole:last-of-type {
+    .t-whole:last-of-type, .posts-flow .post.category-documenti-storici:last-of-type {
       margin-bottom: 0; }
 
   .t-whole-sm {
@@ -660,6 +687,15 @@ img {
   .t-two-twelfth {
     width: calc(8.3333%*2 - 20px);
     margin: 0 10px; }
+
+  #header div[class*="menu-main"] ul li.very-big {
+    height: 36vh; }
+    #header div[class*="menu-main"] ul li.very-big a {
+      font-size: 20vw; }
+  #header div[class*="menu-main"] ul li.gigantic {
+    height: 20vh; }
+    #header div[class*="menu-main"] ul li.gigantic a {
+      font-size: 13vw; }
 
   #content-home #image-grid-container #image-grid {
     grid-template-columns: repeat(6, 1fr); } }

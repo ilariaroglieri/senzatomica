@@ -253,7 +253,7 @@ img {
   background-color: white;
   z-index: 100;
   .container  {
-    height: 5vh;
+    height: 6vh;
     // @include transition(height .3s);
   }
   &.huge {
@@ -317,6 +317,9 @@ img {
         }
         &:hover {
           background-color: $primaryColor;
+          a {
+            color: black;
+          }
         }
       }
       &.gigantic {
@@ -334,6 +337,9 @@ img {
         }
         &:hover {
           background-color: $primaryColor;
+          a {
+            color: black;
+          }
         }
       }
       a {
@@ -422,9 +428,21 @@ img {
   }
 }
 
+body {
+  opacity:0;
+  @include transition(opacity .5s);
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.content {
+  padding-top: 15vh;
+}
+
 #content-home {
-  padding-top: 50vh;
-  min-height: 300vh;
+  margin-top: 50vh;
+  // min-height: 300vh;
   #image-grid-container {
     // overflow: hidden;
     z-index: 1000;
@@ -460,9 +478,6 @@ img {
   margin-bottom: $spacing;
 }
 
-.content {
-  padding-top: 15vh;
-}
 
 .posts-flow {
   @extend .d-flex;
@@ -471,8 +486,41 @@ img {
     margin-bottom: $double-spacing;
   }
   .post {
-    @extend .d-three-twelfth;
-    &.category-rassegna-stampa {
+
+    // altezza
+    &.posts_height-superlandscape {
+      a.img-link {
+        padding-bottom: 50%;
+      }
+    }
+    &.posts_height-landscape {
+      a.img-link {
+        padding-bottom: 64%;
+      }
+    }
+    &.posts_height-quadrata {
+      a.img-link {
+        padding-bottom: 97%;
+      }
+    }
+    &.posts_height-verticale {
+      a.img-link {
+        padding-bottom: 128%;
+      }
+    }
+    &.posts_height-superverticale {
+      a.img-link {
+        padding-bottom: 150%;
+      }
+    }
+    a.img-link {
+      height: 0;
+      overflow: hidden;
+      background-size: cover !important;
+    }
+
+    // tipi di notizie
+    &.posts_type-notizia-sfondo-colorato-senza-immagine {
       background-color: $primaryColor;
       a.img-link {
         display: none;
@@ -489,7 +537,7 @@ img {
         @extend .black;
       }
     }
-    &.category-documenti-storici {
+    &.posts_type-notizia-grande-in-evidenza {
       @extend .d-half;
     }
   }
@@ -547,21 +595,20 @@ img {
 
 .dynamic-stripe{
   background-color: $pink; 
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: $half-spacing 0;
+  position: static;
+  .inner {
+    position: static;
+    transform: translateX(0);
+    animation: marquee 15s linear infinite;
+  }
   &.primaryColor {
     background-color: $primaryColor;
   }
-  &.added {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: $half-spacing 0;
-    position: static;
-    .inner {
-      position: static;
-      transform: translateX(0);
-      animation: marquee 15s linear infinite;
-    }
-  }
+  
 }
 
 .page-keywords ~ .dynamic-stripe {
@@ -592,7 +639,8 @@ img {
 
 @media screen and (max-width: $desktop) {
   .container {
-    margin: $half-spacing;
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
     width: calc(100% - #{$spacing});
   }
 
@@ -635,10 +683,36 @@ img {
     margin: 0 #{$half-spacing};
   }
 
+
+  #header div[class*="menu-main"]{
+    ul li {
+      &.very-big {
+        height: 36vh;
+        a {
+          font-size: 20vw;
+        }
+      }
+      &.gigantic {
+        height: 20vh;
+        a {
+          font-size: 13vw;
+        }
+      }
+    }
+  }
+
   #content-home {
     #image-grid-container {
       #image-grid {
         grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+
+  .posts-flow {
+    .post {
+      &.category-documenti-storici {
+        @extend .t-whole;
       }
     }
   }
