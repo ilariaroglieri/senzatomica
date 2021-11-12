@@ -554,42 +554,31 @@ body {
 }
 
 .marquee {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  display: block;
-  transform-origin: 50% 100%;
-  transition: transform 0.25s;
-  .inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: flex-end;
-    white-space: nowrap;
-  }
+  
 }
 
 .page-title {
-  height: 24px;
+  // height: 24px;
+  & > div {
+    animation-duration: 6s !important;
+  }
 }
 
 .page-keywords {
   height: 20vh;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: $half-spacing 0;
+  position: static;
+  .inner {
+    position: static;
+    transform: translateX(0);
+    animation: marquee 6s linear infinite;
+  }
   h3 {
     color: $primaryColor;
     line-height: 1;
-  }
-}
-
-.variable-type {
-  div {
-    display: inline-block;
-    margin-right: $half-spacing;
-    font-style: italic;
-    span {
-    }
   }
 }
 
@@ -603,7 +592,7 @@ body {
   .inner {
     position: static;
     transform: translateX(0);
-    animation: marquee 15s linear infinite;
+    animation: marquee 6s linear infinite;
   }
   &.primaryColor {
     background-color: $primaryColor;

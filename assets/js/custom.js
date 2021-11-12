@@ -242,7 +242,15 @@ jQuery(document).ready(function($) {
   $('#content-archive-news .dynamic-stripe').clone().addClass('added').insertAfter('.row-container:nth-of-type(3n+3)');
   $('#content-archive-news .dynamic-stripe:even').addClass('primaryColor');
 
-  // marquee('div.marquee.added');
+  $('.page-title').marquee({
+    startVisible: true,
+    gap: 0,
+    delayBeforeStart: 0,
+    direction: 'left',
+    duplicated: true,
+  });
+
+
 
 
 
