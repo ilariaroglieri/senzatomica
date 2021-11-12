@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
   	if ( $('body').hasClass('home') && $(window).scrollTop() < window.innerHeight ) {
       if ($(this).hasClass('open') == true) {
         $('#header .container').css('height', '5vh');
-        $('#header #logo svg').css('width', '16%');
+        $('#header #logo svg').css('width', '20%');
         $('html, body').addClass('overflow-hidden');
         var headerH = $('#header .container').css('height');
       } else {
@@ -233,6 +233,7 @@ jQuery(document).ready(function($) {
 
   // copy dynamic stripes every three rows
   $('#content-archive-news .dynamic-stripe').clone().addClass('added').insertAfter('.row-container:nth-of-type(3n+3)');
+  $('#content-archive-news .dynamic-stripe:even').addClass('primaryColor');
 
   // marquee('div.marquee.added');
 

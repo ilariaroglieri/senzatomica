@@ -398,7 +398,7 @@ img {
       align-items: flex-end;
       justify-content: center; }
       #header #logo a svg {
-        width: 16%; }
+        width: 20%; }
   #header div[class*="menu-main"] {
     width: 100%;
     height: 100vh;
@@ -417,7 +417,12 @@ img {
       top: 0; }
     #header div[class*="menu-main"] ul li {
       text-align: center;
-      height: calc(8.7vh - 20px); }
+      height: calc(8.7vh - 20px);
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
       #header div[class*="menu-main"] ul li.very-big {
         margin-bottom: 0;
         background-color: #FC9251;
@@ -427,8 +432,8 @@ img {
         #header div[class*="menu-main"] ul li.very-big a {
           font-size: 32vh;
           font-style: italic; }
-          #header div[class*="menu-main"] ul li.very-big a:hover {
-            color: white; }
+        #header div[class*="menu-main"] ul li.very-big:hover {
+          background-color: #79fc96; }
       #header div[class*="menu-main"] ul li.gigantic {
         margin-bottom: 0;
         background-color: #FABAF0;
@@ -438,8 +443,8 @@ img {
         #header div[class*="menu-main"] ul li.gigantic a {
           font-size: 15vh;
           font-style: italic; }
-          #header div[class*="menu-main"] ul li.gigantic a:hover {
-            color: white; }
+        #header div[class*="menu-main"] ul li.gigantic:hover {
+          background-color: #79fc96; }
       #header div[class*="menu-main"] ul li a {
         color: black;
         -webkit-transition: color 0.3s;
@@ -565,12 +570,23 @@ img {
   100% {
     transform: translateX(-100%); } }
 .marquee {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap; }
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: block;
+  transform-origin: 50% 100%;
+  transition: transform 0.25s; }
   .marquee .inner {
-    transform: translateX(0);
-    animation: marquee 15s linear infinite; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap; }
+
+.page-title {
+  height: 24px; }
 
 .page-keywords {
   height: 20vh; }
@@ -584,10 +600,22 @@ img {
   font-style: italic; }
 
 .dynamic-stripe {
-  background-color: #79fc96;
-  padding: 10px 0; }
-  .dynamic-stripe:nth-of-type(1) {
-    background-color: pink; }
+  background-color: #FABAF0; }
+  .dynamic-stripe.primaryColor {
+    background-color: #79fc96; }
+  .dynamic-stripe.added {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    position: static; }
+    .dynamic-stripe.added .inner {
+      position: static;
+      transform: translateX(0);
+      animation: marquee 15s linear infinite; }
+
+.page-keywords ~ .dynamic-stripe {
+  display: none; }
 
 .slider .slick-list, .slider .slick-track {
   -webkit-transform: none !important;

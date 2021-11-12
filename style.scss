@@ -276,7 +276,7 @@ img {
       justify-content: center;
       @extend .no-border;
       svg {
-        width: 16%;
+        width: 20%;
         // @include transition(width .3s);
       }
     }
@@ -297,13 +297,14 @@ img {
     ul li {
       text-align: center;
       height: calc(8.7vh - #{$spacing});
+      @include transition(all .3s);
       @extend .s-large;
       @extend .d-flex;
       @extend .center;
       @extend .v-center;
       &.very-big {
         margin-bottom: 0;
-        background-color:#FC9251;
+        background-color: $orange;
         border-top: 1px solid black;
         height: 36vh;
         margin-top: $triple-spacing;
@@ -313,14 +314,14 @@ img {
           @extend .condensed;
           @extend .uppercase;
           @extend .no-border;
-          &:hover {
-            color: white;
-          }
+        }
+        &:hover {
+          background-color: $primaryColor;
         }
       }
       &.gigantic {
         margin-bottom: 0;
-        background-color: #FABAF0;
+        background-color: $pink;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
         height: 20vh;
@@ -330,9 +331,9 @@ img {
           @extend .uppercase;
           @extend .extended;
           @extend .no-border;
-          &:hover {
-            color: white;
-          }
+        }
+        &:hover {
+          background-color: $primaryColor;
         }
       }
       a {
@@ -505,24 +506,25 @@ img {
 }
 
 .marquee {
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  // width: 100vw;
-  // display: block;
-  // transform-origin: 50% 100%;
-  // transition: transform 0.25s;
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: block;
+  transform-origin: 50% 100%;
+  transition: transform 0.25s;
   .inner {
-    transform: translateX(0);
-    animation: marquee 15s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
   }
 }
 
 .page-title {
-  // height: 24px;
+  height: 24px;
 }
 
 .page-keywords {
@@ -543,16 +545,27 @@ img {
   }
 }
 
-.dynamic-stripe {
-  // height: 50px;
-  background-color: $primaryColor;
-  padding: $half-spacing 0;
-  &:nth-of-type(1) {
-    background-color: pink;
+.dynamic-stripe{
+  background-color: $pink; 
+  &.primaryColor {
+    background-color: $primaryColor;
   }
-  .inner {
-    // top: calc(50% - 9px);
+  &.added {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: $half-spacing 0;
+    position: static;
+    .inner {
+      position: static;
+      transform: translateX(0);
+      animation: marquee 15s linear infinite;
+    }
   }
+}
+
+.page-keywords ~ .dynamic-stripe {
+  display: none;
 }
 
 .slider {

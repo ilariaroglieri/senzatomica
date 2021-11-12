@@ -12,7 +12,7 @@
 
           
           <a class="no-border sans extended uppercase s-regular" href="<?php if ($link): echo esc_url($link['url']); else: echo '#'; endif; ?>" aria-label="Link to page: <?php echo $text; ?>" aria-describedby="<?php echo $text; ?>">
-            <?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;
+            <?php echo $text; ?>&nbs&nbsp;&nbsp;&nbsp;&nbsp;p;&nbsp;&nbsp;&nbsp;
           </a>
         <?php endwhile; ?>
       </div>
@@ -26,7 +26,7 @@
 
           
           <a class="no-border sans extended uppercase s-regular" href="<?php if ($link): echo esc_url($link['url']); else: echo '#'; endif; ?>" aria-label="Link to page: <?php echo $text; ?>" aria-describedby="<?php echo $text; ?>">
-            <?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;
+            <?php echo $text; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </a>
         <?php endwhile; ?>
       </div>

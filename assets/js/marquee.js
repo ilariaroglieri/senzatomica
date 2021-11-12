@@ -28,4 +28,4 @@ function marquee(element) {
   });
 }
 
-// marquee('div.marquee');
+marquee('div.marquee');
