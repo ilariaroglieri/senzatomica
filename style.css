@@ -641,9 +641,6 @@ body {
   background-attachment: fixed !important;
   background-size: auto 75% !important; }
 
-#footer {
-  display: none; }
-
 @media screen and (max-width: 1200px) {
   .container {
     margin-left: 10px;

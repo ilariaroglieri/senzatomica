@@ -553,10 +553,6 @@ body {
   }
 }
 
-.marquee {
-  
-}
-
 .page-title {
   // height: 24px;
   & > div {
@@ -623,7 +619,7 @@ body {
 }
 
 #footer {
-  display: none;
+  // display: none;
 }
 
 @media screen and (max-width: $desktop) {

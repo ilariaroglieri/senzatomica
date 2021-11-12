@@ -75,7 +75,7 @@
       <div class="news border-top spacing-p-t-1 spacing-p-b-2">  
         <div class="page-title container-fluid marquee" data-speed="-2">
           <div class="inner">
-            <h1 class="extended uppercase s-medium">Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;Ultime Notizie&nbsp;</h1>
+            <h1 class="extended uppercase s-medium">Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;</h1>
           </div>
         </div>
 
