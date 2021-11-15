@@ -442,6 +442,7 @@ body {
 
 #content-home {
   margin-top: 50vh;
+  padding-top:0;
   // min-height: 300vh;
   #image-grid-container {
     // overflow: hidden;
@@ -618,8 +619,44 @@ body {
   }
 }
 
-#footer {
-  // display: none;
+.footer {
+  border-top: 1px solid black;
+  @extend .mono;
+  @extend .s-xsmall;
+
+  .info {
+    margin-bottom: $spacing;
+    & > div {
+      padding-top: $half-spacing;
+      border-right: 1px solid black;
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+  }
+  .partners {
+    background-color: $primaryColor;
+    border-top: 1px solid black;
+    padding-bottom: $double-spacing;
+    & > div {
+      padding-top: $half-spacing;
+      border-right: 1px solid black;
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+    .logo {
+      padding-right: $spacing;
+    }
+    .logo.d-flex {
+      padding-right: 0; 
+      & > * {
+        flex:1 1 0;
+        max-width: 100px;
+        padding-right: $spacing;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $desktop) {

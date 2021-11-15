@@ -44,6 +44,18 @@ function default_attachment_display_settings() {
 
 add_action( 'after_setup_theme', 'default_attachment_display_settings' );
 
+/* add options page for newsletter */
+if( function_exists('acf_add_options_page') ) {
+  
+  acf_add_options_page(array(
+    'page_title'  => 'Footer',
+    'menu_title'  => 'Footer',
+    'menu_slug'   => 'footer-general-settings',
+    'capability'  => 'edit_posts',
+    'redirect'    => false
+  ));
+}
+
 
 // taxonomies
 // Register Custom Taxonomy

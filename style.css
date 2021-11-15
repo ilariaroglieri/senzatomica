@@ -62,7 +62,7 @@ Version: 1.0
 .sans, #header div[class*="menu-main"] ul li a, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
 
-.mono, a, .button {
+.mono, a, .button, .footer {
   font-family: 'GT Flexa Mono'; }
 
 .extended, #header div[class*="menu-main"] ul li.gigantic a {
@@ -92,7 +92,7 @@ Version: 1.0
 .s-small, .button.bigger {
   font-size: 14px; }
 
-.s-xsmall, .button {
+.s-xsmall, .button, .footer {
   font-size: 11px; }
 
 .d-one-third {
@@ -537,7 +537,8 @@ body {
   padding-top: 15vh; }
 
 #content-home {
-  margin-top: 50vh; }
+  margin-top: 50vh;
+  padding-top: 0; }
   #content-home #image-grid-container {
     z-index: 1000; }
     #content-home #image-grid-container #image-grid {
@@ -640,6 +641,33 @@ body {
 .slider .slide .svg {
   background-attachment: fixed !important;
   background-size: auto 75% !important; }
+
+.footer {
+  border-top: 1px solid black; }
+  .footer .info {
+    margin-bottom: 20px; }
+    .footer .info > div {
+      padding-top: 10px;
+      border-right: 1px solid black; }
+      .footer .info > div:last-of-type {
+        border-right: none; }
+  .footer .partners {
+    background-color: #79fc96;
+    border-top: 1px solid black;
+    padding-bottom: 40px; }
+    .footer .partners > div {
+      padding-top: 10px;
+      border-right: 1px solid black; }
+      .footer .partners > div:last-of-type {
+        border-right: none; }
+    .footer .partners .logo {
+      padding-right: 20px; }
+    .footer .partners .logo.d-flex, .footer .partners #header div[class*="menu-main"] ul li.logo, #header div[class*="menu-main"] ul .footer .partners li.logo, .footer .partners .logo.posts-flow {
+      padding-right: 0; }
+      .footer .partners .logo.d-flex > *, .footer .partners #header div[class*="menu-main"] ul li.logo > *, #header div[class*="menu-main"] ul .footer .partners li.logo > *, .footer .partners .logo.posts-flow > * {
+        flex: 1 1 0;
+        max-width: 100px;
+        padding-right: 20px; }
 
 @media screen and (max-width: 1200px) {
   .container {
