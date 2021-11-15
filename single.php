@@ -11,7 +11,7 @@
         <?php the_post_thumbnail(); ?>
       <?php endif; ?>
 
-      <div class="d-flex flex-row">
+      <div class="d-flex flex-row t-column">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole text-content s-regular wysiwyg paragraph-space spacing-t-3 spacing-b-3">
           <?php the_content(); ?>

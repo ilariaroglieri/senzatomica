@@ -304,14 +304,14 @@ img {
     left: 0;
     z-index:10000;
     background-color: white;
-    padding-top: calc(5vh + #{$triple-spacing}); 
+    padding-top: calc(55px + #{$double-spacing}); 
     @include transition(all .5s);
     &.active {
       top: 0;
     }
     ul li {
       text-align: center;
-      height: calc(8.7vh - #{$spacing});
+      height: 7vh;
       @include transition(all .3s);
       @extend .s-large;
       @extend .d-flex;
@@ -321,10 +321,10 @@ img {
         margin-bottom: 0;
         background-color: $orange;
         border-top: 1px solid black;
-        height: 36vh;
-        margin-top: $triple-spacing;
+        height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3);
+        margin-top: $double-spacing;
         a {
-          font-size: 32vh;
+          font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh);
           font-style: italic;
           @extend .condensed;
           @extend .uppercase;
@@ -342,9 +342,9 @@ img {
         background-color: $pink;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        height: 20vh;
+        height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2);
         a {
-          font-size: 15vh;
+          font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
           font-style: italic;
           @extend .uppercase;
           @extend .extended;
@@ -712,6 +712,21 @@ body {
     }
   }
 
+  #header div[class*="menu-main"]{
+    ul li {
+      &.very-big {
+        a {
+          font-size: 20vw;
+        }
+      }
+      &.gigantic {
+        a {
+          font-size: 13vw;
+        }
+      }
+    }
+  }
+
 }
 
 @media screen and (max-width: $tablet) {
@@ -733,13 +748,12 @@ body {
 
   .t-whole {
     width: calc(100% - #{$spacing});
-    margin: 0 #{$half-spacing};
-    margin-bottom: $half-spacing/2;
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
     &:last-of-type {
       margin-bottom: 0;
     }
   }
-
 
   .t-wrap {
     flex-wrap: wrap;
@@ -747,8 +761,8 @@ body {
 
   .t-whole-pad {
     width: 100%;
-    padding-right: #{$half-spacing};
-    padding-left: #{$half-spacing};
+    padding-right: $half-spacing;
+    padding-left: $half-spacing;
   }
 
   .t-half-pad {
@@ -790,22 +804,22 @@ body {
   }
 
 
-  #header div[class*="menu-main"]{
-    ul li {
-      &.very-big {
-        height: 36vh;
-        a {
-          font-size: 20vw;
-        }
-      }
-      &.gigantic {
-        height: 20vh;
-        a {
-          font-size: 13vw;
-        }
-      }
-    }
-  }
+  // #header div[class*="menu-main"]{
+  //   ul li {
+  //     &.very-big {
+  //       height: 24vw;
+  //       a {
+  //         font-size: 20vw;
+  //       }
+  //     }
+  //     &.gigantic {
+  //       height: 16vw;
+  //       a {
+  //         font-size: 13vw;
+  //       }
+  //     }
+  //   }
+  // }
 
   #content-home {
     #image-grid-container {

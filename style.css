@@ -444,7 +444,7 @@ img {
     left: 0;
     z-index: 10000;
     background-color: white;
-    padding-top: calc(5vh + 90px);
+    padding-top: calc(55px + 60px);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -454,7 +454,7 @@ img {
       top: 0; }
     #header div[class*="menu-main"] ul li {
       text-align: center;
-      height: calc(8.7vh - 30px);
+      height: 7vh;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       -ms-transition: all 0.3s;
@@ -464,10 +464,10 @@ img {
         margin-bottom: 0;
         background-color: #FC9251;
         border-top: 1px solid black;
-        height: 36vh;
-        margin-top: 90px; }
+        height: calc(((100vh - 27vh - 55px - 120px)/5)*3);
+        margin-top: 60px; }
         #header div[class*="menu-main"] ul li.very-big a {
-          font-size: 32vh;
+          font-size: calc((((100vh - 27vh - 55px - 120px)/5)*3) - 5vh);
           font-style: italic; }
         #header div[class*="menu-main"] ul li.very-big:hover {
           background-color: #79fc96; }
@@ -478,9 +478,9 @@ img {
         background-color: #FABAF0;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        height: 20vh; }
+        height: calc(((100vh - 27vh - 55px - 120px)/5)*2); }
         #header div[class*="menu-main"] ul li.gigantic a {
-          font-size: 15vh;
+          font-size: calc((((100vh - 27vh - 55px - 120px)/5)*2) - 5vh);
           font-style: italic; }
         #header div[class*="menu-main"] ul li.gigantic:hover {
           background-color: #79fc96; }
@@ -726,7 +726,12 @@ body {
     align-items: center; }
     .footer .partners .promoters .logo > * {
       margin-bottom: 30px;
-      padding-right: 0; } }
+      padding-right: 0; }
+
+  #header div[class*="menu-main"] ul li.very-big a {
+    font-size: 20vw; }
+  #header div[class*="menu-main"] ul li.gigantic a {
+    font-size: 13vw; } }
 @media screen and (max-width: 768px) {
   .t-hidden {
     display: none; }
@@ -740,8 +745,8 @@ body {
 
   .t-whole, .posts-flow .post.category-documenti-storici {
     width: calc(100% - 30px);
-    margin: 0 15px;
-    margin-bottom: 7.5px; }
+    margin-left: 15px;
+    margin-right: 15px; }
     .t-whole:last-of-type, .posts-flow .post.category-documenti-storici:last-of-type {
       margin-bottom: 0; }
 
@@ -776,15 +781,6 @@ body {
         padding-right: 30px; }
     .footer .partners .patrons, .footer .partners .sustainers {
       border-top: 1px solid black; }
-
-  #header div[class*="menu-main"] ul li.very-big {
-    height: 36vh; }
-    #header div[class*="menu-main"] ul li.very-big a {
-      font-size: 20vw; }
-  #header div[class*="menu-main"] ul li.gigantic {
-    height: 20vh; }
-    #header div[class*="menu-main"] ul li.gigantic a {
-      font-size: 13vw; }
 
   #content-home #image-grid-container #image-grid {
     grid-template-columns: repeat(6, 1fr); } }

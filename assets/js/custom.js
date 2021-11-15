@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
   	if ( $('body').hasClass('home') && $(window).scrollTop() < window.innerHeight ) {
       if ($(this).hasClass('open') == true) {
         $('#header .container').css('height', '6vh');
-        $('#header #logo svg').css('width', '20%');
+        $('#header #logo svg').css('width', '240px');
         $('html, body').addClass('overflow-hidden');
         var headerH = $('#header .container').css('height');
       } else {
