@@ -496,6 +496,9 @@ body {
 
 .single {
   .text-content {
+    p {
+      @extend .serif-text;
+    }
     h1, h2, h3, h4 {
       @extend .sans;
       @extend .s-medium;

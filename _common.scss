@@ -31,6 +31,25 @@ $orange: #FC9251;
 }
 
 @font-face {
+  font-family: 'GT Super';
+  src: url('assets/fonts/GT-SuperText-Regular.woff2') format('woff2'),
+      url('assets/fonts/GT-SuperText-Regular.woff') format('woff'),
+      url('assets/fonts/GT-SuperText-Regular.otf') format('otf'),
+      url('assets/fonts/GT-SuperText-Regular.ttf') format('ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: url('assets/fonts/GT-SuperText-RegularItalic.woff2') format('woff2'),
+      url('assets/fonts/GT-SuperText-RegularItalic.woff') format('woff'),
+      url('assets/fonts/GT-SuperText-RegularItalic.otf') format('otf'),
+      url('assets/fonts/GT-SuperText-RegularItalic.ttf') format('ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'GT Flexa Mono';
   src:url('assets/fonts/GT-Flexa-Mono-Regular.woff2') format('woff2'),
       url('assets/fonts/GT-Flexa-Mono-Regular.woff') format('woff'),
@@ -138,6 +157,10 @@ $orange: #FC9251;
 
 .serif {
   font-family: 'Editorial New';
+}
+
+.serif-text {
+  font-family: 'GT Super';
 }
 
 .sans {

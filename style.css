@@ -13,6 +13,15 @@ Version: 1.0
   font-weight: 200;
   font-style: italic; }
 @font-face {
+  font-family: 'GT Super';
+  src: url("assets/fonts/GT-SuperText-Regular.woff2") format("woff2"), url("assets/fonts/GT-SuperText-Regular.woff") format("woff"), url("assets/fonts/GT-SuperText-Regular.otf") format("otf"), url("assets/fonts/GT-SuperText-Regular.ttf") format("ttf");
+  font-weight: 400; }
+@font-face {
+  font-family: 'GT Super';
+  src: url("assets/fonts/GT-SuperText-RegularItalic.woff2") format("woff2"), url("assets/fonts/GT-SuperText-RegularItalic.woff") format("woff"), url("assets/fonts/GT-SuperText-RegularItalic.otf") format("otf"), url("assets/fonts/GT-SuperText-RegularItalic.ttf") format("ttf");
+  font-weight: 400;
+  font-style: italic; }
+@font-face {
   font-family: 'GT Flexa Mono';
   src: url("assets/fonts/GT-Flexa-Mono-Regular.woff2") format("woff2"), url("assets/fonts/GT-Flexa-Mono-Regular.woff") format("woff"), url("assets/fonts/GT-Flexa-Mono-Regular.otf") format("otf"), url("assets/fonts/GT-Flexa-Mono-Regular.ttf") format("ttf");
   font-weight: 400; }
@@ -63,6 +72,9 @@ Version: 1.0
   font-style: italic; }
 .serif, p, pre, p a, pre a {
   font-family: 'Editorial New'; }
+
+.serif-text, .single .text-content p {
+  font-family: 'GT Super'; }
 
 .sans, #header div[class*="menu-main"] ul li a, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
