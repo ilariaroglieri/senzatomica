@@ -2,19 +2,19 @@
 
 	<div class="footer container-fluid d-flex d-column">
 			<div class="info d-flex t-wrap">
-				<div class="name d-two-twelfth-pad t-half-pad">
+				<div class="name d-two-twelfth-pad t-half-pad m-whole-pad">
 					Comitato Senzatomica<br/>
 					©<?php echo date("Y"); ?> 
 				</div>
-				<div class="address d-two-twelfth-pad t-half-pad">
+				<div class="address d-two-twelfth-pad t-half-pad m-whole-pad">
 					via R. Lambruschini, 52 - Firenze 50134<br/>
 					<a href="mailto:amministrazione@senzatomica.it">Email</a><br/>
 					+39 055 4269800
 				</div>
-				<div class="newsletter d-four-twelfth-pad t-whole-pad">
+				<div class="newsletter d-four-twelfth-pad t-whole-pad m-whole-pad">
 					newsletter
 				</div>
-				<div class="socials d-one-twelfth-pad t-center t-half-pad">
+				<div class="socials d-one-twelfth-pad t-center t-half-pad m-whole-pad">
 					<?php if (have_rows('social','option')): ?>
        	 		<?php while( have_rows('social','option') ) : the_row(); ?>
        	 			<?php $social = get_sub_field('link_social'); ?>
@@ -23,14 +23,14 @@
 						<?php endwhile;
 					endif; ?>
 				</div>
-				<div class="legals d-one-twelfth-pad t-center t-half-pad">
+				<div class="legals d-flex d-column d-one-twelfth-pad t-center t-half-pad m-whole-pad">
 					<a href="<?php echo get_page_link( get_page_by_title( 'Privacy Policy' )->ID ); ?>">Privacy Policy</a>
 					<a href="<?php echo get_page_link( get_page_by_title( 'Legals' )->ID ); ?>">Legals</a>
 				</div>
 			</div>
 
 			<div class="partners d-flex t-wrap">
-				<div class="partner d-flex d-column d-two-twelfth-pad t-half-pad">
+				<div class="partner d-flex d-column d-two-twelfth-pad t-half-pad m-whole-pad">
 					<?php $logo = get_field('partner_logo','option'); ?>
 					Partner di:
 
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 
-				<div class="promoters d-two-twelfth-pad promoters t-half-pad">
+				<div class="promoters d-two-twelfth-pad promoters t-half-pad m-whole-pad">
 					Promossa da:
 
 					<div class="logo d-flex ds-column t-row spacing-t-3">
@@ -64,7 +64,7 @@
 					endif; ?>
 					</div>
 				</div>
-				<div class="patrons d-four-twelfth-pad t-half-pad">
+				<div class="patrons d-four-twelfth-pad t-half-pad m-whole-pad">
 					Adesioni e Patrocini
 
 					<div class="spacing-t-3">
@@ -77,7 +77,7 @@
 						endif; ?>
 					</div>
 				</div>
-				<div class="sustainers d-four-twelfth-pad t-half-pad">
+				<div class="sustainers d-four-twelfth-pad t-half-pad m-whole-pad">
 					Progetto sostenuto con i fondi Otto per Mille dell’Istituto Buddista
 
 					<?php $logo8 = get_field('istituto_buddista','option'); ?>

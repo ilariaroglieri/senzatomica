@@ -418,7 +418,7 @@ img {
       align-items: flex-end;
       justify-content: center; }
       #header #logo a svg {
-        width: 20%; }
+        width: 240px; }
   #header div[class*="menu-main"] {
     width: 100%;
     height: 100vh;
@@ -586,31 +586,32 @@ body {
   margin-bottom: 20px; }
 
 .posts-flow .flex-row {
-  align-items: start;
+  align-items: start; }
+.posts-flow .post {
   margin-bottom: 40px; }
-.posts-flow .post.posts_height-superlandscape a.img-link {
-  padding-bottom: 50%; }
-.posts-flow .post.posts_height-landscape a.img-link {
-  padding-bottom: 64%; }
-.posts-flow .post.posts_height-quadrata a.img-link {
-  padding-bottom: 97%; }
-.posts-flow .post.posts_height-verticale a.img-link {
-  padding-bottom: 128%; }
-.posts-flow .post.posts_height-superverticale a.img-link {
-  padding-bottom: 150%; }
-.posts-flow .post a.img-link {
-  height: 0;
-  overflow: hidden;
-  background-size: cover !important; }
-.posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine {
-  background-color: #79fc96; }
-  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine a.img-link {
-    display: none; }
-  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title {
-    padding: 20px;
-    margin-bottom: 20px; }
-  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .button {
-    margin-left: 20px; }
+  .posts-flow .post.posts_height-superlandscape a.img-link {
+    padding-bottom: 50%; }
+  .posts-flow .post.posts_height-landscape a.img-link {
+    padding-bottom: 64%; }
+  .posts-flow .post.posts_height-quadrata a.img-link {
+    padding-bottom: 97%; }
+  .posts-flow .post.posts_height-verticale a.img-link {
+    padding-bottom: 128%; }
+  .posts-flow .post.posts_height-superverticale a.img-link {
+    padding-bottom: 150%; }
+  .posts-flow .post a.img-link {
+    height: 0;
+    overflow: hidden;
+    background-size: cover !important; }
+  .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine {
+    background-color: #79fc96; }
+    .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine a.img-link {
+      display: none; }
+    .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title {
+      padding: 20px;
+      margin-bottom: 20px; }
+    .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .button {
+      margin-left: 20px; }
 
 @keyframes marquee {
   0% {
@@ -663,11 +664,11 @@ body {
   background-size: auto 75% !important; }
 
 .footer {
-  border-top: 1px solid black;
   line-height: 1.5; }
   .footer .info {
-    margin-bottom: 20px; }
+    border-top: 1px solid black; }
     .footer .info > div {
+      margin-bottom: 20px;
       padding-top: 10px;
       border-right: 1px solid black; }
   .footer .partners {
@@ -736,13 +737,24 @@ body {
     padding-right: 10px;
     padding-left: 10px; }
 
-  .footer .partners .newsletter {
-    border-top: 1px solid black;
-    margin-bottom: 20px; }
-  .footer .partners .socials, .footer .partners .legals {
+  .footer .info .address, .footer .info .legals, .footer .info .newsletter {
+    border-right: none; }
+  .footer .info .newsletter {
     border-top: 1px solid black; }
-  .footer .partners .patrons, .footer .partners .sustainers {
+  .footer .info .socials, .footer .info .legals {
     border-top: 1px solid black; }
+  .footer .info .patrons, .footer .info .sustainers {
+    border-top: 1px solid black; }
+  .footer .partners {
+    padding-bottom: 0; }
+    .footer .partners > div {
+      margin-bottom: 20px; }
+    .footer .partners .promoters {
+      border-right: none; }
+      .footer .partners .promoters .logo > * {
+        padding-right: 20px; }
+    .footer .partners .patrons, .footer .partners .sustainers {
+      border-top: 1px solid black; }
 
   #header div[class*="menu-main"] ul li.very-big {
     height: 36vh; }
@@ -777,7 +789,19 @@ body {
     margin: 0 10px;
     margin-bottom: 0; }
 
+  .m-whole-pad {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px; }
+
   #content-home #image-grid-container #image-grid {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+
+  .footer .info, .footer .partners {
+    border-top: none; }
+    .footer .info > div, .footer .partners > div {
+      text-align: left;
+      border-right: none;
+      border-top: 1px solid black; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -276,7 +276,7 @@ img {
       justify-content: center;
       @extend .no-border;
       svg {
-        width: 20%;
+        width: 240px;
         // @include transition(width .3s);
       }
     }
@@ -484,10 +484,9 @@ body {
   @extend .d-flex;
   .flex-row {
     align-items: start;
-    margin-bottom: $double-spacing;
   }
   .post {
-
+    margin-bottom: $double-spacing;
     // altezza
     &.posts_height-superlandscape {
       a.img-link {
@@ -620,14 +619,14 @@ body {
 }
 
 .footer {
-  border-top: 1px solid black;
   line-height: 1.5;
   @extend .mono;
   @extend .s-xsmall;
 
   .info {
-    margin-bottom: $spacing;
+    border-top: 1px solid black;
     & > div {
+      margin-bottom: $spacing;
       padding-top: $half-spacing;
       border-right: 1px solid black;
       // box-shadow: 0 0 0 1px black;
@@ -732,16 +731,35 @@ body {
     padding-left: #{$half-spacing};
   }
 
-  .footer .partners {
-    .newsletter {
-      border-top: 1px solid black;
-      margin-bottom: $spacing;
-    }
-    .socials, .legals {
-      border-top: 1px solid black;
-    }
-    .patrons, .sustainers {
-      border-top: 1px solid black;
+  .footer {
+    .info {
+      .address, .legals, .newsletter {
+        border-right: none;
+      }
+      .newsletter {
+        border-top: 1px solid black;
+      }
+      .socials, .legals {
+        border-top: 1px solid black;
+      }
+      .patrons, .sustainers {
+        border-top: 1px solid black;
+      }
+    } 
+    .partners {
+      padding-bottom: 0;
+      & > div {
+        margin-bottom: $spacing;
+      }
+      .promoters {
+        border-right: none;
+        & .logo > * {
+          padding-right: $spacing;
+        }
+      }
+      .patrons, .sustainers {
+        border-top: 1px solid black;
+      }
     }
   }
 
@@ -810,10 +828,27 @@ body {
     margin-bottom: 0;
   }
 
+  .m-whole-pad {
+    width: 100%;
+    padding-right: #{$half-spacing};
+    padding-left: #{$half-spacing};
+  }
+
   #content-home {
     #image-grid-container {
       #image-grid {
         grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  .footer {
+    .info, .partners {
+      border-top: none;
+      & > div {
+        text-align: left;
+        border-right: none;
+        border-top: 1px solid black;
       }
     }
   }

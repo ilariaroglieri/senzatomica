@@ -74,8 +74,8 @@ jQuery(document).ready(function($) {
     function scaleOnScroll(el, scroll, maxVal, minVal, property, unit) {
       var percentScroll = scroll/(viewportH/3);
       
-      var minWidth = 100;
-      var maxWidth = 20;
+      var minWidth = 1;
+      var maxWidth = .25;
       var val = percentScroll * (maxVal - minVal) + minVal;
 
       if (val < maxVal) {
@@ -90,10 +90,11 @@ jQuery(document).ready(function($) {
       var currentScrollPos = Math.round( $(document).scrollTop() );
       var rows = Math.round(viewportH/20);
       var newRow = 0;
+      var wh = $(window).height();
      
       //scale logo and header
-      scaleOnScroll($('#logo svg'), currentScrollPos, 20, 100, 'width', '%');
-      scaleOnScroll($('#header .container'), currentScrollPos, 6, 50, 'height', 'vh');
+      scaleOnScroll($('#logo svg'), currentScrollPos, (wh * .25), (wh * 1), 'width', 'px');
+      scaleOnScroll($('#header .container'), currentScrollPos, (wh * .05), (wh * .5), 'height', 'px');
 
       // update row below half viewpoer
       for (var i = 1; i <= 3; i++) {

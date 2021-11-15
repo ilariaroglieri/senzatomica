@@ -80,7 +80,7 @@
         </div>
 
         <div id="latest_news" class="container posts-flow spacing-p-t-3">
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-row wrap">
             <?php while( have_rows('latest_news') ) : the_row(); ?>
               <?php 
 
