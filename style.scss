@@ -498,6 +498,10 @@ body {
   .text-content {
     p {
       @extend .serif-text;
+      b {
+        font-weight: normal;
+        @extend .sans;
+      }
     }
     h1, h2, h3, h4 {
       @extend .sans;

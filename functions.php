@@ -33,7 +33,9 @@ add_action( 'wp_enqueue_scripts', 'marquee_scripts' );
 
 add_theme_support( 'post-thumbnails' ); 
 
-// remove_filter('the_content', 'wpautop');
+add_post_type_support( 'page', 'excerpt' );
+
+remove_filter('the_excerpt', 'wpautop');
 
 // img attachment defaults
 

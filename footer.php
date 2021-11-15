@@ -37,10 +37,10 @@
 					<div class="logo spacing-t-3">
 						<?php if ($logo['caption']): ?>
 							<a class="no-border" href="<?php echo $logo['caption']; ?>" target="_blank">
-								<img src="<?php echo $logo['url']; ?>" />
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo esc_attr($logo['title']); ?>" />
 							</a>
 						<?php else: ?>
-							<img src="<?php echo $logo['url']; ?>" />
+							<img src="<?php echo $logo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -55,10 +55,10 @@
        	 			<?php $promoterLogo = get_sub_field('immagine_logo'); ?>
 							<?php if ($promoterLogo['caption']): ?>
 								<a class="no-border" href="<?php echo $promoterLogo['caption']; ?>" target="_blank">
-									<img src="<?php echo $promoterLogo['url']; ?>" />
+									<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($promoterLogo['title']); ?>" />
 								</a>
 							<?php else: ?>
-								<img src="<?php echo $promoterLogo['url']; ?>" />
+								<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
 							<?php endif; ?>
 						<?php endwhile;
 					endif; ?>
@@ -84,10 +84,10 @@
 					<div class="logo d-flex spacing-t-3">
 						<?php if ($logo8['url']): ?>
 							<a class="no-border" href="<?php echo $logo8['caption']; ?>" target="_blank">
-								<img src="<?php echo $logo8['url']; ?>" />
+								<img src="<?php echo $logo8['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>" />
 							</a>
 						<?php else: ?>
-							<img src="<?php echo $logo8['url']; ?>" />
+							<img src="<?php echo $logo8['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>" />
 						<?php endif; ?>
 					</div>
 				</div>

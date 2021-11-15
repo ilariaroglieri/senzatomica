@@ -76,7 +76,7 @@ Version: 1.0
 .serif-text, .single .text-content p {
   font-family: 'GT Super'; }
 
-.sans, #header div[class*="menu-main"] ul li a, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
+.sans, #header div[class*="menu-main"] ul li a, .single .text-content p b, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
 
 .mono, a, .button, .caption, .footer {
@@ -94,8 +94,11 @@ Version: 1.0
 .xcondensed {
   font-family: 'Media Sans Extra Condensed'; }
 
+.italic {
+  font-style: italic; }
+
 .s-huge {
-  font-size: 20vh; }
+  font-size: 16vh; }
 
 .s-large, #header div[class*="menu-main"] ul li {
   font-size: 5vh; }
@@ -614,6 +617,8 @@ body {
 .wysiwyg.paragraph-space p {
   margin-bottom: 30px; }
 
+.single .text-content p b {
+  font-weight: normal; }
 .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4 {
   margin: 60px 0;
   margin-left: -8.3333%; }
