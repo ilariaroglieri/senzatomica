@@ -253,6 +253,32 @@ $col: 8.3333%;
 }
 
 
+// padding
+.d-one-twelfth-pad {
+  width: $col;
+  padding-right: #{$half-spacing};
+  padding-left: #{$half-spacing};
+}
+
+.d-two-twelfth-pad {
+  width: $col*2;
+  padding-right: #{$half-spacing};
+  padding-left: #{$half-spacing};
+}
+
+.d-three-twelfth-pad {
+  width: $col*3;
+  padding-right: #{$half-spacing};
+  padding-left: #{$half-spacing};
+}
+
+.d-four-twelfth-pad {
+  width: $col*4;
+  padding-right: #{$half-spacing};
+  padding-left: #{$half-spacing};
+}
+
+
 // spacers
 .spacing-b-1 {
   margin-bottom: $half-spacing;

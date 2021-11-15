@@ -621,6 +621,7 @@ body {
 
 .footer {
   border-top: 1px solid black;
+  line-height: 1.5;
   @extend .mono;
   @extend .s-xsmall;
 
@@ -629,9 +630,10 @@ body {
     & > div {
       padding-top: $half-spacing;
       border-right: 1px solid black;
-      &:last-of-type {
-        border-right: none;
-      }
+      // box-shadow: 0 0 0 1px black;
+      // &:last-of-type {
+      //   border-right: none;
+      // }
     }
   }
   .partners {
@@ -645,11 +647,12 @@ body {
         border-right: none;
       }
     }
-    .logo {
-      padding-right: $spacing;
+    .partner > * {
+      max-width: 150px;
+      display: inline-block;
     }
     .logo.d-flex {
-      padding-right: 0; 
+      padding-right: 0;
       & > * {
         flex:1 1 0;
         max-width: 100px;
@@ -666,6 +669,24 @@ body {
     width: calc(100% - #{$spacing});
   }
 
+  .d-flex {
+    &.ds-column {
+      flex-flow: column;
+    }
+    &.ds-column-reverse {
+      flex-flow: column-reverse;
+    }
+  }
+
+  .footer .partners .promoters .logo {
+    align-items: center;
+    & > * {
+      margin-bottom: $spacing;
+      padding-right: 0;
+
+    }
+  }
+
 }
 
 @media screen and (max-width: $tablet) {
@@ -674,6 +695,9 @@ body {
   }
 
   .d-flex {
+    &.t-row {
+      flex-flow: row;
+    }
     &.t-column {
       flex-flow: column;
     }
@@ -691,18 +715,34 @@ body {
     }
   }
 
-  .t-whole-sm {
-    width: calc(100% - #{$spacing});
-    margin: 0 #{$half-spacing};
-    margin-bottom: $half-spacing/4;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+
+  .t-wrap {
+    flex-wrap: wrap;
   }
 
-  .t-two-twelfth {
-    width: calc(#{$col}*2 - #{$spacing});
-    margin: 0 #{$half-spacing};
+  .t-whole-pad {
+    width: 100%;
+    padding-right: #{$half-spacing};
+    padding-left: #{$half-spacing};
+  }
+
+  .t-half-pad {
+    width: 50%;
+    padding-right: #{$half-spacing};
+    padding-left: #{$half-spacing};
+  }
+
+  .footer .partners {
+    .newsletter {
+      border-top: 1px solid black;
+      margin-bottom: $spacing;
+    }
+    .socials, .legals {
+      border-top: 1px solid black;
+    }
+    .patrons, .sustainers {
+      border-top: 1px solid black;
+    }
   }
 
 

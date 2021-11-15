@@ -1,29 +1,36 @@
 
 
 	<div class="footer container-fluid d-flex d-column">
-			<div class="info d-flex">
-				<div class="d-two-twelfth">
+			<div class="info d-flex t-wrap">
+				<div class="name d-two-twelfth-pad t-half-pad">
 					Comitato Senzatomica<br/>
 					©<?php echo date("Y"); ?> 
 				</div>
-				<div class="d-two-twelfth">
+				<div class="address d-two-twelfth-pad t-half-pad">
 					via R. Lambruschini, 52 - Firenze 50134<br/>
 					<a href="mailto:amministrazione@senzatomica.it">Email</a><br/>
 					+39 055 4269800
 				</div>
-				<div class="d-four-twelfth">
+				<div class="newsletter d-four-twelfth-pad t-whole-pad">
 					newsletter
 				</div>
-				<div class="d-two-twelfth">
-					socials
+				<div class="socials d-one-twelfth-pad t-center t-half-pad">
+					<?php if (have_rows('social','option')): ?>
+       	 		<?php while( have_rows('social','option') ) : the_row(); ?>
+       	 			<?php $social = get_sub_field('link_social'); ?>
+							<a class="uppercase" href="<?php echo $social['url']; ?>" target="_blank"><?php echo $social['title']; ?>
+							</a><br/>
+						<?php endwhile;
+					endif; ?>
 				</div>
-				<div class="d-two-twelfth">
-					privacy policy
+				<div class="legals d-one-twelfth-pad t-center t-half-pad">
+					<a href="<?php echo get_page_link( get_page_by_title( 'Privacy Policy' )->ID ); ?>">Privacy Policy</a>
+					<a href="<?php echo get_page_link( get_page_by_title( 'Legals' )->ID ); ?>">Legals</a>
 				</div>
 			</div>
 
-			<div class="partners d-flex">
-				<div class="d-two-twelfth">
+			<div class="partners d-flex t-wrap">
+				<div class="partner d-flex d-column d-two-twelfth-pad t-half-pad">
 					<?php $logo = get_field('partner_logo','option'); ?>
 					Partner di:
 
@@ -37,10 +44,11 @@
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="d-two-twelfth">
+
+				<div class="promoters d-two-twelfth-pad promoters t-half-pad">
 					Promossa da:
 
-					<div class="logo d-flex spacing-t-3">
+					<div class="logo d-flex ds-column t-row spacing-t-3">
 
 					<?php if (have_rows('promoters','option')): ?>
        	 		<?php while( have_rows('promoters','option') ) : the_row(); ?>
@@ -56,7 +64,7 @@
 					endif; ?>
 					</div>
 				</div>
-				<div class="d-four-twelfth">
+				<div class="patrons d-four-twelfth-pad t-half-pad">
 					Adesioni e Patrocini
 
 					<div class="spacing-t-3">
@@ -69,7 +77,7 @@
 						endif; ?>
 					</div>
 				</div>
-				<div class="d-four-twelfth">
+				<div class="sustainers d-four-twelfth-pad t-half-pad">
 					Progetto sostenuto con i fondi Otto per Mille dell’Istituto Buddista
 
 					<?php $logo8 = get_field('istituto_buddista','option'); ?>
