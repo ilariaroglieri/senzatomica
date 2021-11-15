@@ -13,39 +13,51 @@ $orange: #FC9251;
 // Typography
 @font-face {
   font-family: 'GT Flexa';
-  src:url('assets/fonts/GTFlexaTrial-Lt.woff2') format('woff2'),
-      url('assets/fonts/GTFlexaTrial-Lt.woff') format('woff'),
-      url('assets/fonts/GTFlexaTrial-Lt.ttf') format('ttf'),
-      url('assets/fonts/GTFlexaTrial-Lt.svg') format('svg');
+  src:url('assets/fonts/GT-Flexa-Standard-Light.woff2') format('woff2'),
+      url('assets/fonts/GT-Flexa-Standard-Light.woff') format('woff'),
+      url('assets/fonts/GT-Flexa-Standard-Light.otf') format('otf'),
+      url('assets/fonts/GT-Flexa-Standard-Light.ttf') format('ttf');
   font-weight: 200;
 }
 
 @font-face {
   font-family: 'GT Flexa';
-  src:url('assets/fonts/GTFlexaTrial-LtIt.woff2') format('woff2'),
-      url('assets/fonts/GTFlexaTrial-LtIt.woff') format('woff'),
-      url('assets/fonts/GTFlexaTrial-LtIt.ttf') format('ttf'),
-      url('assets/fonts/GTFlexaTrial-LtIt.svg') format('svg');
+  src:url('assets/fonts/GT-Flexa-Standard-Light-Italic.woff2') format('woff2'),
+      url('assets/fonts/GT-Flexa-Standard-Light-Italic.woff') format('woff'),
+      url('assets/fonts/GT-Flexa-Standard-Light-Italic.otf') format('otf'),
+      url('assets/fonts/GT-Flexa-Standard-Light-Italic.ttf') format('ttf');
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'GT Flexa Mono';
-  src:url('assets/fonts/GTFlexaMonoTrial-Rg.woff2') format('woff2'),
-      url('assets/fonts/GTFlexaMonoTrial-Rg.woff') format('woff'),
-      url('assets/fonts/GTFlexaMonoTrial-Rg.ttf') format('ttf'),
-      url('assets/fonts/GTFlexaMonoTrial-Rg.svg') format('svg');
+  src:url('assets/fonts/GT-Flexa-Mono-Regular.woff2') format('woff2'),
+      url('assets/fonts/GT-Flexa-Mono-Regular.woff') format('woff'),
+      url('assets/fonts/GT-Flexa-Mono-Regular.otf') format('otf'),
+      url('assets/fonts/GT-Flexa-Mono-Regular.ttf') format('ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Editorial New';
-  src:url('assets/fonts/EditorialNew-Light.woff2') format('woff2'),
-      url('assets/fonts/EditorialNew-Light.woff') format('woff'),
-      url('assets/fonts/EditorialNew-Light.ttf') format('ttf'),
-      url('assets/fonts/EditorialNew-Light.svg') format('svg');
+  src:url('assets/fonts/PPEditorialNew-Light.woff2') format('woff2'),
+      url('assets/fonts/PPEditorialNew-Light.woff') format('woff'),
+      url('assets/fonts/PPEditorialNew-Light.otf') format('otf'),
+      url('assets/fonts/PPEditorialNew-Light.ttf') format('ttf'),
+      url('assets/fonts/PPEditorialNew-Light.eot') format('eot');
   font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Editorial New';
+  src:url('assets/fonts/PPEditorialNew-LightItalic.woff2') format('woff2'),
+      url('assets/fonts/PPEditorialNew-LightItalic.woff') format('woff'),
+      url('assets/fonts/PPEditorialNew-LightItalic.otf') format('otf'),
+      url('assets/fonts/PPEditorialNew-LightItalic.ttf') format('ttf'),
+      url('assets/fonts/PPEditorialNew-LightItalic.eot') format('eot');
+  font-weight: 400;
+  font-style: italic;
 }
 
 @font-face {
@@ -160,6 +172,10 @@ $orange: #FC9251;
   font-size: 5vh;
 }
 
+.s-big { 
+  font-size: 40px;
+}
+
 .s-medium { 
   font-size: 24px;
 }
@@ -178,7 +194,7 @@ $orange: #FC9251;
 
 
 // grid system
-$spacing: 20px;
+$spacing: 30px;
 $half-spacing: $spacing/2;
 $double-spacing: $spacing*2;
 $triple-spacing: $spacing*3;

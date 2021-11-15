@@ -44,6 +44,19 @@ function default_attachment_display_settings() {
 
 add_action( 'after_setup_theme', 'default_attachment_display_settings' );
 
+/* add class button light to navigation link */
+function posts_link_next_class($format){
+  $format = str_replace('href=', 'class="next light button" href=', $format);
+  return $format;
+}
+add_filter('next_post_link', 'posts_link_next_class');
+
+function posts_link_prev_class($format) {
+  $format = str_replace('href=', 'class="prev light button" href=', $format);
+ 	return $format;
+}
+add_filter('previous_post_link', 'posts_link_prev_class');
+
 /* add options page for newsletter */
 if( function_exists('acf_add_options_page') ) {
   
