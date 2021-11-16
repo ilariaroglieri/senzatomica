@@ -547,7 +547,7 @@ body {
     width: 100%;
     opacity: 0;
     pointer-events: none;
-    @include transition(opacity .3s);
+    @include transition(opacity 0);
   }
   .close {
     position: absolute;
@@ -576,7 +576,7 @@ body {
       .text-content {
         opacity: 1;
         pointer-events: all;
-        // @include transition(opacity .5s);
+        @include transition(opacity .3s .5s);
       }
     }
   }
@@ -586,7 +586,7 @@ body {
     position: absolute;
     right: 0;
     z-index: 0;
-    @include transition(all .7s ease-in-out);
+    @include transition(all .5s ease-in-out);
     &[data-role='first'] {
       left: 0;
     }
@@ -594,6 +594,7 @@ body {
       right: 0;
     }
     &.active {
+      @include transition(all .7s ease-in-out);
       width: 100%;
       z-index: 1;
     }
@@ -768,14 +769,14 @@ body {
       }
     }
     .partner > * {
-      max-width: 150px;
+      max-width: 170px;
       display: inline-block;
     }
     .logo.d-flex {
       padding-right: 0;
       & > * {
         flex:1 1 0;
-        max-width: 100px;
+        max-width: 120px;
         padding-right: $spacing;
       }
     }
@@ -987,4 +988,22 @@ body {
       }
     }
   }
+  .colored-box {
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .background {
+      display: none;
+    }
+    .inner-box {
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: $double-spacing;
+      padding-bottom: $double-spacing;
+      .text-content {
+        padding: $half-spacing;
+      }
+    }
+  } 
 }

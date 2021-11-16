@@ -68,24 +68,27 @@
                   <?php while( have_rows('box_singolo') ): the_row(); ?>
                     <?php 
                       $i++;
-                      $svg = get_sub_field('immagine_titolo_svg'); 
-                      $title = get_sub_field('titolo'); 
                       $color = get_sub_field('colore'); 
-                      $excerpt = get_sub_field('testo_grande'); 
-                      $text = get_sub_field('testo'); 
-                      $link = get_sub_field('link'); 
                     ?>
 
                     <div class="background half" data-role="<?php if ($i == 1): ?>first<?php else: ?>last<?php endif; ?>" style="background-color: <?php echo $color; ?>">
                     </div>
                   <?php endwhile; ?>
 
-                    <div class="container spacing-p-t-4 spacing-p-b-4">
+                    <div class="container  spacing-p-t-4 spacing-p-b-4">
                       <div class="d-flex flex-row t-column">
                         <?php $j = 0; ?>
                         <?php while( have_rows('box_singolo') ): the_row(); ?>
-                          <?php $j++; ?>
-                          <div class="inner-box d-half p-relative" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
+                          <?php 
+                            $j++;
+                            $svg = get_sub_field('immagine_titolo_svg'); 
+                            $title = get_sub_field('titolo'); 
+                            $color = get_sub_field('colore'); 
+                            $excerpt = get_sub_field('testo_grande'); 
+                            $text = get_sub_field('testo'); 
+                            $link = get_sub_field('link'); 
+                          ?>
+                          <div class="inner-box d-half m-whole-pad p-relative" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" data-color="<?php echo $color; ?>">
                             <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
 
                             <div class="text-content hidden p-absolute d-flex start d-column hidden">
