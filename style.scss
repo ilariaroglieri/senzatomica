@@ -49,7 +49,7 @@ Version: 1.0
   &.center {
     align-items: center;
   }
-  &.top {
+  &.start {
     align-items: flex-start;
   }
   &.baseline {
@@ -149,7 +149,7 @@ p, pre {
   }
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   line-height: 1.25;
 }
@@ -304,65 +304,78 @@ img {
     left: 0;
     z-index:10000;
     background-color: white;
-    padding-top: calc(55px + #{$double-spacing}); 
     @include transition(all .5s);
     &.active {
       top: 0;
     }
-    ul li {
-      text-align: center;
-      height: 7vh;
-      @include transition(all .3s);
-      @extend .s-large;
+    & > ul {
       @extend .d-flex;
-      @extend .center;
-      @extend .v-center;
-      &.very-big {
-        margin-bottom: 0;
-        background-color: $orange;
-        border-top: 1px solid black;
-        height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3);
-        margin-top: $double-spacing;
-        a {
-          font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh);
-          font-style: italic;
-          @extend .condensed;
-          @extend .uppercase;
-          @extend .no-border;
+      flex-flow: column;
+      height: 100vh;
+      padding-top: calc(65px + #{$double-spacing}); 
+      justify-content: flex-end;
+      li {
+        text-align: center;
+        @include transition(all .3s);
+        @extend .s-large;
+        @extend .d-flex;
+        @extend .center;
+        @extend .v-center;
+        &.menu-item-has-children > a {
+          display: none;
         }
-        &:hover {
-          background-color: $primaryColor;
+        .sub-menu {
+          @extend .d-flex;
+          @extend .container;
+          padding: $fourfold-spacing 0;
+          justify-content: space-around;
+        }
+        &.very-big {
+          margin-bottom: 0;
+          background-color: $orange;
+          border-top: 1px solid black;
+          height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3);
           a {
-            color: black;
+            font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh);
+            font-style: italic;
+            @extend .condensed;
+            @extend .uppercase;
+            @extend .no-border;
+          }
+          &:hover {
+            background-color: $primaryColor;
+            a {
+              color: black;
+            }
           }
         }
-      }
-      &.gigantic {
-        margin-bottom: 0;
-        background-color: $pink;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2);
-        a {
-          font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
-          font-style: italic;
-          @extend .uppercase;
-          @extend .extended;
-          @extend .no-border;
-        }
-        &:hover {
-          background-color: $primaryColor;
+        &.gigantic {
+          margin-bottom: 0;
+          background-color: $pink;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2);
           a {
-            color: black;
+            font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
+            font-style: italic;
+            @extend .uppercase;
+            @extend .extended;
+            @extend .no-border;
+          }
+          &:hover {
+            background-color: $primaryColor;
+            a {
+              color: black;
+            }
           }
         }
-      }
-      a {
-        @extend .sans;
-        color: black;
-        @include transition(color .3s);
-        &:hover {
-          color: $primaryColor;
+        a {
+          @extend .sans;
+          color: black;
+          @include transition(color .3s);
+          &:hover {
+            color: $primaryColor;
+          }
         }
       }
     }
@@ -490,8 +503,13 @@ body {
   }
 }
 
-.wysiwyg.paragraph-space p {
-  margin-bottom: $spacing;
+.wysiwyg {
+  &.serif-text P {
+    @extend .serif-text;
+  }
+  &.paragraph-space p {
+    margin-bottom: $spacing;
+  }
 }
 
 .single {
@@ -508,6 +526,37 @@ body {
       @extend .s-medium;
       margin: $double-spacing 0;
       margin-left: - $col;
+    }
+  }
+}
+
+// perchè page
+.colored-box {
+  .title-svg {
+    opacity: 1;
+    cursor: pointer;
+    @include transition(opacity .5s);
+  }
+  .text-content {
+    padding-right: $col;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(opacity .5s);
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: $double-spacing;
+  }
+  &.active {
+    .title-svg {
+      opacity: 0;
+    }
+    .text-content {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }
@@ -589,7 +638,7 @@ body {
 .page-title {
   // height: 24px;
   & > div {
-    animation-duration: 6s !important;
+    animation-duration: 10s !important;
   }
 }
 
@@ -603,7 +652,7 @@ body {
   .inner {
     position: static;
     transform: translateX(0);
-    animation: marquee 6s linear infinite;
+    animation: marquee 10s linear infinite;
   }
   h3 {
     color: $primaryColor;

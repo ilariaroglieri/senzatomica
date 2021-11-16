@@ -251,8 +251,18 @@ jQuery(document).ready(function($) {
     duplicated: true,
   });
 
+  // colored box
+  $('.colored-box .title-svg').click(function() {
+    var currentBox = $(this).closest('.colored-box');
+    $('.colored-box').removeClass('active');
+    currentBox.addClass('active');
 
+  });
 
+  $('.close').click(function() {
+    $(this).closest('.colored-box').removeClass('active');
+    console.log($(this).closest('.colored-box'));
+  });
 
 
 

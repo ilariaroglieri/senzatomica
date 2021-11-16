@@ -40,12 +40,25 @@
               $link = get_sub_field('link'); 
             ?>
 
-            <div class="container-fluid" style="background-color: <?php echo $color; ?>">
+            <div class="container-fluid colored-box" style="background-color: <?php echo $color; ?>">
               <div class="container spacing-p-t-4 spacing-p-b-4">
                 <div class="d-flex flex-row t-column">
-                  <div class="d-whole">
-                    <img src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                  <div class="d-whole p-relative">
+                    <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+
+                    <div class="text-content hidden p-absolute d-flex start d-column hidden">
+                      <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
+                      <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
+                      <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                      <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
+
+                      <?php if ($link): ?>
+                        <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                      <?php endif; ?>
+                    </div>
                   </div>
+
+
                 </div>
               </div>
             </div>
