@@ -641,21 +641,21 @@ body {
 .colored-box .title-svg {
   opacity: 1;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s; }
+  -webkit-transition: opacity 0.3s 0.5s;
+  -moz-transition: opacity 0.3s 0.5s;
+  -ms-transition: opacity 0.3s 0.5s;
+  -o-transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s; }
 .colored-box .text-content {
   padding-right: 8.3333%;
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  -ms-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-  transition: opacity 0.5s; }
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
 .colored-box .close {
   position: absolute;
   top: 0;
@@ -671,11 +671,16 @@ body {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s; }
   .colored-box .inner-box.d-half .title-svg, .colored-box .posts-flow .inner-box.post.posts_type-notizia-grande-in-evidenza .title-svg, .posts-flow .colored-box .inner-box.post.posts_type-notizia-grande-in-evidenza .title-svg {
-    max-width: 600px; }
+    max-width: calc(1200px/2 - 30px); }
   .colored-box .inner-box.hidden {
     opacity: 0; }
   .colored-box .inner-box.active .title-svg {
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
   .colored-box .inner-box.active .text-content {
     opacity: 1;
     pointer-events: all; }

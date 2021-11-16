@@ -540,14 +540,14 @@ body {
   .title-svg {
     opacity: 1;
     cursor: pointer;
-    @include transition(opacity .3s);
+    @include transition(opacity .3s .5s);
   }
   .text-content {
     padding-right: $col;
     width: 100%;
     opacity: 0;
     pointer-events: none;
-    @include transition(opacity .5s);
+    @include transition(opacity .3s);
   }
   .close {
     position: absolute;
@@ -562,7 +562,7 @@ body {
     @include transition(opacity .3s);
     &.d-half {
       .title-svg {
-        max-width: $desktop/2;
+        max-width: calc(#{$desktop}/2 - #{$spacing});
       }
     }
     &.hidden {
@@ -571,10 +571,12 @@ body {
     &.active {
       .title-svg {
         opacity: 0;
+        @include transition(opacity .3s);
       }
       .text-content {
         opacity: 1;
         pointer-events: all;
+        // @include transition(opacity .5s);
       }
     }
   }
