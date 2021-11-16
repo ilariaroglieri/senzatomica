@@ -252,17 +252,32 @@ jQuery(document).ready(function($) {
   });
 
   // colored box
-  $('.colored-box .title-svg').click(function() {
-    var currentBox = $(this).closest('.colored-box');
-    $('.colored-box').removeClass('active');
+  $('.inner-box .title-svg').click(function() {
+    var currentBox = $(this).closest('.inner-box');
+    var boxRole = currentBox.attr('data-role');
+    $('.inner-box').removeClass('active');
     currentBox.addClass('active');
 
+    // double row case
+    var background = $(this).closest('.container-fluid').find('.background[data-role~="'+boxRole+'"]');
+    // $('.background').removeClass('active');
+    background.addClass('active');
+
+    if (currentBox.siblings().size() > 0) {
+      var sibling = currentBox.siblings();
+
+      currentBox.addClass('d-whole');
+      sibling.addClass('d-zero');
+    }
+     
+    $('.close').click(function() {
+      $(this).closest('.inner-box').removeClass('active');
+      $('.background').removeClass('active');
+      $('.inner-box').removeClass('d-zero d-whole');
+    });
+
   });
 
-  $('.close').click(function() {
-    $(this).closest('.colored-box').removeClass('active');
-    console.log($(this).closest('.colored-box'));
-  });
 
 
 

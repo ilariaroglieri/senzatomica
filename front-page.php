@@ -101,7 +101,7 @@
 
     <!-- editor content -->
     <div id="main-claim" class="container-fluid border-top">
-      <div class="container wysiwyg serif s-large spacing-t-3 spacing-b-4 paragraph-space">
+      <div class="container wysiwyg serif s-medium spacing-t-3 spacing-b-4 paragraph-space">
           <?php the_content(); ?>
       </div>
     </div>

@@ -32,19 +32,19 @@ $orange: #FC9251;
 
 @font-face {
   font-family: 'GT Super';
-  src: url('assets/fonts/GT-SuperText-Regular.woff2') format('woff2'),
-      url('assets/fonts/GT-SuperText-Regular.woff') format('woff'),
-      url('assets/fonts/GT-SuperText-Regular.otf') format('otf'),
-      url('assets/fonts/GT-SuperText-Regular.ttf') format('ttf');
+  src: url('assets/fonts/GTSuperText-Regular.woff2') format('woff2'),
+      url('assets/fonts/GTSuperText-Regular.woff') format('woff'),
+      url('assets/fonts/GTSuperText-Regular.otf') format('otf'),
+      url('assets/fonts/GTSuperText-Regular.ttf') format('ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'GT Super';
-  src: url('assets/fonts/GT-SuperText-RegularItalic.woff2') format('woff2'),
-      url('assets/fonts/GT-SuperText-RegularItalic.woff') format('woff'),
-      url('assets/fonts/GT-SuperText-RegularItalic.otf') format('otf'),
-      url('assets/fonts/GT-SuperText-RegularItalic.ttf') format('ttf');
+  src: url('assets/fonts/GTSuperText-RegularItalic.woff2') format('woff2'),
+      url('assets/fonts/GTSuperText-RegularItalic.woff') format('woff'),
+      url('assets/fonts/GTSuperText-RegularItalic.otf') format('otf'),
+      url('assets/fonts/GTSuperText-RegularItalic.ttf') format('ttf');
   font-weight: 400;
   font-style: italic;
 }
@@ -230,6 +230,10 @@ $fourfold-spacing: $spacing*4;
 $col: 8.3333%;
 
 // col system
+.d-zero {
+  width: 0 !important;
+  overflow: hidden;
+}
 .d-one-third {
   width: calc(#{$col}*4 - #{$spacing});
   margin: 0 #{$half-spacing};

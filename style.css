@@ -14,11 +14,11 @@ Version: 1.0
   font-style: italic; }
 @font-face {
   font-family: 'GT Super';
-  src: url("assets/fonts/GT-SuperText-Regular.woff2") format("woff2"), url("assets/fonts/GT-SuperText-Regular.woff") format("woff"), url("assets/fonts/GT-SuperText-Regular.otf") format("otf"), url("assets/fonts/GT-SuperText-Regular.ttf") format("ttf");
+  src: url("assets/fonts/GTSuperText-Regular.woff2") format("woff2"), url("assets/fonts/GTSuperText-Regular.woff") format("woff"), url("assets/fonts/GTSuperText-Regular.otf") format("otf"), url("assets/fonts/GTSuperText-Regular.ttf") format("ttf");
   font-weight: 400; }
 @font-face {
   font-family: 'GT Super';
-  src: url("assets/fonts/GT-SuperText-RegularItalic.woff2") format("woff2"), url("assets/fonts/GT-SuperText-RegularItalic.woff") format("woff"), url("assets/fonts/GT-SuperText-RegularItalic.otf") format("otf"), url("assets/fonts/GT-SuperText-RegularItalic.ttf") format("ttf");
+  src: url("assets/fonts/GTSuperText-RegularItalic.woff2") format("woff2"), url("assets/fonts/GTSuperText-RegularItalic.woff") format("woff"), url("assets/fonts/GTSuperText-RegularItalic.otf") format("otf"), url("assets/fonts/GTSuperText-RegularItalic.ttf") format("ttf");
   font-weight: 400;
   font-style: italic; }
 @font-face {
@@ -117,6 +117,10 @@ Version: 1.0
 
 .s-xsmall, .button, .caption, .footer {
   font-size: 11px; }
+
+.d-zero {
+  width: 0 !important;
+  overflow: hidden; }
 
 .d-one-third {
   width: calc(8.3333%*4 - 30px);
@@ -369,6 +373,10 @@ img {
   width: 1200px;
   margin-left: auto;
   margin-right: auto; }
+  .container.half, #header div[class*="menu-main"] > ul li .half.sub-menu {
+    width: 600px;
+    margin-left: initial;
+    margin-right: initial; }
 
 .container-fluid {
   margin-left: auto;
@@ -633,13 +641,14 @@ body {
 .colored-box .title-svg {
   opacity: 1;
   cursor: pointer;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition: opacity 0.5s;
-  -ms-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-  transition: opacity 0.5s; }
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
 .colored-box .text-content {
   padding-right: 8.3333%;
+  width: 100%;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.5s;
@@ -653,11 +662,41 @@ body {
   right: 0;
   cursor: pointer;
   width: 60px; }
-.colored-box.active .title-svg {
-  opacity: 0; }
-.colored-box.active .text-content {
+.colored-box .inner-box {
+  z-index: 10;
   opacity: 1;
-  pointer-events: all; }
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  .colored-box .inner-box.d-half .title-svg, .colored-box .posts-flow .inner-box.post.posts_type-notizia-grande-in-evidenza .title-svg, .posts-flow .colored-box .inner-box.post.posts_type-notizia-grande-in-evidenza .title-svg {
+    max-width: 600px; }
+  .colored-box .inner-box.hidden {
+    opacity: 0; }
+  .colored-box .inner-box.active .title-svg {
+    opacity: 0; }
+  .colored-box .inner-box.active .text-content {
+    opacity: 1;
+    pointer-events: all; }
+.colored-box .background.half {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out; }
+  .colored-box .background.half[data-role='first'] {
+    left: 0; }
+  .colored-box .background.half[data-role='last'] {
+    right: 0; }
+  .colored-box .background.half.active {
+    width: 100%;
+    z-index: 1; }
 
 .posts-flow .flex-row {
   align-items: start; }
@@ -720,7 +759,7 @@ body {
   .dynamic-stripe .inner {
     position: static;
     transform: translateX(0);
-    animation: marquee 6s linear infinite; }
+    animation: marquee 10s linear infinite; }
   .dynamic-stripe.primaryColor {
     background-color: #79fc96; }
 

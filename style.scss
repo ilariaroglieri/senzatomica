@@ -189,6 +189,11 @@ img {
   width: $desktop;
   margin-left: auto;
   margin-right: auto;
+  &.half {
+    width: $desktop/2;
+    margin-left: initial;
+    margin-right: initial;
+  }
 }
 
 .container-fluid {
@@ -535,10 +540,11 @@ body {
   .title-svg {
     opacity: 1;
     cursor: pointer;
-    @include transition(opacity .5s);
+    @include transition(opacity .3s);
   }
   .text-content {
     padding-right: $col;
+    width: 100%;
     opacity: 0;
     pointer-events: none;
     @include transition(opacity .5s);
@@ -550,13 +556,44 @@ body {
     cursor: pointer;
     width: $double-spacing;
   }
-  &.active {
-    .title-svg {
+  .inner-box {
+    z-index: 10;
+    opacity: 1;
+    @include transition(opacity .3s);
+    &.d-half {
+      .title-svg {
+        max-width: $desktop/2;
+      }
+    }
+    &.hidden {
       opacity: 0;
     }
-    .text-content {
-      opacity: 1;
-      pointer-events: all;
+    &.active {
+      .title-svg {
+        opacity: 0;
+      }
+      .text-content {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  .background.half {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    @include transition(all .7s ease-in-out);
+    &[data-role='first'] {
+      left: 0;
+    }
+    &[data-role='last'] {
+      right: 0;
+    }
+    &.active {
+      width: 100%;
+      z-index: 1;
     }
   }
 }
@@ -670,7 +707,7 @@ body {
   .inner {
     position: static;
     transform: translateX(0);
-    animation: marquee 6s linear infinite;
+    animation: marquee 10s linear infinite;
   }
   &.primaryColor {
     background-color: $primaryColor;
