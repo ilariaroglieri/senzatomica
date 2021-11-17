@@ -1,16 +1,5 @@
 var mqMobile = window.matchMedia('(max-width: 640px)');
 
-function checkScroll() {
-	var currentScrollPos = $(window).scrollTop();
-
-  if ($('body').hasClass('home')) {
-  	if (currentScrollPos > window.innerHeight) {
-  		$('.icon, #logo, .menu-toggle').removeClass('white');
-    } else {
-  		$('.icon, #logo, .menu-toggle').addClass('white');
-    }
-  }
-}
 
 function shuffle(arr) {
   arr.sort(function() {return .5 - Math.random()});
@@ -54,6 +43,18 @@ var state = {
 jQuery(document).ready(function($) {
   // fade in effect on conent
   $('body').addClass('loaded');
+
+  //scroll direction for menu
+  var lastScrollTop = 0;
+  $(window).scroll(function(event){
+     var st = $(this).scrollTop();
+     if (st > lastScrollTop){
+        $('#header').addClass('hidden');
+     } else {
+        $('#header').removeClass('hidden');
+     }
+     lastScrollTop = st;
+  });
 
   //home
   // shuffle images

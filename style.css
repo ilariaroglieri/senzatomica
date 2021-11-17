@@ -432,7 +432,14 @@ img {
   top: 0;
   width: 100%;
   background-color: white;
-  z-index: 100; }
+  z-index: 100;
+  -webkit-transition: top 0.5s;
+  -moz-transition: top 0.5s;
+  -ms-transition: top 0.5s;
+  -o-transition: top 0.5s;
+  transition: top 0.5s; }
+  #header.hidden {
+    top: -100%; }
   #header .container, #header div[class*="menu-main"] > ul li .sub-menu {
     height: 6vh; }
   #header.huge .container, #header.huge div[class*="menu-main"] > ul li .sub-menu {

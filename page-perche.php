@@ -13,7 +13,7 @@
         <div class="d-flex flex-row t-column">
           <div class="d-one-twelfth t-whole"></div>
           <div class="d-ten-twelfth t-whole text-content spacing-t-3">
-            <h3 class="s-large normal italic"><?php the_excerpt(); ?></h3>
+            <h3 class="s-big normal italic"><?php the_excerpt(); ?></h3>
           </div>
           <div class="d-one-twelfth t-whole"></div>
         </div>

@@ -272,9 +272,12 @@ img {
   width: 100%;
   background-color: white;
   z-index: 100;
+  @include transition(top .5s);
+  &.hidden {
+    top: -100%;
+  }
   .container  {
     height: 6vh;
-    // @include transition(height .3s);
   }
   &.huge {
     .container {
