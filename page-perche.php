@@ -42,18 +42,15 @@
             ?>
 
             <div class="colored-box one p-relative">
-              <div class="title-container container-fluid" data-role="single" style="background-color: <?php echo $color; ?>">
-                <div class="container spacing-p-t-4 spacing-p-b-4">
-                  <div class="d-flex flex-row t-column">
-                    <div class="d-whole p-relative" data-role="single">
-                      <img class="title-svg" data-role="single" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
-                    </div>
-                  </div>
+              <div class="title-container full-height container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
+                <div class="container full-height spacing-p-t-4 spacing-p-b-2">
+                  <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                  <p class="button black biggest mono">+</p>
                 </div>
               </div>
 
               <div class="text-container hidden p-absolute container-fluid" data-role="single" style="background-color: <?php echo $color; ?>">
-                <div class="container spacing-p-t-4 spacing-p-b-4" data-role="single">
+                <div class="container spacing-p-t-4 spacing-p-b-2" data-role="single">
                   <div class="d-flex flex-row t-column centered">
                     <div class="d-whole">
                       <div class="text-content d-flex start d-column hidden">
@@ -88,7 +85,7 @@
                     </div>
                   <?php endwhile; ?>
 
-                    <div class="container spacing-p-t-4 spacing-p-b-4">
+                    <div class="container spacing-p-t-2">
                       <div class="d-flex flex-row t-column">
                         <?php $j = 0; ?>
                         <?php while( have_rows('box_singolo') ): the_row(); ?>
@@ -101,8 +98,11 @@
                             $text = get_sub_field('testo'); 
                             $link = get_sub_field('link'); 
                           ?>
-                          <div class="inner-box d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
-                            <img class="title-svg" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                          <div class="inner-box d-flex d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
+                            <div class="title-container t-center" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
+                              <img class="title-svg"src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                              <p class="button black biggest mono">+</p>
+                            </div>
 
                             <div class="text-container" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
                               <div class="text-content d-flex start d-column hidden">

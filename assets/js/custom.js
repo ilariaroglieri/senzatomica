@@ -44,17 +44,19 @@ jQuery(document).ready(function($) {
   // fade in effect on conent
   $('body').addClass('loaded');
 
-  //scroll direction for menu
-  var lastScrollTop = 0;
-  $(window).scroll(function(event){
-     var st = $(this).scrollTop();
-     if (st > lastScrollTop){
-        $('#header').addClass('hidden');
-     } else {
-        $('#header').removeClass('hidden');
-     }
-     lastScrollTop = st;
-  });
+  //scroll direction for menu (except home)
+  if ( !($('body').hasClass('home')) ) {
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+       var st = $(this).scrollTop();
+       if (st > lastScrollTop){
+          $('#header').addClass('hidden');
+       } else {
+          $('#header').removeClass('hidden');
+       }
+       lastScrollTop = st;
+    });
+  }
 
   //home
   // shuffle images
@@ -255,7 +257,7 @@ jQuery(document).ready(function($) {
   });
 
   // colored box
-  $('.title-svg').click(function() {
+  $('.title-container').click(function() {
     var boxRole = $(this).attr('data-role');
     var currentBox = $(this).closest('.inner-box');
     var currentTxt = $(this).closest('.colored-box').find('.text-container[data-role~="'+boxRole+'"]');
@@ -278,11 +280,9 @@ jQuery(document).ready(function($) {
     }
      
     $('.close').click(function() {
-      console.log(currentTxt);
       currentTxt.removeClass('active');
       currentTitle.removeClass('active');
       background.removeClass('active');
-      // $('.inner-box').removeClass('d-zero d-whole');
 
       if (currentBox.siblings().size() > 0) {
         var sibling = currentBox.siblings();

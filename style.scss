@@ -215,9 +215,14 @@ img {
   border: 1px solid $primaryColor;
   background-color: $primaryColor;
   margin: $spacing 0;
+  cursor: pointer;
   @extend .s-xsmall;
   @extend .mono;
   @include transition(all .3s);
+  &.biggest {
+    @extend .s-regular;
+    padding: 8px $spacing;
+  }
   &.bigger {
     @extend .s-small;
     padding: 8px $spacing;
@@ -226,7 +231,7 @@ img {
     background-color: black;
     color: white;
     border: 1px solid black;
-    &:hover {
+    &:hover, .active {
       border: 1px solid white;
       background-color: white;
       color: black;
@@ -541,7 +546,14 @@ body {
 // perchè page
 .colored-box {
   .title-container {
-    z-index: 1;
+    min-height: 100vh;
+    cursor: pointer;
+    .container {
+      @extend .d-flex;
+      @extend .d-column;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   .title-svg {
     cursor: pointer;
@@ -554,7 +566,7 @@ body {
     height: 0;
     width: 100%;
     overflow:hidden;
-    @include transition(height .5s ease-in-out);
+    @include transition(height 1s cubic-bezier(0.83, 0, 0.17, 1));
     &.active {
       height: 100%;
       pointer-events: all;
@@ -573,8 +585,21 @@ body {
     }
   }
   &.multi {
+
     .title-svg {
       max-width: calc(#{$desktop/2 -  #{$spacing}});
+    }
+    .title-container {
+      opacity: 1;
+      @extend .d-flex;
+      @extend .d-column;
+      align-items: center;
+      justify-content: space-between;
+      @include transition(all .5s);
+      &.active {
+        @include transition(none);
+        opacity: 0;
+      }
     }
     .text-container {
       height: 100%;
@@ -584,7 +609,7 @@ body {
       &.active {
         z-index: 10;
         opacity: 1;
-        @include transition(all .3s .2s ease-in-out);
+        @include transition(all .3s .2s);
       }
     }
     .background {
@@ -592,7 +617,7 @@ body {
       height: 100%;
       width: 100%;
       z-index: 0;
-      @include transition(all .5s ease-in-out);
+      @include transition(all .5s cubic-bezier(0.83, 0, 0.17, 1));
       &.active {
         height: 100%;
         z-index: 10;
@@ -607,7 +632,7 @@ body {
           right: 0;
         }
         &.active {
-          @include transition(all .7s ease-in-out);
+          @include transition(all 1s cubic-bezier(0.83, 0, 0.17, 1));
           width: 100%;
         }
       }
