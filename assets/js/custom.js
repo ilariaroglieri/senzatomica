@@ -279,21 +279,27 @@ jQuery(document).ready(function($) {
       }
     }
      
-    $('.close').click(function() {
-      currentTxt.removeClass('active');
-      currentTitle.removeClass('active');
-      background.removeClass('active');
-
-      if (currentBox.siblings().size() > 0) {
-        var sibling = currentBox.siblings();
-
-        currentBox.removeClass('d-whole');
-        sibling.removeClass('d-zero');
-      }
-    });
 
   });
 
+  $('.close').click(function() {
+    var boxRole = $(this).closest('.text-container').attr('data-role');
+    var currentBox = $(this).closest('.inner-box');
+    var currentTxt = $(this).closest('.colored-box').find('.text-container[data-role~="'+boxRole+'"]');
+    var currentTitle = $(this).closest('.colored-box').find('.title-container[data-role~="'+boxRole+'"]');
+    var background = $(this).closest('.container-fluid').find('.background[data-role~="'+boxRole+'"]');
+
+    currentTxt.removeClass('active');
+    currentTitle.removeClass('active');
+    background.removeClass('active');
+
+    if (currentBox.siblings().size() > 0) {
+      var sibling = currentBox.siblings();
+
+      currentBox.removeClass('d-whole');
+      sibling.removeClass('d-zero');
+    }
+  });
 
   if (mqMobile.matches) {
     $('.inner-box').each(function(i, el) {

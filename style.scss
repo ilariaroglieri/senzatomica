@@ -865,6 +865,14 @@ body {
 }
 
 @media screen and (max-width: $tablet) {
+  .s-huge {
+    font-size: 13vw;
+  }
+
+  .s-big {
+    font-size: 30px;
+  }
+
   .t-hidden {
     display: none; 
   }
@@ -904,6 +912,15 @@ body {
     width: 50%;
     padding-right: #{$half-spacing};
     padding-left: #{$half-spacing};
+  }
+
+  .colored-box {
+    .text-container {
+      .text-content {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
   }
 
   .footer {
@@ -974,6 +991,14 @@ body {
 }
 
 @media screen and (max-width: $mobile) {
+  .s-big, .s-medium {
+    font-size: 24px;
+  }
+
+  .s-regular {
+    font-size: 16px;
+  }
+
   .m-hidden {
     display: none; 
   }
@@ -1028,21 +1053,18 @@ body {
     }
   }
   .colored-box {
-    .container {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
     .background {
       display: none;
     }
     .inner-box {
       margin-left: 0;
       margin-right: 0;
-      padding-top: $double-spacing;
-      padding-bottom: $double-spacing;
-      .text-content {
-        padding: $half-spacing;
+      .text-container {
+        width: calc(100% - #{$spacing});
       }
+    }
+    .excerpt {
+      display: none;
     }
   } 
 }

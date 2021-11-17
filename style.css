@@ -112,6 +112,7 @@ Version: 1.0
 
 .d-zero {
   width: 0 !important;
+  margin: 0 !important;
   overflow: hidden; }
 
 .d-one-third {
@@ -863,6 +864,12 @@ body {
   #header div[class*="menu-main"] ul li.gigantic a {
     font-size: 13vw; } }
 @media screen and (max-width: 768px) {
+  .s-huge {
+    font-size: 13vw; }
+
+  .s-big {
+    font-size: 30px; }
+
   .t-hidden {
     display: none; }
 
@@ -893,6 +900,10 @@ body {
     padding-right: 15px;
     padding-left: 15px; }
 
+  .colored-box .text-container .text-content {
+    padding-right: 0;
+    padding-left: 0; }
+
   .footer .info .address, .footer .info .legals, .footer .info .newsletter {
     border-right: none; }
   .footer .info .newsletter {
@@ -915,6 +926,12 @@ body {
   #content-home #image-grid-container #image-grid {
     grid-template-columns: repeat(6, 1fr); } }
 @media screen and (max-width: 640px) {
+  .s-big, .s-medium, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4 {
+    font-size: 24px; }
+
+  .s-regular, .button.biggest {
+    font-size: 16px; }
+
   .m-hidden {
     display: none; }
 
@@ -951,17 +968,14 @@ body {
       border-right: none;
       border-top: 1px solid black; }
 
-  .colored-box .container, .colored-box #header div[class*="menu-main"] > ul li .sub-menu, #header div[class*="menu-main"] > ul li .colored-box .sub-menu {
-    padding-top: 0;
-    padding-bottom: 0; }
   .colored-box .background {
     display: none; }
   .colored-box .inner-box {
     margin-left: 0;
-    margin-right: 0;
-    padding-top: 60px;
-    padding-bottom: 60px; }
-    .colored-box .inner-box .text-content {
-      padding: 15px; } }
+    margin-right: 0; }
+    .colored-box .inner-box .text-container {
+      width: calc(100% - 30px); }
+  .colored-box .excerpt {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

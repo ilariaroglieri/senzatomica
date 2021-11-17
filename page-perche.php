@@ -53,10 +53,10 @@
                 <div class="container spacing-p-t-4 spacing-p-b-2" data-role="single">
                   <div class="d-flex flex-row t-column centered">
                     <div class="d-whole">
-                      <div class="text-content d-flex start d-column hidden">
+                      <div class="text-content d-flex start d-column hidden p-relative">
                         <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
                         <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                        <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                        <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
                         <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
 
                         <?php if ($link): ?>
@@ -85,8 +85,8 @@
                     </div>
                   <?php endwhile; ?>
 
-                    <div class="container spacing-p-t-2">
-                      <div class="d-flex flex-row t-column">
+                    <div class="container">
+                      <div class="d-flex flex-row m-column">
                         <?php $j = 0; ?>
                         <?php while( have_rows('box_singolo') ): the_row(); ?>
                           <?php 
@@ -99,16 +99,16 @@
                             $link = get_sub_field('link'); 
                           ?>
                           <div class="inner-box d-flex d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
-                            <div class="title-container t-center" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
+                            <div class="title-container t-center spacing-p-t-4 spacing-p-b-2" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
                               <img class="title-svg"src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
                               <p class="button black biggest mono">+</p>
                             </div>
 
                             <div class="text-container" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
-                              <div class="text-content d-flex start d-column hidden">
+                              <div class="text-content p-relative d-flex start d-column hidden spacing-t-4 spacing-p-b-2">
                                 <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
                                 <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                                <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                                <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
                                 <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
 
                                 <?php if ($link): ?>
