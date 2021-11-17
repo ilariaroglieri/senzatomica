@@ -537,66 +537,77 @@ body {
 
 // perchè page
 .colored-box {
+  .title-container {
+    z-index: 1;
+  }
   .title-svg {
-    opacity: 1;
     cursor: pointer;
-    @include transition(opacity .3s .5s);
+    // pointer-events: all;
   }
-  .text-content {
-    padding-right: $col;
-    width: 100%;
-    opacity: 0;
+  .text-container {
+    z-index: 2;
     pointer-events: none;
-    @include transition(opacity 0);
-  }
-  .close {
     position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    width: $double-spacing;
-  }
-  .inner-box {
-    z-index: 10;
-    opacity: 1;
-    @include transition(opacity .3s);
-    &.d-half {
-      .title-svg {
-        max-width: calc(#{$desktop}/2 - #{$spacing});
-      }
-    }
-    &.hidden {
-      opacity: 0;
-    }
+    height: 0;
+    width: 100%;
+    overflow:hidden;
+    @include transition(height .5s ease-in-out);
     &.active {
-      .title-svg {
-        opacity: 0;
-        @include transition(opacity .3s);
-      }
-      .text-content {
-        opacity: 1;
-        pointer-events: all;
-        @include transition(opacity .3s .5s);
-      }
+      height: 100%;
+      pointer-events: all;
     }
-  }
-  .background.half {
-    height: 100%;
-    width: 50%;
-    position: absolute;
-    right: 0;
-    z-index: 0;
-    @include transition(all .5s ease-in-out);
-    &[data-role='first'] {
-      left: 0;
-    }
-    &[data-role='last'] {
-      right: 0;
-    }
-    &.active {
-      @include transition(all .7s ease-in-out);
+    .text-content {
+      padding-right: $col;
+      padding-left: $col;
       width: 100%;
-      z-index: 1;
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        width: $double-spacing;
+      }
+    }
+  }
+  &.multi {
+    .title-svg {
+      max-width: calc(#{$desktop/2 -  #{$spacing}});
+    }
+    .text-container {
+      height: 100%;
+      top: 0;
+      opacity: 0;
+      @include transition(all 0);
+      &.active {
+        z-index: 10;
+        opacity: 1;
+        @include transition(all .3s .2s ease-in-out);
+      }
+    }
+    .background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      @include transition(all .5s ease-in-out);
+      &.active {
+        height: 100%;
+        z-index: 10;
+      }
+      &.half {
+        width: 50%;
+        right: 0;
+        &[data-role='first'] {
+          left: 0;
+        }
+        &[data-role='last'] {
+          right: 0;
+        }
+        &.active {
+          @include transition(all .7s ease-in-out);
+          width: 100%;
+        }
+      }
     }
   }
 }

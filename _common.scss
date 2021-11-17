@@ -31,25 +31,6 @@ $orange: #FC9251;
 }
 
 @font-face {
-  font-family: 'GT Super';
-  src: url('assets/fonts/GTSuperText-Regular.woff2') format('woff2'),
-      url('assets/fonts/GTSuperText-Regular.woff') format('woff'),
-      url('assets/fonts/GTSuperText-Regular.otf') format('otf'),
-      url('assets/fonts/GTSuperText-Regular.ttf') format('ttf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'GT Super';
-  src: url('assets/fonts/GTSuperText-RegularItalic.woff2') format('woff2'),
-      url('assets/fonts/GTSuperText-RegularItalic.woff') format('woff'),
-      url('assets/fonts/GTSuperText-RegularItalic.otf') format('otf'),
-      url('assets/fonts/GTSuperText-RegularItalic.ttf') format('ttf');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
   font-family: 'GT Flexa Mono';
   src:url('assets/fonts/GT-Flexa-Mono-Regular.woff2') format('woff2'),
       url('assets/fonts/GT-Flexa-Mono-Regular.woff') format('woff'),
@@ -160,7 +141,7 @@ $orange: #FC9251;
 }
 
 .serif-text {
-  font-family: 'GT Super';
+  font-family: 'Libre Baskerville', serif;
 }
 
 .sans {
@@ -196,7 +177,7 @@ $orange: #FC9251;
 }
 
 .s-large { 
-  font-size: 5vh;
+  font-size: 60px;
 }
 
 .s-big { 
@@ -208,7 +189,8 @@ $orange: #FC9251;
 }
 
 .s-regular {
-	font-size: 20px;
+	font-size: 18px;
+  line-height: 1.5;
 }
 
 .s-small {

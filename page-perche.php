@@ -13,7 +13,7 @@
         <div class="d-flex flex-row t-column">
           <div class="d-one-twelfth t-whole"></div>
           <div class="d-ten-twelfth t-whole text-content spacing-t-3">
-            <h3 class="s-big normal italic"><?php the_excerpt(); ?></h3>
+            <h3 class="s-large normal italic"><?php the_excerpt(); ?></h3>
           </div>
           <div class="d-one-twelfth t-whole"></div>
         </div>
@@ -21,7 +21,7 @@
 
         <div class="d-flex flex-row t-column">
           <div class="d-one-twelfth t-whole"></div>
-          <div class="d-ten-twelfth t-whole text-content s-big wysiwyg paragraph-space spacing-t-3 spacing-b-3">
+          <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg paragraph-space spacing-t-3 spacing-b-3">
             <?php the_content(); ?>
           </div>
           <div class="d-one-twelfth t-whole"></div>
@@ -30,7 +30,8 @@
 
       <?php if( have_rows('righe_box_colorati') ): ?>
         <?php while( have_rows('righe_box_colorati') ): the_row(); ?>
-            <?php if( get_row_layout() == 'riga_box_singolo' ): ?>
+          <!-- single BOX -->
+          <?php if( get_row_layout() == 'riga_box_singolo' ): ?>
             <?php 
               $svg = get_sub_field('immagine_titolo_svg'); 
               $title = get_sub_field('titolo'); 
@@ -40,27 +41,39 @@
               $link = get_sub_field('link'); 
             ?>
 
-            <div class="container-fluid colored-box" style="background-color: <?php echo $color; ?>">
-              <div class="container spacing-p-t-4 spacing-p-b-4">
-                <div class="d-flex flex-row t-column">
-                  <div class="inner-box d-whole p-relative">
-                    <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
-
-                    <div class="text-content hidden p-absolute d-flex start d-column hidden">
-                      <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
-                      <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                      <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                      <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
-
-                      <?php if ($link): ?>
-                        <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-                      <?php endif; ?>
+            <div class="colored-box one p-relative">
+              <div class="title-container container-fluid" data-role="single" style="background-color: <?php echo $color; ?>">
+                <div class="container spacing-p-t-4 spacing-p-b-4">
+                  <div class="d-flex flex-row t-column">
+                    <div class="d-whole p-relative" data-role="single">
+                      <img class="title-svg" data-role="single" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <div class="text-container hidden p-absolute container-fluid" data-role="single" style="background-color: <?php echo $color; ?>">
+                <div class="container spacing-p-t-4 spacing-p-b-4" data-role="single">
+                  <div class="d-flex flex-row t-column centered">
+                    <div class="d-whole">
+                      <div class="text-content d-flex start d-column hidden">
+                        <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
+                        <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
+                        <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                        <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
+
+                        <?php if ($link): ?>
+                          <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
+            <!-- MULTIPLE BOXES -->
             <?php elseif( get_row_layout() == 'riga_box_doppio' ): ?>
               <?php if ( have_rows('box_singolo') ): ?>
                 <div class="container-fluid colored-box multi p-relative">
@@ -68,14 +81,14 @@
                   <?php while( have_rows('box_singolo') ): the_row(); ?>
                     <?php 
                       $i++;
-                      $color = get_sub_field('colore'); 
+                      $color = get_sub_field('colore');
                     ?>
 
                     <div class="background half" data-role="<?php if ($i == 1): ?>first<?php else: ?>last<?php endif; ?>" style="background-color: <?php echo $color; ?>">
                     </div>
                   <?php endwhile; ?>
 
-                    <div class="container  spacing-p-t-4 spacing-p-b-4">
+                    <div class="container spacing-p-t-4 spacing-p-b-4">
                       <div class="d-flex flex-row t-column">
                         <?php $j = 0; ?>
                         <?php while( have_rows('box_singolo') ): the_row(); ?>
@@ -88,18 +101,20 @@
                             $text = get_sub_field('testo'); 
                             $link = get_sub_field('link'); 
                           ?>
-                          <div class="inner-box d-half m-whole-pad p-relative" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" data-color="<?php echo $color; ?>">
-                            <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                          <div class="inner-box d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
+                            <img class="title-svg" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
 
-                            <div class="text-content hidden p-absolute d-flex start d-column hidden">
-                              <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
-                              <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                              <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                              <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
+                            <div class="text-container" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
+                              <div class="text-content d-flex start d-column hidden">
+                                <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
+                                <h4 class="condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
+                                <h5 class="serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                                <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
 
-                              <?php if ($link): ?>
-                                <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-                              <?php endif; ?>
+                                <?php if ($link): ?>
+                                  <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                                <?php endif; ?>
+                              </div>
                             </div>
                           </div>
                         <?php endwhile; ?>
