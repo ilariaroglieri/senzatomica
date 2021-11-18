@@ -60,8 +60,10 @@
                         <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
 
                         <?php if ($link): ?>
-                          <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                          <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>
                         <?php endif; ?>
+
+                        <div class="more mob-only" style="background-color: <?php echo $color; ?>"></div>
                       </div>
                     </div>
                   </div>
@@ -112,8 +114,10 @@
                                 <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
 
                                 <?php if ($link): ?>
-                                  <a class="button black" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                                  <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>
                                 <?php endif; ?>
+
+                                <div class="more mob-only" style="background-color: <?php echo $color; ?>"></div>
                               </div>
                             </div>
                           </div>

@@ -339,7 +339,7 @@ p, pre {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  line-height: 1.25; }
+  line-height: 1.1; }
 
 a {
   color: black;
@@ -904,6 +904,16 @@ body {
     padding-right: 0;
     padding-left: 0; }
 
+  #header {
+    padding: 15px 0; }
+    #header div[class*="menu-main"] > ul li {
+      font-size: 45px; }
+      #header div[class*="menu-main"] > ul li .sub-menu {
+        height: initial;
+        flex-flow: column;
+        padding: 0;
+        padding-bottom: 30px; }
+
   .footer .info .address, .footer .info .legals, .footer .info .newsletter {
     border-right: none; }
   .footer .info .newsletter {
@@ -976,6 +986,43 @@ body {
     .colored-box .inner-box .text-container {
       width: calc(100% - 30px); }
   .colored-box .excerpt {
-    display: none; } }
+    display: none; }
+  .colored-box .text-container {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, height 0s;
+    -moz-transition: opacity 0.5s, height 0s;
+    -ms-transition: opacity 0.5s, height 0s;
+    -o-transition: opacity 0.5s, height 0s;
+    transition: opacity 0.5s, height 0s; }
+    .colored-box .text-container.active {
+      -webkit-transition: opacity 0.5s, height 0s;
+      -moz-transition: opacity 0.5s, height 0s;
+      -ms-transition: opacity 0.5s, height 0s;
+      -o-transition: opacity 0.5s, height 0s;
+      transition: opacity 0.5s, height 0s;
+      opacity: 1; }
+    .colored-box .text-container .container, .colored-box .text-container #header div[class*="menu-main"] > ul li .sub-menu, #header div[class*="menu-main"] > ul li .colored-box .text-container .sub-menu {
+      padding-top: 0; }
+    .colored-box .text-container .text-content {
+      margin-top: 30px; }
+      .colored-box .text-container .text-content .close {
+        width: 30px;
+        top: 15px; }
+      .colored-box .text-container .text-content .wysiwyg.paragraph-space p {
+        margin-bottom: 0; } }
+@media screen and (max-width: 360px) {
+  #header {
+    padding-top: 30px;
+    padding-bottom: 15px; }
+    #header #logo a {
+      justify-content: flex-start; }
+    #header .menu-toggle {
+      top: 0; }
+    #header div[class*="menu-main"] > ul li {
+      font-size: 40px; }
+
+  .colored-box .text-container .text-content {
+    height: 100vh;
+    overflow: scroll; } }
 
 /*# sourceMappingURL=style.css.map */

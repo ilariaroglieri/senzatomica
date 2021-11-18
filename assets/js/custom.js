@@ -278,8 +278,6 @@ jQuery(document).ready(function($) {
         sibling.addClass('d-zero');
       }
     }
-     
-
   });
 
   $('.close').click(function() {
@@ -303,9 +301,7 @@ jQuery(document).ready(function($) {
 
   if (mqMobile.matches) {
     $('.inner-box').each(function(i, el) {
-      console.log($(el));
       var color = $(el).attr('data-color');
-      console.log(color);
       $(el).css('background-color', color);
     });
   }

@@ -151,7 +151,7 @@ p, pre {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  line-height: 1.25;
+  line-height: 1.1;
 }
 
 a {
@@ -923,6 +923,21 @@ body {
     }
   }
 
+  #header {
+    padding: $half-spacing 0;
+    div[class*="menu-main"] > ul {
+      li {
+        font-size: 45px;
+        .sub-menu {
+          height: initial;
+          flex-flow: column;
+          padding: 0;
+          padding-bottom: $spacing;
+        }
+      } 
+    }
+  }
+
   .footer {
     .info {
       .address, .legals, .newsletter {
@@ -1034,6 +1049,12 @@ body {
     padding-left: #{$half-spacing};
   }
 
+  #header {
+    div[class*="menu-main"] > ul li {
+      // font-size: 40px;
+    }
+  }
+
   #content-home {
     #image-grid-container {
       #image-grid {
@@ -1065,6 +1086,65 @@ body {
     }
     .excerpt {
       display: none;
+    }
+
+    .text-container {
+      opacity: 0;
+      @include transition(opacity .5s, height 0s);
+      &.active {
+        @include transition(opacity .5s, height 0s);
+        opacity: 1;
+      }
+      .container {
+        padding-top: 0;
+      }
+      .text-content {
+        margin-top: $spacing;
+        .close {
+          width: $spacing;
+          top: $half-spacing;
+        }
+        .wysiwyg.paragraph-space p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: $mobile-small) {
+  #header {
+    padding-top: $spacing;
+    padding-bottom: $half-spacing;
+    #logo a {
+      justify-content: flex-start;
+    }
+    .menu-toggle {
+      top: 0;
+    }
+    div[class*="menu-main"] > ul li {
+      font-size: 40px;
+    }
+  }
+
+  .colored-box {
+    .text-container {
+      .text-content {
+        height: 100vh;
+        overflow: scroll;
+        // .button {
+        //   position: absolute;
+        //   bottom: 0;
+        //   z-index: 10;
+        // }
+        // .more {
+        //   height: 100px;
+        //   width: 100%;
+        //   position: absolute;
+        //   bottom: 0;
+        //   display: inline-block;
+        // }
+      }
     }
   } 
 }
