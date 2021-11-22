@@ -27,6 +27,44 @@ Version: 1.0
   outline:0;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  font-family: 'GT Flexa Mono', sans-serif;
+  font-size: 11px;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+  font-family: 'GT Flexa Mono', sans-serif;
+  font-size: 11px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+  font-family: 'GT Flexa Mono', sans-serif;
+  font-size: 11px;
+}
+
+input[type="email"], input[type="text"] {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  font-family: 'GT Flexa Mono', sans-serif;
+  @extend .s-xsmall;
+}
+input[type="submit"] {
+  @extend .button;
+  margin: 0 !important;
+  margin-left: $half-spacing !important;
+
+  cursor: pointer;
+  // background-color: white;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
 //varie & eventuali
 .d-inline-block {
   display: inline-block;

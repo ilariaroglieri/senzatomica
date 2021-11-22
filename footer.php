@@ -12,7 +12,9 @@
 					+39 055 4269800
 				</div>
 				<div class="newsletter d-four-twelfth-pad t-whole-pad m-whole-pad">
-					newsletter
+					<?php if ( shortcode_exists( 'mc4wp_form' ) ): ?>
+						<?php echo do_shortcode('[mc4wp_form id="13747"]'); ?>
+					<?php endif; ?>
 				</div>
 				<div class="socials d-one-twelfth-pad t-center t-half-pad m-whole-pad">
 					<?php if (have_rows('social','option')): ?>
