@@ -597,10 +597,12 @@ body {
   opacity: 0;
   height: 0;
   overflow: hidden;
+  visibility: hidden;
   @include transition(opacity .3s);
   &.active {
     opacity: 1;
     height: initial;
+    visibility: visible;
   }
   .button-row {
     &.v-center {
@@ -1044,24 +1046,6 @@ body {
     }
   }
 
-
-  // #header div[class*="menu-main"]{
-  //   ul li {
-  //     &.very-big {
-  //       height: 24vw;
-  //       a {
-  //         font-size: 20vw;
-  //       }
-  //     }
-  //     &.gigantic {
-  //       height: 16vw;
-  //       a {
-  //         font-size: 13vw;
-  //       }
-  //     }
-  //   }
-  // }
-
   #content-home {
     #image-grid-container {
       #image-grid {
@@ -1075,6 +1059,16 @@ body {
       &.category-documenti-storici {
         @extend .t-whole;
       }
+    }
+  }
+
+  .button-row {
+    flex-flow: column;
+    justify-content: flex-start;
+    .button {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
     }
   }
 }

@@ -51,7 +51,7 @@
                       <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
 
                       <?php if( have_rows('lista_link') ): ?>
-                        <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>"">
+                        <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>">
                           <?php while( have_rows('lista_link') ): the_row(); ?>
                             <?php $link = get_sub_field('link'); ?>
                             <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
@@ -61,6 +61,10 @@
 
                     <?php elseif( get_row_layout() == 'contattaci' ): ?>
                       <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
+
+                      <?php if ( shortcode_exists( 'contact-form-7' ) ): ?>
+                        <?php echo do_shortcode('[contact-form-7 id="6238" title="Contatti"]'); ?>
+                      <?php endif; ?>
                     <?php endif; ?>
                   </div>
                 </div>

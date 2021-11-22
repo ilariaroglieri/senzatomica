@@ -256,6 +256,17 @@ jQuery(document).ready(function($) {
     duplicated: true,
   });
 
+  // cosa posso fare
+  $('.cpf-selector .button').click(function() {
+    var linkToSection = $(this).attr('data-link');
+
+    $('.cpf-selector .button').removeClass('active');
+    $(this).addClass('active');
+
+    $('.container-section').removeClass('active');
+    $('#'+linkToSection).addClass('active');
+  });
+
   // colored box
   $('.title-container').click(function() {
     var boxRole = $(this).attr('data-role');
