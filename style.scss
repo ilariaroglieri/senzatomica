@@ -593,6 +593,30 @@ body {
   }
 }
 
+.container-section {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  @include transition(opacity .3s);
+  &.active {
+    opacity: 1;
+    height: initial;
+  }
+  .button-row {
+    &.v-center {
+      .button {
+        margin-left: $half-spacing;
+        margin-right: $half-spacing;
+      }
+    }
+    &.start {
+      .button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 // perchè page
 .colored-box {
   .title-container {

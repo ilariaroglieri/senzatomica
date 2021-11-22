@@ -693,6 +693,24 @@ body {
   margin-left: 15px;
   margin-right: 15px; }
 
+.container-section {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  .container-section.active {
+    opacity: 1;
+    height: initial; }
+  .container-section .button-row.v-center .button, .container-section #header div[class*="menu-main"] > ul li.button-row .button, #header div[class*="menu-main"] > ul .container-section li.button-row .button, .container-section .button-row.v-center input[type="submit"], .container-section #header div[class*="menu-main"] > ul li.button-row input[type="submit"], #header div[class*="menu-main"] > ul .container-section li.button-row input[type="submit"] {
+    margin-left: 15px;
+    margin-right: 15px; }
+  .container-section .button-row.start .button, .container-section .button-row.start input[type="submit"] {
+    margin-bottom: 0; }
+
 .colored-box .title-container {
   min-height: 100vh;
   cursor: pointer; }

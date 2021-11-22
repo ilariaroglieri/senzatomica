@@ -16,7 +16,7 @@
               $title = get_sub_field('titolo_sezione_cpf'); 
               ?>
 
-              <h3 class="button light uppercase <?php if ($i == 0): echo 'active'; endif; ?>"><?= $title; ?></h3>
+              <h3 data-link="<?php echo str_replace(' ', '-', strtolower($title)); ?>" class="button light uppercase <?php if ($i == 0): echo 'active'; endif; ?>"><?= $title; ?></h3>
 
               <?php $i++; ?>
             <?php endwhile; ?>
@@ -33,7 +33,7 @@
           $title = get_sub_field('titolo_sezione_cpf'); 
           ?>
 
-          <div data-section="<?= $title; ?>" class="container-section <?php if ($i == 0): echo 'active'; endif; ?>">
+          <div id="<?php echo str_replace(' ', '-', strtolower($title)); ?>" class="container-section <?php if ($i == 0): echo 'active'; endif; ?>">
 
             <?php if( have_rows('tipo_sezione') ): ?>
               <?php while( have_rows('tipo_sezione') ): the_row(); ?>
@@ -49,6 +49,15 @@
                     <!-- titolo + lista link -->
                     <?php if( get_row_layout() == 'titolo_lista_link' ): ?>
                       <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
+
+                      <?php if( have_rows('lista_link') ): ?>
+                        <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>"">
+                          <?php while( have_rows('lista_link') ): the_row(); ?>
+                            <?php $link = get_sub_field('link'); ?>
+                            <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                          <?php endwhile; ?>
+                        </div>
+                      <?php endif; ?>
 
                     <?php elseif( get_row_layout() == 'contattaci' ): ?>
                       <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
