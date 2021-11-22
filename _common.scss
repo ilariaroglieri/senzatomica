@@ -11,6 +11,15 @@ $primaryColor: #79fc96;
 $pink: #FABAF0;
 $orange: #FC9251;
 
+// grid system
+$spacing: 30px;
+$half-spacing: $spacing/2;
+$double-spacing: $spacing*2;
+$triple-spacing: $spacing*3;
+$fourfold-spacing: $spacing*4;
+
+$col: 8.3333%;
+
 // Typography
 @font-face {
   font-family: 'GT Flexa';
@@ -188,6 +197,16 @@ $orange: #FC9251;
   line-height: 1;
 }
 
+.s-perche {
+  font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
+  font-style: italic;
+}
+
+.s-cpf {
+  font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh); 
+  font-style: italic;
+}
+
 .s-huge { 
   font-size: 16vh;
 }
@@ -217,15 +236,6 @@ $orange: #FC9251;
   font-size: 11px;
 }
 
-
-// grid system
-$spacing: 30px;
-$half-spacing: $spacing/2;
-$double-spacing: $spacing*2;
-$triple-spacing: $spacing*3;
-$fourfold-spacing: $spacing*4;
-
-$col: 8.3333%;
 
 // col system
 .d-zero {

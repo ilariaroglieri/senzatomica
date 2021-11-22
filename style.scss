@@ -50,15 +50,24 @@ input[type="email"], input[type="text"] {
   width: 100%;
   border: none;
   border-bottom: 1px solid black;
+  background-color: transparent;
   color: black;
   font-family: 'GT Flexa Mono', sans-serif;
-  @extend .s-xsmall;
+  @extend .s-small;
+}
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  color: black;
+  font-family: 'GT Flexa Mono', sans-serif;
+  height: 2em;
+  @extend .s-small;
 }
 input[type="submit"] {
   @extend .button;
-  margin: 0 !important;
-  margin-left: $half-spacing !important;
-
+  @extend .uppercase;
   cursor: pointer;
   // background-color: white;
   box-shadow: none;
@@ -148,14 +157,12 @@ input[type="submit"] {
   height: 50vh;
 }
 
-.f-right {
+.t-right {
   text-align: right;
-  float: right;
 }
 
-.f-left {
+.t-left {
   text-align: left;
-  float: left;
 }
 
 .t-center {
@@ -298,10 +305,23 @@ img {
 
 .border-top {
   border-top: 1px solid $primaryColor;
+  &.black {
+    border-top: 1px solid black;
+  }
 }
 
 .border-bottom {
   border-bottom: 1px solid $primaryColor;
+  &.black {
+    border-bottom: 1px solid black;
+  }
+}
+
+.hover-primary-color {
+  @include transition(all .3s);
+  &:hover {
+    background-color: $primaryColor;
+  }
 }
 
 
@@ -384,7 +404,7 @@ img {
           padding: $fourfold-spacing 0;
           justify-content: space-around;
         }
-        &.very-big {
+        &.s-cpf {
           margin-bottom: 0;
           background-color: $orange;
           border-top: 1px solid black;
@@ -403,7 +423,7 @@ img {
             }
           }
         }
-        &.gigantic {
+        &.s-perche {
           margin-bottom: 0;
           background-color: $pink;
           border-top: 1px solid black;
@@ -597,12 +617,15 @@ body {
   opacity: 0;
   height: 0;
   overflow: hidden;
-  visibility: hidden;
+  position: absolute;
   @include transition(opacity .3s);
   &.active {
     opacity: 1;
     height: initial;
-    visibility: visible;
+    position: static;
+  }
+  .container {
+    min-height: 100vh;
   }
   .button-row {
     &.v-center {
@@ -896,9 +919,50 @@ body {
       }
     }
   }
+  input[type='submit'] {
+    margin: 0 !important;
+    margin-left: $spacing !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .s-cpf {
+    font-size: 20vw;
+  }
+
+  .s-perche {
+    font-size: 13vw;
+  }
+
+  #header div[class*="menu-main"]{
+    ul li {
+      &.s-cpf {
+        a {
+          font-size: 20vw;
+        }
+      }
+      &.s-perche {
+        a {
+          font-size: 13vw;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $desktop) {
+  .s-megagigahuge { 
+    font-size: 40vw;
+  }
+
+  .s-megagiga { 
+    font-size: 30vw;
+  }
+
+  .s-gigantic { 
+    font-size: 20vw;
+  }
+
   .container {
     margin-left: $half-spacing;
     margin-right: $half-spacing;
@@ -920,21 +984,6 @@ body {
       margin-bottom: $spacing;
       padding-right: 0;
 
-    }
-  }
-
-  #header div[class*="menu-main"]{
-    ul li {
-      &.very-big {
-        a {
-          font-size: 20vw;
-        }
-      }
-      &.gigantic {
-        a {
-          font-size: 13vw;
-        }
-      }
     }
   }
 
@@ -969,9 +1018,6 @@ body {
     width: calc(100% - #{$spacing});
     margin-left: $half-spacing;
     margin-right: $half-spacing;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
 
   .t-wrap {
@@ -1131,16 +1177,6 @@ body {
     }
   }
 
-  .footer {
-    .info, .partners {
-      border-top: none;
-      & > div {
-        text-align: left;
-        border-right: none;
-        border-top: 1px solid black;
-      }
-    }
-  }
   .colored-box {
     .background {
       display: none;
@@ -1178,6 +1214,23 @@ body {
       }
     }
   } 
+
+  .cpf-selector {
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .footer {
+    .info, .partners {
+      border-top: none;
+      & > div {
+        text-align: left;
+        border-right: none;
+        border-top: 1px solid black;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $mobile-small) {

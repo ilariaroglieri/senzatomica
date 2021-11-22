@@ -5,10 +5,10 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="container">
-        <h2 class="uppercase condensed italic s-gigantic t-center spacing-b-1"><?php the_title(); ?></h2>
+        <h2 class="uppercase condensed italic s-cpf t-center spacing-b-2"><?php the_title(); ?></h2>
 
         <?php if( have_rows('sezione_cosa_posso_fare') ): ?>
-          <div class="cpf-selector d-flex v-center">
+          <div class="cpf-selector d-flex v-center m-column">
             <?php $i = 0; ?>
             <?php while( have_rows('sezione_cosa_posso_fare') ): the_row(); ?>
               <!-- titoli 3 sezioni cosa posso fare -->
@@ -25,7 +25,7 @@
       </div>
 
 
-     <?php if( have_rows('sezione_cosa_posso_fare') ): ?>
+      <?php if( have_rows('sezione_cosa_posso_fare') ): ?>
         <?php $i = 0; ?>
         <?php while( have_rows('sezione_cosa_posso_fare') ): the_row(); ?>
           <!-- 3 sezioni cosa posso fare -->
@@ -45,7 +45,7 @@
                 ?>
 
                 <div class="container-fluid" style="background-color: <?php echo $color; ?>">
-                  <div class="container full-height spacing-p-t-3 spacing-p-b-3">
+                  <div class="container spacing-p-t-3 spacing-p-b-3">
                     <!-- titolo + lista link -->
                     <?php if( get_row_layout() == 'titolo_lista_link' ): ?>
                       <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
@@ -60,10 +60,12 @@
                       <?php endif; ?>
 
                     <?php elseif( get_row_layout() == 'contattaci' ): ?>
-                      <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
+                      <h4 class="uppercase xcondensed <?php echo $titleSize; ?> spacing-p-b-3"><?= $title; ?></h4>
 
                       <?php if ( shortcode_exists( 'contact-form-7' ) ): ?>
-                        <?php echo do_shortcode('[contact-form-7 id="6238" title="Contatti"]'); ?>
+                        <div class="form-container t-center">
+                          <?php echo do_shortcode('[contact-form-7 id="6238" title="Contatti"]'); ?>
+                        </div>
                       <?php endif; ?>
                     <?php endif; ?>
                   </div>
@@ -77,6 +79,11 @@
           <?php $i++; ?>
         <?php endwhile; ?>
       <?php endif; ?>
+
+      <div class="container-fluid border-top black hover-primary-color t-center spacing-p-b-3 spacing-p-t-3">
+        <a class="s-perche no-border extended uppercase" href="<?php echo get_page_link( get_page_by_title( 'Perché?' )->ID ); ?>" class="button bigger uppercase">Perché?</a>
+      </div>
+
     </article>
 
   <?php endwhile; else: ?>
