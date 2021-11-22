@@ -88,6 +88,18 @@ Version: 1.0
 .italic {
   font-style: italic; }
 
+.s-megagigahuge {
+  font-size: 56vh;
+  line-height: 1; }
+
+.s-megagiga {
+  font-size: 33vh;
+  line-height: 1; }
+
+.s-gigantic {
+  font-size: 25vh;
+  line-height: 1; }
+
 .s-huge {
   font-size: 16vh; }
 
@@ -442,10 +454,12 @@ img {
       color: black; }
   .button.light, input.light[type="submit"] {
     background-color: white; }
-  .button:hover, input[type="submit"]:hover {
+  .button:hover, input[type="submit"]:hover, .button.active, input.active[type="submit"] {
     background-color: black;
     color: #79fc96;
     border: 1px solid black; }
+  .button.active, input.active[type="submit"] {
+    pointer-events: none; }
 
 .caption {
   display: inline-block;
@@ -674,6 +688,10 @@ body {
 .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4 {
   margin: 60px 0;
   margin-left: -8.3333%; }
+
+.cpf-selector .button, .cpf-selector input[type="submit"] {
+  margin-left: 15px;
+  margin-right: 15px; }
 
 .colored-box .title-container {
   min-height: 100vh;

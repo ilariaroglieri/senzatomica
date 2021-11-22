@@ -278,10 +278,13 @@ img {
   &.light {
     background-color: white;
   }
-  &:hover { 
+  &:hover, &.active { 
     background-color: black;
     color: $primaryColor;
     border: 1px solid black;
+  }
+  &.active {
+    pointer-events: none;
   }
 }
 
@@ -578,6 +581,15 @@ body {
       margin: $double-spacing 0;
       margin-left: - $col;
     }
+  }
+}
+
+
+// cosa posso fare page
+.cpf-selector {
+  .button {
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
   }
 }
 
