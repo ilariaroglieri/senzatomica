@@ -784,8 +784,9 @@ body {
     margin-bottom: 0; }
 
 .colored-box .title-container {
-  min-height: 100vh;
-  cursor: pointer; }
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px; }
   .colored-box .title-container .container, .colored-box .title-container #header div[class*="menu-main"] > ul li .sub-menu, #header div[class*="menu-main"] > ul li .colored-box .title-container .sub-menu {
     align-items: center;
     justify-content: space-between; }

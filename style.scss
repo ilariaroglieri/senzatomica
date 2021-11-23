@@ -711,8 +711,10 @@ body {
 // perchè page
 .colored-box {
   .title-container {
-    min-height: 100vh;
+    // min-height: 100vh;
     cursor: pointer;
+    padding-left: $half-spacing;
+    padding-right: $half-spacing;
     .container {
       @extend .d-flex;
       @extend .d-column;

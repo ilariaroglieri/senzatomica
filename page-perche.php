@@ -45,8 +45,8 @@
             ?>
 
             <div class="colored-box one p-relative">
-              <div class="title-container full-height container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
-                <div class="container full-height spacing-p-t-4 spacing-p-b-2">
+              <div class="title-container container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
+                <div class="container spacing-p-t-4 spacing-p-b-2">
                   <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
                   <p class="button black biggest mono">+</p>
                 </div>
