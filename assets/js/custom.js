@@ -252,9 +252,20 @@ jQuery(document).ready(function($) {
     startVisible: true,
     gap: 0,
     delayBeforeStart: 0,
+    direction: 'right',
+    duplicated: true,
+    duration: 10000,
+  });
+
+  $('.page-keywords').marquee({
+    startVisible: true,
+    gap: 0,
+    delayBeforeStart: 0,
     direction: 'left',
     duplicated: true,
+    duration: 15000,
   });
+
 
   // cosa posso fare
   $('.cpf-selector .button').click(function() {
