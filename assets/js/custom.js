@@ -45,17 +45,19 @@ jQuery(document).ready(function($) {
   $('body').addClass('loaded');
 
   //scroll direction for menu (except home)
-  if ( !($('body').hasClass('home')) ) {
-    var lastScrollTop = 0;
-    $(window).scroll(function(event){
-       var st = $(this).scrollTop();
-       if (st > lastScrollTop){
-          $('#header').addClass('hidden');
-       } else {
-          $('#header').removeClass('hidden');
-       }
-       lastScrollTop = st;
-    });
+  if (mqMobile.matches) {
+    if ( !($('body').hasClass('home')) ) {
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+         var st = $(this).scrollTop();
+         if (st > lastScrollTop){
+            $('#header').addClass('hidden');
+         } else {
+            $('#header').removeClass('hidden');
+         }
+         lastScrollTop = st;
+      });
+    }
   }
 
   //home

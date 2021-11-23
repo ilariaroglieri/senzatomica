@@ -4,7 +4,7 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <div class="container">
+      <div class="container-fluid">
         <h2 class="uppercase condensed italic s-cpf t-center spacing-b-2"><?php the_title(); ?></h2>
 
         <?php if( have_rows('sezione_cosa_posso_fare') ): ?>
@@ -16,7 +16,7 @@
               $title = get_sub_field('titolo_sezione_cpf'); 
               ?>
 
-              <h3 data-link="<?php echo str_replace(' ', '-', strtolower($title)); ?>" class="button light uppercase <?php if ($i == 0): echo 'active'; endif; ?>"><?= $title; ?></h3>
+              <h3 data-link="<?php echo str_replace(' ', '-', strtolower($title)); ?>" class="button bigger light uppercase <?php if ($i == 0): echo 'active'; endif; ?>"><?= $title; ?></h3>
 
               <?php $i++; ?>
             <?php endwhile; ?>
@@ -44,30 +44,32 @@
                   $color = get_sub_field('colore'); 
                 ?>
 
-                <div class="container-fluid" style="background-color: <?php echo $color; ?>">
-                  <div class="container spacing-p-t-3 spacing-p-b-3">
+                <div class="container-fluid spacing-p-t-3 spacing-p-b-3" style="background-color: <?php echo $color; ?>">
                     <!-- titolo + lista link -->
-                    <?php if( get_row_layout() == 'titolo_lista_link' ): ?>
-                      <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
+                    <div class="d-whole">
 
-                      <?php if( have_rows('lista_link') ): ?>
-                        <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>">
-                          <?php while( have_rows('lista_link') ): the_row(); ?>
-                            <?php $link = get_sub_field('link'); ?>
-                            <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-                          <?php endwhile; ?>
-                        </div>
+                      <?php if( get_row_layout() == 'titolo_lista_link' ): ?>
+                        <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
+
+                        <?php if( have_rows('lista_link') ): ?>
+                          <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>">
+                            <?php while( have_rows('lista_link') ): the_row(); ?>
+                              <?php $link = get_sub_field('link'); ?>
+                              <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                            <?php endwhile; ?>
+                          </div>
+                        <?php endif; ?>
+
+                      <?php elseif( get_row_layout() == 'contattaci' ): ?>
+                        <h4 class="uppercase xcondensed <?php echo $titleSize; ?> spacing-p-b-3"><?= $title; ?></h4>
+
+                        <?php if ( shortcode_exists( 'contact-form-7' ) ): ?>
+                          <div class="form-container t-center">
+                            <?php echo do_shortcode('[contact-form-7 id="6238" title="Contatti"]'); ?>
+                          </div>
+                        <?php endif; ?>
                       <?php endif; ?>
 
-                    <?php elseif( get_row_layout() == 'contattaci' ): ?>
-                      <h4 class="uppercase xcondensed <?php echo $titleSize; ?> spacing-p-b-3"><?= $title; ?></h4>
-
-                      <?php if ( shortcode_exists( 'contact-form-7' ) ): ?>
-                        <div class="form-container t-center">
-                          <?php echo do_shortcode('[contact-form-7 id="6238" title="Contatti"]'); ?>
-                        </div>
-                      <?php endif; ?>
-                    <?php endif; ?>
                   </div>
                 </div>
 
@@ -81,7 +83,9 @@
       <?php endif; ?>
 
       <div class="container-fluid border-top black hover-primary-color t-center spacing-p-b-3 spacing-p-t-3">
-        <a class="s-perche no-border extended uppercase" href="<?php echo get_page_link( get_page_by_title( 'Perché?' )->ID ); ?>" class="button bigger uppercase">Perché?</a>
+        <div class="d-whole">
+          <a class="s-perche no-border extended uppercase" href="<?php echo get_page_link( get_page_by_title( 'Perché?' )->ID ); ?>" class="button bigger uppercase">Perché?</a>
+        </div>
       </div>
 
     </article>

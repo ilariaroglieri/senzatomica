@@ -89,23 +89,25 @@ Version: 1.0
   font-style: italic; }
 
 .s-megagigahuge {
-  font-size: 56vh;
+  font-size: 33vw;
   line-height: 1; }
 
 .s-megagiga {
-  font-size: 33vh;
+  font-size: 25vw;
   line-height: 1; }
 
 .s-gigantic {
-  font-size: 25vh;
+  font-size: 20vw;
   line-height: 1; }
 
 .s-perche {
   font-size: calc((((100vh - 27vh - 55px - 120px)/5)*2) - 5vh);
+  font-size: 13vw;
   font-style: italic; }
 
 .s-cpf {
   font-size: calc((((100vh - 27vh - 55px - 120px)/5)*3) - 5vh);
+  font-size: 21vw;
   font-style: italic; }
 
 .s-huge {
@@ -449,6 +451,7 @@ img {
   background-color: #79fc96;
   margin: 30px 0;
   cursor: pointer;
+  letter-spacing: 0.05em;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -515,7 +518,6 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
   z-index: 100;
   -webkit-transition: top 0.5s;
   -moz-transition: top 0.5s;
@@ -774,7 +776,7 @@ body {
     height: initial;
     position: static; }
   .container-section .container, .container-section #header div[class*="menu-main"] > ul li .sub-menu, #header div[class*="menu-main"] > ul li .container-section .sub-menu {
-    min-height: 100vh; }
+    min-height: initial; }
   .container-section .button-row.v-center .button, .container-section #header div[class*="menu-main"] > ul li.button-row .button, #header div[class*="menu-main"] > ul .container-section li.button-row .button, .container-section .button-row.v-center input[type="submit"], .container-section #header div[class*="menu-main"] > ul li.button-row input[type="submit"], #header div[class*="menu-main"] > ul .container-section li.button-row input[type="submit"] {
     margin-left: 15px;
     margin-right: 15px; }
@@ -1097,6 +1099,9 @@ body {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px; }
+
+  #header {
+    background-color: white; }
 
   #content-home #image-grid-container #image-grid {
     grid-template-columns: repeat(4, 1fr); }

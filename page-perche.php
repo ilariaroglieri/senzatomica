@@ -4,8 +4,11 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <div class="container">
+      <div class="container-fluid">
         <h2 class="uppercase extended italic s-perche t-center spacing-b-1"><?php the_title(); ?></h2>
+      </div>
+
+      <div class="container">
         <?php if ( has_post_thumbnail() ) : ?>  
           <?php the_post_thumbnail(); ?>
         <?php endif; ?>

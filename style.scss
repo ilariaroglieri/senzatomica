@@ -261,6 +261,7 @@ img {
   background-color: $primaryColor;
   margin: $spacing 0;
   cursor: pointer;
+  letter-spacing: 0.05em;
   @extend .s-xsmall;
   @extend .mono;
   @include transition(all .3s);
@@ -343,7 +344,6 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
   z-index: 100;
   @include transition(top .5s);
   &.hidden {
@@ -691,7 +691,7 @@ body {
     position: static;
   }
   .container {
-    min-height: 100vh;
+    min-height: initial;
   }
   .button-row {
     &.v-center {
@@ -1176,6 +1176,7 @@ body {
   }
 
   #header {
+    background-color: white;
     div[class*="menu-main"] > ul li {
       // font-size: 40px;
     }
