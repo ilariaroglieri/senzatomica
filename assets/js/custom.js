@@ -134,7 +134,7 @@ jQuery(document).ready(function($) {
   // --- Hamburger menu
   $('.menu-toggle').click(function() {
     // save dimensions of header
-    
+    $('html, body').toggleClass('overflow-hidden');
     $(this).toggleClass('open');
     $('div[class*="menu-main"]').toggleClass('active');
     // check if it's on slider

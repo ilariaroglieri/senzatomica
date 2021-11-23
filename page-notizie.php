@@ -10,33 +10,10 @@ $cptQuery = new WP_Query( array(
 ?>
 
 <section class="content" id="content-archive-news">
-  <div class="page-title container-fluid">
-    <h1 class="extended uppercase s-medium"><?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;
-    </h1>
-  </div>
 
-  <?php if( have_rows('parole_chiave') ): ?>
-    <div class="page-keywords container-fluid spacing-b-2">
-      <div class="inner">
-        <h3 class="normal uppercase s-huge variable-type">
-          <?php while( have_rows('parole_chiave') ) : the_row(); ?>
-            <?php $keyword = get_sub_field('parola_chiave'); ?>
+  <?php include('title-stripe.php') ?>
 
-            <span><?php echo $keyword; ?>&nbsp;</span>
-          <?php endwhile; ?>
-        </h3>
-      </div>
-      <div class="inner">
-        <h3 class="normal uppercase s-huge variable-type">
-          <?php while( have_rows('parole_chiave') ) : the_row(); ?>
-            <?php $keyword = get_sub_field('parola_chiave'); ?>
-
-            <span><?php echo $keyword; ?>&nbsp;</span>
-          <?php endwhile; ?>
-        </h3>
-      </div>
-    </div>
-  <?php endif; ?>
+  <?php include('keywords-stripe.php') ?>
 
   <?php include('dynamic-stripe.php') ?>
 

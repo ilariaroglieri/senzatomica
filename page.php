@@ -3,26 +3,50 @@
 <section class="content" id="content-single">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-      <a href="<?php echo get_page_link( get_page_by_title( 'Notizie' )->ID ); ?>" class="button uppercase">Back</a>
-      <h2 class="serif s-big spacing-b-1"><?php the_title(); ?></h2>
-      <p class="caption spacing-b-2"><?php the_date(); ?></p>
-      <?php if ( has_post_thumbnail() ) : ?>  
-        <?php the_post_thumbnail(); ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <div class="container-fluid">
+        <?php include('title-stripe.php') ?>
+
+        <?php include('keywords-stripe.php') ?>
+      </div>
+
+      <div class="container">
+        <?php if ( has_post_thumbnail() ) : ?>  
+          <?php the_post_thumbnail(); ?>
+        <?php endif; ?>
+
+        <div class="d-flex flex-row t-column">
+          <div class="d-one-twelfth t-whole"></div>
+          <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg paragraph-space spacing-t-3 spacing-b-3">
+            <?php the_content(); ?>
+          </div>
+          <div class="d-one-twelfth t-whole"></div>
+        </div>
+      </div>
+
+      <!-- contatti page -->
+      <?php if( have_rows('membro_senzatomica') ): ?>
+        <div class="container">
+          <div class="d-flex flex-row wrap">
+            <?php while( have_rows('membro_senzatomica') ): the_row(); ?>
+              <?php
+              $img = get_sub_field('ritratto');
+              $name = get_sub_field('nome');
+              $role = get_sub_field('qualifica');
+              ?>
+
+
+              <div class="staff_sa border d-three-twelfth t-half m-whole spacing-b-3">
+                <img class="spacing-b-1" src="<?php echo $img['url']; ?>" alt="<?php echo $name; ?>" />
+                <h4 class="sans s-small"><?= $name; ?></h4>
+                <p class="sans s-small"><?= $role; ?></p>
+              </div>
+
+            <?php endwhile; ?>
+          </div>
+        </div>
       <?php endif; ?>
 
-      <div class="d-flex flex-row t-column">
-        <div class="d-one-twelfth t-whole"></div>
-        <div class="d-ten-twelfth t-whole text-content s-regular wysiwyg paragraph-space spacing-t-3 spacing-b-3">
-          <?php the_content(); ?>
-        </div>
-        <div class="d-one-twelfth t-whole"></div>
-      </div>
-      
-      <div class="navigation d-flex space-between">
-          <span class="navi uppercase previous"><?php previous_post_link( '%link','Precedente', false ); ?></span>
-          <span class="navi uppercase next"><?php next_post_link( '%link','Successiva', false ); ?></span>
-      </div>
     </article>
 
   <?php endwhile; else: ?>

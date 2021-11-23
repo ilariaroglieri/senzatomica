@@ -303,6 +303,13 @@ img {
   @extend .mono;
 }
 
+.border {
+  border: 1px solid $primaryColor;
+  &.black {
+    border: 1px solid black;
+  }
+}
+
 .border-top {
   border-top: 1px solid $primaryColor;
   &.black {
@@ -542,6 +549,64 @@ body {
   padding-top: 15vh;
 }
 
+// page headers
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.page-title {
+  // height: 24px;
+  & > div {
+    animation-duration: 10s !important;
+  }
+}
+
+.page-keywords {
+  height: 20vh;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: $half-spacing 0;
+  position: static;
+  .inner {
+    position: static;
+    transform: translateX(0);
+    animation: marquee 10s linear infinite;
+  }
+  h3 {
+    color: $primaryColor;
+    line-height: 1;
+  }
+}
+
+.dynamic-stripe{
+  background-color: $pink; 
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: $half-spacing 0;
+  position: static;
+  .inner {
+    position: static;
+    transform: translateX(0);
+    animation: marquee 10s linear infinite;
+  }
+  &.primaryColor {
+    background-color: $primaryColor;
+  }
+  
+}
+
+.page-keywords ~ .dynamic-stripe {
+  display: none;
+}
+
+//home
 #content-home {
   margin-top: 50vh;
   padding-top:0;
@@ -586,6 +651,7 @@ body {
   }
 }
 
+//single
 .single {
   .text-content {
     p {
@@ -740,6 +806,7 @@ body {
 }
 
 
+//archives
 .posts-flow {
   @extend .d-flex;
   .flex-row {
@@ -803,80 +870,11 @@ body {
   }
 }
 
-// page headers
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+//chi siamo
+.staff_sa {
+  padding: $half-spacing;
 }
 
-.page-title {
-  // height: 24px;
-  & > div {
-    animation-duration: 10s !important;
-  }
-}
-
-.page-keywords {
-  height: 20vh;
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: $half-spacing 0;
-  position: static;
-  .inner {
-    position: static;
-    transform: translateX(0);
-    animation: marquee 10s linear infinite;
-  }
-  h3 {
-    color: $primaryColor;
-    line-height: 1;
-  }
-}
-
-.dynamic-stripe{
-  background-color: $pink; 
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: $half-spacing 0;
-  position: static;
-  .inner {
-    position: static;
-    transform: translateX(0);
-    animation: marquee 10s linear infinite;
-  }
-  &.primaryColor {
-    background-color: $primaryColor;
-  }
-  
-}
-
-.page-keywords ~ .dynamic-stripe {
-  display: none;
-}
-
-.slider {
-  .slick-list, .slick-track {
-    @extend .full-height;
-    -webkit-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
-    -o-transform: none !important;
-    transform: none !important;
-  }
-
-  .slide {
-    .svg {
-      background-attachment: fixed !important;
-      background-size: auto 75% !important;
-    }
-  }
-}
 
 .footer {
   line-height: 1.5;
@@ -1020,6 +1018,12 @@ body {
     margin-right: $half-spacing;
   }
 
+  .t-half {
+    width: calc(#{$col}*6 - #{$spacing});
+    margin-left: #{$half-spacing};
+    margin-right: #{$half-spacing};
+  }
+
   .t-wrap {
     flex-wrap: wrap;
   }
@@ -1147,14 +1151,14 @@ body {
 
   .m-whole {
     width: calc(100% - #{$spacing});
-    margin: 0 #{$half-spacing};
-    margin-bottom: 0;
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
   }
 
   .m-half {
     width: calc(50% - #{$spacing});
-    margin: 0 #{$half-spacing};
-    margin-bottom: 0;
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
   }
 
   .m-whole-pad {
