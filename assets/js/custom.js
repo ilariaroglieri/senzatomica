@@ -222,7 +222,7 @@ jQuery(document).ready(function($) {
       prevSlice = prevSlice - 10;
     }
     
-    questo.parent().addClass('d-half-pad');
+    questo.parent().parent().addClass('d-half-pad');
     questo.css('transform','rotate('+ prevRotation + 'deg)');
     $('.slice-container').addClass('visible');
     $('.slice-content').removeClass('active');

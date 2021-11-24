@@ -769,6 +769,16 @@ body {
   padding-right: 15px; }
   #question-wheel-container.d-half-pad {
     width: 50%; }
+  #question-wheel-container .arrow-left {
+    position: absolute;
+    right: -15px;
+    top: calc(50% -  30px);
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 30px solid black;
+    z-index: 10; }
   #question-wheel-container #question-wheel {
     border-radius: 50%;
     height: 35vw;

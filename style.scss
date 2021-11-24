@@ -651,6 +651,17 @@ body {
   &.d-half-pad {
     width: 50%;
   }
+  .arrow-left {
+    position: absolute;
+    right: - $half-spacing;
+    top: calc(50% -  #{$spacing});
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:$spacing solid black;
+    z-index: 10;
+  }
   #question-wheel {
     border-radius: 50%;
     height: 35vw;

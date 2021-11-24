@@ -108,22 +108,25 @@
 
     <?php include('dynamic-stripe.php') ?>
 
-    <div class="container-fluid d-flex v-center spacing-b-3">
+    <div class="container-fluid d-flex v-center spacing-b-3 border-top border-bottom">
       <?php if( have_rows('magic_wheel') ): ?>
         <div id="question-wheel-container" class="d-whole-pad d-flex center d-column">
-          <p class="sans s-medium uppercase spacing-b-2">Gira la ruota</p>
+          <p class="sans s-medium uppercase spacing-b-2 spacing-p-t-2 ">Gira la ruota</p>
 
-          <div id="question-wheel" class="spacing-b-1">
-            <?php $i = 0; ?>
-            <?php while( have_rows('magic_wheel') ): the_row(); ?>
-              <?php
-                $color = get_sub_field('colore'); 
-                $i++;
-              ?>
+          <div class="p-relative">
+            <div class="arrow-left"></div>
+            <div id="question-wheel" class="spacing-b-1">
+              <?php $i = 0; ?>
+              <?php while( have_rows('magic_wheel') ): the_row(); ?>
+                <?php
+                  $color = get_sub_field('colore'); 
+                  $i++;
+                ?>
 
-              <div class="slice" id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
-              </div>
-            <?php endwhile; ?>
+                <div class="slice" id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
+                </div>
+              <?php endwhile; ?>
+            </div>
           </div>
 
           <p class="button wheel-button uppercase">Leggi una frase</p>
