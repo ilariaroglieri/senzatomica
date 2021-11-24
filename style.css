@@ -971,15 +971,19 @@ body {
   .colored-box .text-container .text-content {
     padding-right: 8.3333%;
     padding-left: 8.3333%;
-    width: 100%; }
+    width: 100%;
+    cursor: auto;
+    cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
+    cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x, url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer; }
     .colored-box .text-container .text-content .close {
+      display: none;
       position: absolute;
       top: 0;
       right: 0;
       cursor: pointer;
       width: 60px; }
 .colored-box.multi .title-svg {
-  max-width: calc(600px - 30px); }
+  width: calc(600px - 30px); }
 .colored-box.multi .title-container {
   opacity: 1;
   align-items: center;
@@ -1319,6 +1323,7 @@ body {
         font-size: 30px;
         width: calc(100% - 30px); }
       .colored-box .text-container .text-content .close {
+        display: inline-block;
         width: 30px;
         top: 2px; }
       .colored-box .text-container .text-content .wysiwyg.paragraph-space p {

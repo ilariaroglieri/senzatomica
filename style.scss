@@ -839,7 +839,11 @@ body {
       padding-right: $col;
       padding-left: $col;
       width: 100%;
+      cursor: auto;
+      cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
+      cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer;
       .close {
+        display: none;
         position: absolute;
         top: 0;
         right: 0;
@@ -851,7 +855,7 @@ body {
   &.multi {
 
     .title-svg {
-      max-width: calc(#{$desktop/2 -  #{$spacing}});
+      width: calc(#{$desktop/2 -  #{$spacing}});
     }
     .title-container {
       opacity: 1;
@@ -1351,6 +1355,7 @@ body {
           width: calc(100% - #{$spacing});
         }
         .close {
+          display: inline-block;
           width: $spacing;
           top: 2px;
         }
