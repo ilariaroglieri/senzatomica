@@ -1,4 +1,5 @@
 var mqMobile = window.matchMedia('(max-width: 640px)');
+var mqHoverDevices = window.matchMedia('(hover: none)');
 
 
 function shuffle(arr) {
@@ -231,11 +232,19 @@ jQuery(document).ready(function($) {
     // console.log('[data-slide="slice-' + prevSlice + '"]');
   });
 
-  $('.slice-content .close').click(function() {
-    $('#question-wheel').parent().parent().removeClass('d-half-pad');
-    $('.slice-container').removeClass('visible');
-    $('.slice-content').removeClass('active');
-  });
+  if (mqHoverDevices.matches) {
+    $('.slice-content .close').click(function() {
+      $('#question-wheel').parent().parent().removeClass('d-half-pad');
+      $('.slice-container').removeClass('visible');
+      $('.slice-content').removeClass('active');
+    });
+  } else {
+    $('.slice-content').click(function() {
+      $('#question-wheel').parent().parent().removeClass('d-half-pad');
+      $('.slice-container').removeClass('visible');
+      $('.slice-content').removeClass('active');
+    });
+  }
 
   // divide posts into rows
   var posts = $('#content-archive-news').find($('.post'));
@@ -333,7 +342,8 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $('.title-container .close').click(function() {
+  $('.text-container .close').click(function() {
+    console.log('click');
     var boxRole = $(this).closest('.text-container').attr('data-role');
     var currentBox = $(this).closest('.inner-box');
     var currentTxt = $(this).closest('.colored-box').find('.text-container[data-role~="'+boxRole+'"]');

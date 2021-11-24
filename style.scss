@@ -704,6 +704,9 @@ body {
     @include transition(all ease .3s 3s);
   }
   .slice-content {
+    cursor: auto;
+    cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
+    cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer;
     height: 100%;
     width: 100%;
     padding: $spacing;
@@ -719,11 +722,12 @@ body {
       @include transition(opacity .3s 3s);
     }
     .close {
+      display:none;
       position: absolute;
-      top: $spacing;
-      right: $spacing;
+      top: $half-spacing;
+      right: $half-spacing;
       cursor: pointer;
-      width: $double-spacing;
+      width: $spacing;
     }
     .text {
       max-width: 600px;
@@ -1162,6 +1166,7 @@ body {
           flex-flow: column;
           padding: 0;
           padding-bottom: $spacing;
+          align-items: center;
         }
       } 
     }
@@ -1277,6 +1282,35 @@ body {
     }
   }
 
+  // spinning wheel
+  #question-wheel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    &.d-half-pad {
+      width: 0;
+      padding: 0;
+    }
+    #question-wheel {
+      height: 80vw;
+      width: 80vw;
+    }
+  }
+
+  .slice-container {
+    &.visible {
+      width: 100%;
+    }
+    .slice-content {
+      padding: $half-spacing;
+      .text {
+        margin-top: 0;
+        font-size: 14px;
+        font-family: 'Libre Baskerville', serif;
+      }
+    }
+  }
+
+
   #content-home {
     #image-grid-container {
       #image-grid {
@@ -1312,9 +1346,13 @@ body {
       }
       .text-content {
         margin-top: $spacing;
+        .title  {
+          font-size: 30px;
+          width: calc(100% - #{$spacing});
+        }
         .close {
           width: $spacing;
-          top: $half-spacing;
+          top: 2px;
         }
         .wysiwyg.paragraph-space p {
           margin-bottom: 0;
@@ -1357,6 +1395,11 @@ body {
   }
 
   .colored-box {
+    &.one {
+      .title-container {
+        min-height: 100vh;
+      }
+    }
     .text-container {
       .text-content {
         height: 100vh;
@@ -1376,4 +1419,17 @@ body {
       }
     }
   } 
+  .inner-box {
+    height: 100vh;
+  }
+}
+
+@media screen and (hover: none) {
+  .slice-container {
+    .slice-content {
+      .close {
+        display: inline-block;
+      }
+    }
+  }
 }
