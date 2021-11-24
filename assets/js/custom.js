@@ -231,6 +231,12 @@ jQuery(document).ready(function($) {
     // console.log('[data-slide="slice-' + prevSlice + '"]');
   });
 
+  $('.slice-content .close').click(function() {
+    $('#question-wheel').parent().parent().removeClass('d-half-pad');
+    $('.slice-container').removeClass('visible');
+    $('.slice-content').removeClass('active');
+  });
+
   // divide posts into rows
   var posts = $('#content-archive-news').find($('.post'));
   var elements = [];
@@ -327,7 +333,7 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $('.close').click(function() {
+  $('.title-container .close').click(function() {
     var boxRole = $(this).closest('.text-container').attr('data-role');
     var currentBox = $(this).closest('.inner-box');
     var currentTxt = $(this).closest('.colored-box').find('.text-container[data-role~="'+boxRole+'"]');

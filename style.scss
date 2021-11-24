@@ -644,12 +644,13 @@ body {
 
 // spinning wheel
 #question-wheel-container {
-  @include transition(width ease .3s 3s);
+  @include transition(width ease .5s);
   width: 100%;
   padding-left: $half-spacing;
   padding-right: $half-spacing;
   &.d-half-pad {
     width: 50%;
+    @include transition(width ease .3s 3s);
   }
   .arrow-left {
     position: absolute;
@@ -696,10 +697,11 @@ body {
   width: 0;
   overflow: hidden;
   right: -100%;
-  @include transition(all ease .3s 3s);
+  @include transition(all ease .3s);
   &.visible {
     right: 0;
     width: 50%;
+    @include transition(all ease .3s 3s);
   }
   .slice-content {
     height: 100%;
@@ -711,9 +713,17 @@ body {
     justify-content: space-between;
     z-index: 10;
     opacity: 0;
-    @include transition(opacity .3s 3s);
+    @include transition(opacity .3s);
     &.active {
       opacity: 1;
+      @include transition(opacity .3s 3s);
+    }
+    .close {
+      position: absolute;
+      top: $spacing;
+      right: $spacing;
+      cursor: pointer;
+      width: $double-spacing;
     }
     .text {
       max-width: 600px;

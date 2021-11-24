@@ -144,6 +144,7 @@
             ?>
 
             <div class="slice-content d-flex d-column" data-slice="slice-<?php echo $j; ?>" style="background-color: <?php echo $color; ?>">
+              <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
               <h3 class="title sans s-medium"><?= $title; ?></h3>
               <p class="text serif s-medium"><?= $quote; ?></p>
               <p class="mono s-small"><?= $author; ?></p>
