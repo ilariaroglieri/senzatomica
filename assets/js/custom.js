@@ -208,14 +208,22 @@ jQuery(document).ready(function($) {
   });
 
   // homepage spinning wheel
+  var prevRotation = 0;
+  var prevSlice = 0;
   $('#question-wheel').click(function() {
-    var randomDeg = (Math.floor(Math.random() * 10)+1);
-    console.log('#slice-' + (randomDeg));
-    var rotation = randomDeg*36;
+    var randomSlice = (Math.floor(Math.random() * 10)+1);
+    var rotation = 360 + (randomSlice*36);
+
+    prevRotation = prevRotation + rotation;
+    prevSlice = (prevSlice + randomSlice);
+
+    if (prevSlice > 10) {
+      prevSlice = prevSlice - 10;
+    }
     
-    $(this).css('transform','rotate('+ rotation + 'deg)');
+    $(this).css('transform','rotate('+ prevRotation + 'deg)');
     $('.slice').removeClass('active');
-    $(this).find('#slice-' + (randomDeg)).addClass('active');
+    $(this).find('#slice-' + prevSlice).addClass('active');
   });
 
   // divide posts into rows

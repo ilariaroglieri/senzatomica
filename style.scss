@@ -645,11 +645,11 @@ body {
 // spinning wheel
 #question-wheel {
   border-radius: 50%;
-  height: 80vh;
-  width: 80vh;
+  height: 40vw;
+  width: 40vw;
   position: relative;
   overflow: hidden;
-  @include transition(all ease 1s);
+  @include transition(all ease 2s);
   div {
     overflow: hidden;
     position: absolute;
