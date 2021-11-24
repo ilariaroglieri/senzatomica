@@ -748,6 +748,69 @@ body {
           height: 100%;
           object-fit: cover; }
 
+#question-wheel {
+  border-radius: 50%;
+  height: 80vh;
+  width: 80vh;
+  position: relative;
+  overflow: hidden; }
+  #question-wheel div {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0% 100%; }
+  #question-wheel #slice-1 {
+    -webkit-transform: rotate(36deg) skewY(-54deg);
+    -ms-transform: rotate(36deg) skewY(-54deg);
+    transform: rotate(36deg) skewY(-54deg); }
+  #question-wheel #slice-2 {
+    -webkit-transform: rotate(72deg) skewY(-54deg);
+    -ms-transform: rotate(72deg) skewY(-54deg);
+    transform: rotate(72deg) skewY(-54deg); }
+  #question-wheel #slice-3 {
+    -webkit-transform: rotate(108deg) skewY(-54deg);
+    -ms-transform: rotate(108deg) skewY(-54deg);
+    transform: rotate(108deg) skewY(-54deg); }
+  #question-wheel #slice-4 {
+    -webkit-transform: rotate(144deg) skewY(-54deg);
+    -ms-transform: rotate(144deg) skewY(-54deg);
+    transform: rotate(144deg) skewY(-54deg); }
+  #question-wheel #slice-5 {
+    -webkit-transform: rotate(180deg) skewY(-54deg);
+    -ms-transform: rotate(180deg) skewY(-54deg);
+    transform: rotate(180deg) skewY(-54deg); }
+  #question-wheel #slice-6 {
+    -webkit-transform: rotate(216deg) skewY(-54deg);
+    -ms-transform: rotate(216deg) skewY(-54deg);
+    transform: rotate(216deg) skewY(-54deg); }
+  #question-wheel #slice-7 {
+    -webkit-transform: rotate(252deg) skewY(-54deg);
+    -ms-transform: rotate(252deg) skewY(-54deg);
+    transform: rotate(252deg) skewY(-54deg); }
+  #question-wheel #slice-8 {
+    -webkit-transform: rotate(288deg) skewY(-54deg);
+    -ms-transform: rotate(288deg) skewY(-54deg);
+    transform: rotate(288deg) skewY(-54deg); }
+  #question-wheel #slice-9 {
+    -webkit-transform: rotate(324deg) skewY(-54deg);
+    -ms-transform: rotate(324deg) skewY(-54deg);
+    transform: rotate(324deg) skewY(-54deg); }
+  #question-wheel #slice-10 {
+    -webkit-transform: rotate(360deg) skewY(-54deg);
+    -ms-transform: rotate(360deg) skewY(-54deg);
+    transform: rotate(360deg) skewY(-54deg); }
+  #question-wheel #slice-11 {
+    -webkit-transform: rotate(396deg) skewY(-54deg);
+    -ms-transform: rotate(396deg) skewY(-54deg);
+    transform: rotate(396deg) skewY(-54deg); }
+  #question-wheel #slice-12 {
+    -webkit-transform: rotate(432deg) skewY(-54deg);
+    -ms-transform: rotate(432deg) skewY(-54deg);
+    transform: rotate(432deg) skewY(-54deg); }
+
 .wysiwyg.paragraph-space p {
   margin-bottom: 30px; }
 

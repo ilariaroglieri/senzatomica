@@ -642,6 +642,33 @@ body {
   }
 }
 
+// spinning wheel
+#question-wheel {
+  border-radius: 50%;
+  height: 80vh;
+  width: 80vh;
+  position: relative;
+  overflow: hidden;
+  div {
+    overflow: hidden;
+    position: absolute;
+    top: 0; 
+    right: 0;
+    width: 50%; 
+    height: 50%;
+    transform-origin: 0% 100%;    
+  }
+
+  $degree: 36deg;
+  @for $i from 1 through 12 {
+    #slice-#{$i} {
+      -webkit-transform: rotate($degree*$i) skewY(-54deg);
+      -ms-transform: rotate($degree*$i) skewY(-54deg);
+      transform: rotate($degree*$i) skewY(-54deg); 
+    }
+  }
+}
+
 .wysiwyg {
   &.serif-text P {
     @extend .serif-text;

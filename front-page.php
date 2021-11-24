@@ -107,6 +107,26 @@
     </div>
 
     <?php include('dynamic-stripe.php') ?>
+
+    <div class="container-fluid d-flex v-center">
+      <?php if( have_rows('magic_wheel') ): ?>
+        <div id="question-wheel">
+          <?php $i = 0; ?>
+          <?php while( have_rows('magic_wheel') ): the_row(); ?>
+            <?php
+              $title = get_sub_field('titolo_frase'); 
+              $quote = get_sub_field('frase'); 
+              $author = get_sub_field('firma'); 
+              $color = get_sub_field('colore'); 
+              $i++;
+            ?>
+
+            <div id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
+            </div>
+          <?php endwhile; ?>
+        </div>
+      <?php endif; ?>
+    </div>
   
   <?php endwhile; else: ?>
 
