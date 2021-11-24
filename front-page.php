@@ -108,7 +108,7 @@
 
     <?php include('dynamic-stripe.php') ?>
 
-    <div class="container-fluid d-flex v-center">
+    <div class="container-fluid d-flex v-center spacing-b-3">
       <?php if( have_rows('magic_wheel') ): ?>
         <div id="question-wheel">
           <?php $i = 0; ?>
@@ -121,7 +121,7 @@
               $i++;
             ?>
 
-            <div id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
+            <div class="slice" id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
             </div>
           <?php endwhile; ?>
         </div>

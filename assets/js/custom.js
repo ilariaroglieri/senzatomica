@@ -205,7 +205,17 @@ jQuery(document).ready(function($) {
       }
     }
 
-    $('')
+  });
+
+  // homepage spinning wheel
+  $('#question-wheel').click(function() {
+    var randomDeg = (Math.floor(Math.random() * 10)+1);
+    console.log('#slice-' + (randomDeg));
+    var rotation = randomDeg*36;
+    
+    $(this).css('transform','rotate('+ rotation + 'deg)');
+    $('.slice').removeClass('active');
+    $(this).find('#slice-' + (randomDeg)).addClass('active');
   });
 
   // divide posts into rows

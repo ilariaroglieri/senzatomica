@@ -649,6 +649,7 @@ body {
   width: 80vh;
   position: relative;
   overflow: hidden;
+  @include transition(all ease 1s);
   div {
     overflow: hidden;
     position: absolute;
@@ -662,10 +663,13 @@ body {
   $degree: 36deg;
   @for $i from 1 through 12 {
     #slice-#{$i} {
-      -webkit-transform: rotate($degree*$i) skewY(-54deg);
-      -ms-transform: rotate($degree*$i) skewY(-54deg);
-      transform: rotate($degree*$i) skewY(-54deg); 
+      -webkit-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
+      -ms-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
+      transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg); 
     }
+  }
+  .slice.active {
+    background: red !important;
   }
 }
 

@@ -753,7 +753,12 @@ body {
   height: 80vh;
   width: 80vh;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  -ms-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s; }
   #question-wheel div {
     overflow: hidden;
     position: absolute;
@@ -767,49 +772,51 @@ body {
     -ms-transform: rotate(36deg) skewY(-54deg);
     transform: rotate(36deg) skewY(-54deg); }
   #question-wheel #slice-2 {
-    -webkit-transform: rotate(72deg) skewY(-54deg);
-    -ms-transform: rotate(72deg) skewY(-54deg);
-    transform: rotate(72deg) skewY(-54deg); }
+    -webkit-transform: rotate(0deg) skewY(-54deg);
+    -ms-transform: rotate(0deg) skewY(-54deg);
+    transform: rotate(0deg) skewY(-54deg); }
   #question-wheel #slice-3 {
-    -webkit-transform: rotate(108deg) skewY(-54deg);
-    -ms-transform: rotate(108deg) skewY(-54deg);
-    transform: rotate(108deg) skewY(-54deg); }
+    -webkit-transform: rotate(-36deg) skewY(-54deg);
+    -ms-transform: rotate(-36deg) skewY(-54deg);
+    transform: rotate(-36deg) skewY(-54deg); }
   #question-wheel #slice-4 {
-    -webkit-transform: rotate(144deg) skewY(-54deg);
-    -ms-transform: rotate(144deg) skewY(-54deg);
-    transform: rotate(144deg) skewY(-54deg); }
+    -webkit-transform: rotate(-72deg) skewY(-54deg);
+    -ms-transform: rotate(-72deg) skewY(-54deg);
+    transform: rotate(-72deg) skewY(-54deg); }
   #question-wheel #slice-5 {
-    -webkit-transform: rotate(180deg) skewY(-54deg);
-    -ms-transform: rotate(180deg) skewY(-54deg);
-    transform: rotate(180deg) skewY(-54deg); }
+    -webkit-transform: rotate(-108deg) skewY(-54deg);
+    -ms-transform: rotate(-108deg) skewY(-54deg);
+    transform: rotate(-108deg) skewY(-54deg); }
   #question-wheel #slice-6 {
-    -webkit-transform: rotate(216deg) skewY(-54deg);
-    -ms-transform: rotate(216deg) skewY(-54deg);
-    transform: rotate(216deg) skewY(-54deg); }
+    -webkit-transform: rotate(-144deg) skewY(-54deg);
+    -ms-transform: rotate(-144deg) skewY(-54deg);
+    transform: rotate(-144deg) skewY(-54deg); }
   #question-wheel #slice-7 {
-    -webkit-transform: rotate(252deg) skewY(-54deg);
-    -ms-transform: rotate(252deg) skewY(-54deg);
-    transform: rotate(252deg) skewY(-54deg); }
+    -webkit-transform: rotate(-180deg) skewY(-54deg);
+    -ms-transform: rotate(-180deg) skewY(-54deg);
+    transform: rotate(-180deg) skewY(-54deg); }
   #question-wheel #slice-8 {
-    -webkit-transform: rotate(288deg) skewY(-54deg);
-    -ms-transform: rotate(288deg) skewY(-54deg);
-    transform: rotate(288deg) skewY(-54deg); }
+    -webkit-transform: rotate(-216deg) skewY(-54deg);
+    -ms-transform: rotate(-216deg) skewY(-54deg);
+    transform: rotate(-216deg) skewY(-54deg); }
   #question-wheel #slice-9 {
-    -webkit-transform: rotate(324deg) skewY(-54deg);
-    -ms-transform: rotate(324deg) skewY(-54deg);
-    transform: rotate(324deg) skewY(-54deg); }
+    -webkit-transform: rotate(-252deg) skewY(-54deg);
+    -ms-transform: rotate(-252deg) skewY(-54deg);
+    transform: rotate(-252deg) skewY(-54deg); }
   #question-wheel #slice-10 {
-    -webkit-transform: rotate(360deg) skewY(-54deg);
-    -ms-transform: rotate(360deg) skewY(-54deg);
-    transform: rotate(360deg) skewY(-54deg); }
+    -webkit-transform: rotate(-288deg) skewY(-54deg);
+    -ms-transform: rotate(-288deg) skewY(-54deg);
+    transform: rotate(-288deg) skewY(-54deg); }
   #question-wheel #slice-11 {
-    -webkit-transform: rotate(396deg) skewY(-54deg);
-    -ms-transform: rotate(396deg) skewY(-54deg);
-    transform: rotate(396deg) skewY(-54deg); }
+    -webkit-transform: rotate(-324deg) skewY(-54deg);
+    -ms-transform: rotate(-324deg) skewY(-54deg);
+    transform: rotate(-324deg) skewY(-54deg); }
   #question-wheel #slice-12 {
-    -webkit-transform: rotate(432deg) skewY(-54deg);
-    -ms-transform: rotate(432deg) skewY(-54deg);
-    transform: rotate(432deg) skewY(-54deg); }
+    -webkit-transform: rotate(-360deg) skewY(-54deg);
+    -ms-transform: rotate(-360deg) skewY(-54deg);
+    transform: rotate(-360deg) skewY(-54deg); }
+  #question-wheel .slice.active {
+    background: red !important; }
 
 .wysiwyg.paragraph-space p {
   margin-bottom: 30px; }
