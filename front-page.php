@@ -110,18 +110,40 @@
 
     <div class="container-fluid d-flex v-center spacing-b-3">
       <?php if( have_rows('magic_wheel') ): ?>
-        <div id="question-wheel">
-          <?php $i = 0; ?>
+        <div id="question-wheel-container" class="d-whole-pad d-flex center d-column">
+          <p class="sans s-medium uppercase spacing-b-2">Gira la ruota</p>
+
+          <div id="question-wheel" class="spacing-b-1">
+            <?php $i = 0; ?>
+            <?php while( have_rows('magic_wheel') ): the_row(); ?>
+              <?php
+                $color = get_sub_field('colore'); 
+                $i++;
+              ?>
+
+              <div class="slice" id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
+              </div>
+            <?php endwhile; ?>
+          </div>
+
+          <p class="button wheel-button uppercase">Leggi una frase</p>
+        </div>
+
+        <div class="slice-container d-half-no-pad">
+          <?php $j = 0; ?>
           <?php while( have_rows('magic_wheel') ): the_row(); ?>
             <?php
               $title = get_sub_field('titolo_frase'); 
               $quote = get_sub_field('frase'); 
               $author = get_sub_field('firma'); 
               $color = get_sub_field('colore'); 
-              $i++;
+              $j++;
             ?>
 
-            <div class="slice" id="slice-<?php echo $i; ?>" style="background-color: <?php echo $color; ?>">
+            <div class="slice-content d-flex d-column" data-slice="slice-<?php echo $j; ?>" style="background-color: <?php echo $color; ?>">
+              <h3 class="title sans s-medium"><?= $title; ?></h3>
+              <p class="text serif s-medium"><?= $quote; ?></p>
+              <p class="mono s-small"><?= $author; ?></p>
             </div>
           <?php endwhile; ?>
         </div>

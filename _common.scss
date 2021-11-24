@@ -310,8 +310,20 @@ $col: 8.3333%;
   margin: 0 #{$half-spacing};
 }
 
+//without padding
+.d-half-no-pad {
+  width: $col*6;
+  padding-right: 0;
+  padding-left: 0;
+}
 
 // padding
+.d-half-pad {
+  width: $col*6;
+  padding-right: $half-spacing;
+  padding-left: $half-spacing;
+}
+
 .d-one-twelfth-pad {
   width: $col;
   padding-right: #{$half-spacing};

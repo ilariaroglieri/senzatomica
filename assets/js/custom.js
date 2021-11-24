@@ -210,9 +210,10 @@ jQuery(document).ready(function($) {
   // homepage spinning wheel
   var prevRotation = 0;
   var prevSlice = 0;
-  $('#question-wheel').click(function() {
+  $('#question-wheel, .wheel-button').click(function() {
+    questo = $('#question-wheel');
     var randomSlice = (Math.floor(Math.random() * 10)+1);
-    var rotation = 360 + (randomSlice*36);
+    var rotation = 1440 + (randomSlice*36);
 
     prevRotation = prevRotation + rotation;
     prevSlice = (prevSlice + randomSlice);
@@ -221,9 +222,13 @@ jQuery(document).ready(function($) {
       prevSlice = prevSlice - 10;
     }
     
-    $(this).css('transform','rotate('+ prevRotation + 'deg)');
-    $('.slice').removeClass('active');
-    $(this).find('#slice-' + prevSlice).addClass('active');
+    questo.parent().addClass('d-half-pad');
+    questo.css('transform','rotate('+ prevRotation + 'deg)');
+    $('.slice-container').addClass('visible');
+    $('.slice-content').removeClass('active');
+    $('.slice-container').find('.slice-content[data-slice="slice-' + prevSlice + '"]').addClass('active');
+
+    // console.log('[data-slide="slice-' + prevSlice + '"]');
   });
 
   // divide posts into rows

@@ -189,6 +189,16 @@ Version: 1.0
   width: calc(8.3333%*11 - 30px);
   margin: 0 15px; }
 
+.d-half-no-pad {
+  width: 49.9998%;
+  padding-right: 0;
+  padding-left: 0; }
+
+.d-half-pad {
+  width: 49.9998%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
 .d-one-twelfth-pad {
   width: 8.3333%;
   padding-right: 15px;
@@ -748,75 +758,121 @@ body {
           height: 100%;
           object-fit: cover; }
 
-#question-wheel {
-  border-radius: 50%;
-  height: 40vw;
-  width: 40vw;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: all ease 2s;
-  -moz-transition: all ease 2s;
-  -ms-transition: all ease 2s;
-  -o-transition: all ease 2s;
-  transition: all ease 2s; }
-  #question-wheel div {
+#question-wheel-container {
+  -webkit-transition: width ease 0.3s 3s;
+  -moz-transition: width ease 0.3s 3s;
+  -ms-transition: width ease 0.3s 3s;
+  -o-transition: width ease 0.3s 3s;
+  transition: width ease 0.3s 3s;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px; }
+  #question-wheel-container.d-half-pad {
+    width: 50%; }
+  #question-wheel-container #question-wheel {
+    border-radius: 50%;
+    height: 35vw;
+    width: 35vw;
+    position: relative;
     overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: all ease 3s;
+    -moz-transition: all ease 3s;
+    -ms-transition: all ease 3s;
+    -o-transition: all ease 3s;
+    transition: all ease 3s; }
+    #question-wheel-container #question-wheel div {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      transform-origin: 0% 100%; }
+    #question-wheel-container #question-wheel #slice-1 {
+      -webkit-transform: rotate(36deg) skewY(-54deg);
+      -ms-transform: rotate(36deg) skewY(-54deg);
+      transform: rotate(36deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-2 {
+      -webkit-transform: rotate(0deg) skewY(-54deg);
+      -ms-transform: rotate(0deg) skewY(-54deg);
+      transform: rotate(0deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-3 {
+      -webkit-transform: rotate(-36deg) skewY(-54deg);
+      -ms-transform: rotate(-36deg) skewY(-54deg);
+      transform: rotate(-36deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-4 {
+      -webkit-transform: rotate(-72deg) skewY(-54deg);
+      -ms-transform: rotate(-72deg) skewY(-54deg);
+      transform: rotate(-72deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-5 {
+      -webkit-transform: rotate(-108deg) skewY(-54deg);
+      -ms-transform: rotate(-108deg) skewY(-54deg);
+      transform: rotate(-108deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-6 {
+      -webkit-transform: rotate(-144deg) skewY(-54deg);
+      -ms-transform: rotate(-144deg) skewY(-54deg);
+      transform: rotate(-144deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-7 {
+      -webkit-transform: rotate(-180deg) skewY(-54deg);
+      -ms-transform: rotate(-180deg) skewY(-54deg);
+      transform: rotate(-180deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-8 {
+      -webkit-transform: rotate(-216deg) skewY(-54deg);
+      -ms-transform: rotate(-216deg) skewY(-54deg);
+      transform: rotate(-216deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-9 {
+      -webkit-transform: rotate(-252deg) skewY(-54deg);
+      -ms-transform: rotate(-252deg) skewY(-54deg);
+      transform: rotate(-252deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-10 {
+      -webkit-transform: rotate(-288deg) skewY(-54deg);
+      -ms-transform: rotate(-288deg) skewY(-54deg);
+      transform: rotate(-288deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-11 {
+      -webkit-transform: rotate(-324deg) skewY(-54deg);
+      -ms-transform: rotate(-324deg) skewY(-54deg);
+      transform: rotate(-324deg) skewY(-54deg); }
+    #question-wheel-container #question-wheel #slice-12 {
+      -webkit-transform: rotate(-360deg) skewY(-54deg);
+      -ms-transform: rotate(-360deg) skewY(-54deg);
+      transform: rotate(-360deg) skewY(-54deg); }
+
+.slice-container {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  right: -100%;
+  -webkit-transition: all ease 0.3s 3s;
+  -moz-transition: all ease 0.3s 3s;
+  -ms-transition: all ease 0.3s 3s;
+  -o-transition: all ease 0.3s 3s;
+  transition: all ease 0.3s 3s; }
+  .slice-container.visible {
+    right: 0;
+    width: 50%; }
+  .slice-container .slice-content {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 50%;
-    height: 50%;
-    transform-origin: 0% 100%; }
-  #question-wheel #slice-1 {
-    -webkit-transform: rotate(36deg) skewY(-54deg);
-    -ms-transform: rotate(36deg) skewY(-54deg);
-    transform: rotate(36deg) skewY(-54deg); }
-  #question-wheel #slice-2 {
-    -webkit-transform: rotate(0deg) skewY(-54deg);
-    -ms-transform: rotate(0deg) skewY(-54deg);
-    transform: rotate(0deg) skewY(-54deg); }
-  #question-wheel #slice-3 {
-    -webkit-transform: rotate(-36deg) skewY(-54deg);
-    -ms-transform: rotate(-36deg) skewY(-54deg);
-    transform: rotate(-36deg) skewY(-54deg); }
-  #question-wheel #slice-4 {
-    -webkit-transform: rotate(-72deg) skewY(-54deg);
-    -ms-transform: rotate(-72deg) skewY(-54deg);
-    transform: rotate(-72deg) skewY(-54deg); }
-  #question-wheel #slice-5 {
-    -webkit-transform: rotate(-108deg) skewY(-54deg);
-    -ms-transform: rotate(-108deg) skewY(-54deg);
-    transform: rotate(-108deg) skewY(-54deg); }
-  #question-wheel #slice-6 {
-    -webkit-transform: rotate(-144deg) skewY(-54deg);
-    -ms-transform: rotate(-144deg) skewY(-54deg);
-    transform: rotate(-144deg) skewY(-54deg); }
-  #question-wheel #slice-7 {
-    -webkit-transform: rotate(-180deg) skewY(-54deg);
-    -ms-transform: rotate(-180deg) skewY(-54deg);
-    transform: rotate(-180deg) skewY(-54deg); }
-  #question-wheel #slice-8 {
-    -webkit-transform: rotate(-216deg) skewY(-54deg);
-    -ms-transform: rotate(-216deg) skewY(-54deg);
-    transform: rotate(-216deg) skewY(-54deg); }
-  #question-wheel #slice-9 {
-    -webkit-transform: rotate(-252deg) skewY(-54deg);
-    -ms-transform: rotate(-252deg) skewY(-54deg);
-    transform: rotate(-252deg) skewY(-54deg); }
-  #question-wheel #slice-10 {
-    -webkit-transform: rotate(-288deg) skewY(-54deg);
-    -ms-transform: rotate(-288deg) skewY(-54deg);
-    transform: rotate(-288deg) skewY(-54deg); }
-  #question-wheel #slice-11 {
-    -webkit-transform: rotate(-324deg) skewY(-54deg);
-    -ms-transform: rotate(-324deg) skewY(-54deg);
-    transform: rotate(-324deg) skewY(-54deg); }
-  #question-wheel #slice-12 {
-    -webkit-transform: rotate(-360deg) skewY(-54deg);
-    -ms-transform: rotate(-360deg) skewY(-54deg);
-    transform: rotate(-360deg) skewY(-54deg); }
-  #question-wheel .slice.active {
-    background: red !important; }
+    left: 0;
+    justify-content: space-between;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s 3s;
+    -moz-transition: opacity 0.3s 3s;
+    -ms-transition: opacity 0.3s 3s;
+    -o-transition: opacity 0.3s 3s;
+    transition: opacity 0.3s 3s; }
+    .slice-container .slice-content.active {
+      opacity: 1; }
+    .slice-container .slice-content .text {
+      max-width: 600px;
+      margin-top: -30px; }
+    .slice-container .slice-content .title {
+      max-width: 600px; }
 
 .wysiwyg.paragraph-space p {
   margin-bottom: 30px; }

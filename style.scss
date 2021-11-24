@@ -643,33 +643,74 @@ body {
 }
 
 // spinning wheel
-#question-wheel {
-  border-radius: 50%;
-  height: 40vw;
-  width: 40vw;
-  position: relative;
-  overflow: hidden;
-  @include transition(all ease 2s);
-  div {
-    overflow: hidden;
-    position: absolute;
-    top: 0; 
-    right: 0;
-    width: 50%; 
-    height: 50%;
-    transform-origin: 0% 100%;    
+#question-wheel-container {
+  @include transition(width ease .3s 3s);
+  width: 100%;
+  padding-left: $half-spacing;
+  padding-right: $half-spacing;
+  &.d-half-pad {
+    width: 50%;
   }
+  #question-wheel {
+    border-radius: 50%;
+    height: 35vw;
+    width: 35vw;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    @include transition(all ease 3s);
+    div {
+      overflow: hidden;
+      position: absolute;
+      top: 0; 
+      right: 0;
+      width: 50%; 
+      height: 50%;
+      transform-origin: 0% 100%;    
+    }
 
-  $degree: 36deg;
-  @for $i from 1 through 12 {
-    #slice-#{$i} {
-      -webkit-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
-      -ms-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
-      transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg); 
+    $degree: 36deg;
+    @for $i from 1 through 12 {
+      #slice-#{$i} {
+        -webkit-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
+        -ms-transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg);
+        transform: rotate(- ($degree*$i) + ($degree*2)) skewY(-54deg); 
+      }
     }
   }
-  .slice.active {
-    background: red !important;
+}
+
+.slice-container {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  right: -100%;
+  @include transition(all ease .3s 3s);
+  &.visible {
+    right: 0;
+    width: 50%;
+  }
+  .slice-content {
+    height: 100%;
+    width: 100%;
+    padding: $spacing;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    z-index: 10;
+    opacity: 0;
+    @include transition(opacity .3s 3s);
+    &.active {
+      opacity: 1;
+    }
+    .text {
+      max-width: 600px;
+      margin-top: - $spacing;
+    }
+    .title {
+      max-width: 600px;
+    }
   }
 }
 
