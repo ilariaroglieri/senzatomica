@@ -291,46 +291,49 @@ jQuery(document).ready(function($) {
   }
 
   // divide posts into rows
-  var posts = $('#content-archive-news').find($('.post'));
-  var elements = [];
+  function createArchiveRows() {
+    var posts = $('#content-archive-news').find($('.hentry'));
+    var elements = [];
 
-  posts.each(function(i, el) {
-    var obj = {
-      'id' : [],
-      'offsetTop' : []
-    };
-    var topPos = $(el).offset().top;
-    obj.offsetTop.push(topPos);
-    obj.id.push($(el).attr('id'));
+    posts.each(function(i, el) {
+      var obj = {
+        'id' : [],
+        'offsetTop' : []
+      };
+      var topPos = $(el).offset().top;
+      obj.offsetTop.push(topPos);
+      obj.id.push($(el).attr('id'));
 
-    elements.push(obj);
-  });
+      elements.push(obj);
+    });
 
-  var elGroups = {};
+    var elGroups = {};
 
-  for (const el of elements) {
-    if (!elGroups[el.offsetTop]) {
-      elGroups[el.offsetTop] = []
+    for (const el of elements) {
+      if (!elGroups[el.offsetTop]) {
+        elGroups[el.offsetTop] = []
+      }
+      elGroups[el.offsetTop].push(el);
     }
-    elGroups[el.offsetTop].push(el);
+
+    var elGrouped = Object.values(elGroups);
+
+    for (var i = 0; i < elGrouped.length; i++) {
+      for (var j = 0; j < elGrouped[i].length; j++) {
+        var ids = elGrouped[i][j].id;
+        var post = $('#'+ ids);
+        post.attr('data-group', i);
+      }
+      $('#content-archive-news .hentry[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
+    }
+
+
+    // copy dynamic stripes every three rows
+    $('#content-archive-news .dynamic-stripe').clone().addClass('added').insertAfter('.row-container:nth-of-type(3n+3)');
+    $('#content-archive-news .dynamic-stripe:even').addClass('primaryColor');
   }
 
-  var elGrouped = Object.values(elGroups);
-
-  for (var i = 0; i < elGrouped.length; i++) {
-    for (var j = 0; j < elGrouped[i].length; j++) {
-      console.log(i);
-      var ids = elGrouped[i][j].id;
-      var post = $('#'+ ids);
-      post.attr('data-group', i);
-    }
-    $('#content-archive-news .post[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
-  }
-
-
-  // copy dynamic stripes every three rows
-  $('#content-archive-news .dynamic-stripe').clone().addClass('added').insertAfter('.row-container:nth-of-type(3n+3)');
-  $('#content-archive-news .dynamic-stripe:even').addClass('primaryColor');
+  createArchiveRows();
 
   $('.page-title').marquee({
     startVisible: true,
@@ -426,14 +429,55 @@ jQuery(document).ready(function($) {
     });
   }
 
-  
-
   if (mqMobile.matches) {
     $('.inner-box').each(function(i, el) {
       var color = $(el).attr('data-color');
       $(el).css('background-color', color);
     });
   }
+
+  // ajax filters
+  $('select').niceSelect();
+  $(document).on('change', '#category-select, #theme-select, #date-select', function(ev) {
+    ev.preventDefault();
+
+    $('.posts-flow').addClass('hidden');
+
+    var category = $('#category-select').find('select').attr('name');
+    var catTerm = $('#category-select').find('li.selected').data('value');
+    console.log(category);
+    console.log(catTerm);
+
+    var theme = $('#theme-select').find('select').attr('name');
+    var themeTerm = $('#theme-select').find('li.selected').data('value');
+    console.log(theme);
+    console.log(themeTerm);
+    
+    var dateString =  $('#date-select').find('li.selected').data('value');
+
+    if (dateString != '0') {
+      var parts = dateString.split('/');
+      var date = '';
+
+      if (parts.length > 1) {
+        date = parts[parts.length-2];
+      }
+      console.log(date);
+    }
+
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: {action: 'filterCat', catTerm: catTerm, category: category, theme: theme, themeTerm: themeTerm, date: date},
+      type: 'post',
+      success: function(results) {
+        $('.posts-flow').removeClass('hidden').html(results);
+        createArchiveRows();
+      },
+      error: function(results) {
+        console.log(results);
+      }
+    })
+  });
 
 
 

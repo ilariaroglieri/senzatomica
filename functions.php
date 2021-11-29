@@ -13,12 +13,26 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 
 
+function jquery_select_scripts() {
+	wp_enqueue_script( 'select', get_stylesheet_directory_uri() . '/assets/js/jquery.nice-select.js', array(), NULL, true );
+	wp_enqueue_style( 'select', get_stylesheet_directory_uri() . '/assets/js/nice-select.css', array() );
+}
+
+add_action( 'wp_enqueue_scripts', 'jquery_select_scripts' );
+
 
 function jquery_scripts() {
-	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), NULL, true );
+
+	wp_localize_script('custom', 'wpAjax',
+		array(
+			'ajaxUrl' => admin_url('admin-ajax.php')
+		)
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'jquery_scripts' );
+
 
 function marquee_scripts() {
 	wp_enqueue_script( 'marquee', get_stylesheet_directory_uri() . '/assets/js/jquery.marquee.js', array(), '1.0.0', true );
@@ -70,6 +84,83 @@ if( function_exists('acf_add_options_page') ) {
     'redirect'    => false
   ));
 }
+
+
+// ajax query
+// AJAX cat
+function filterCatAjax() {
+    
+  $catTerm = $_POST['catTerm'];
+  $category = $_POST['category'];
+
+  $themeTerm = $_POST['themeTerm'];
+  $theme = $_POST['theme'];
+
+  $date = $_POST['date'];
+
+  $args = array(
+  	'post_type' => 'post',
+  	'posts_per_page' => -1,
+  );
+
+  // check its a term
+  if ( isset($catTerm) && $catTerm != '0' ) {
+		$args['tax_query'] = array(
+      array(
+        'taxonomy' => $category,
+        'field'    => 'slug',
+        'terms'    => $catTerm,
+        'operator' => 'IN',
+      )
+    );
+  } 
+
+  if ( isset($themeTerm) && $themeTerm != '0' ) {
+		$args['tax_query'] = array(
+      array(
+        'taxonomy' => $theme,
+        'field'    => 'slug',
+        'terms'    => $themeTerm,
+      ),
+    );
+  } 
+
+  if ( isset($catTerm) && $catTerm != '0' && isset($themeTerm) && $themeTerm != '0' ) {
+  	$args['tax_query'] = array(
+      'relation' => 'AND',
+      array(
+        'taxonomy' => $category,
+        'field'    => 'slug',
+        'terms'    => $catTerm,
+      ),
+      array(
+        'taxonomy' => $theme,
+        'field'    => 'slug',
+        'terms'    => $themeTerm,
+      ),
+    );
+  };
+
+  if ( isset($date) && $date != '0' ) {
+		$args['year'] = $date;
+  }
+
+  $ajaxQuery = new WP_Query($args);
+
+  if ($ajaxQuery->have_posts()) :
+  	while ($ajaxQuery->have_posts()) : $ajaxQuery->the_post(); ?>
+  		<?php include('loop-single-post.php'); ?>
+  	<?php endwhile;
+  else: ?>
+  	<?php include('empty-query.php'); ?>
+  <?php endif;
+  wp_reset_postdata();
+
+  die();
+}
+
+add_action( 'wp_ajax_nopriv_filterCat', 'filterCatAjax' );
+add_action( 'wp_ajax_filterCat', 'filterCatAjax' );
 
 
 // taxonomies

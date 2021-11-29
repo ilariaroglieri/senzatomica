@@ -27,24 +27,14 @@
 
   <?php endwhile; ?>
 
-  <?php 
-  $cptQuery = new WP_Query( array(
-    'post_type'         => 'post',
-    'posts_per_page'    => -1,
-    'order'             => 'DESC',
-    'ignore_sticky_posts' => 1
-    ));
-  ?>
 
-  <?php include('filters.php') ?>
-
-  <?php if ( $cptQuery->have_posts() ) : ?>
-  <div class="posts-flow container-fluid d-flex wrap spacing-p-t-4">
-    <?php while ( $cptQuery->have_posts() ) : $cptQuery->the_post(); ?>
-      <?php echo 'post'; ?>
-    <?php endwhile; ?>
+  <div class="container">
+    <?php include('filters.php') ?>
   </div>
-  <?php endif; ?>
+
+  <div class="posts-flow hidden container-fluid d-flex wrap spacing-p-t-4">
+
+  </div>
 
   <?php else: ?>
 

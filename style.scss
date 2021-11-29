@@ -180,7 +180,7 @@ html, body {
   }
 }
 
-html, body {
+body {
   overflow-x: hidden;
 }
 
@@ -259,7 +259,7 @@ img {
   border-radius: $spacing;
   border: 1px solid $primaryColor;
   background-color: $primaryColor;
-  margin: $spacing 0;
+  // margin: $spacing 0;
   cursor: pointer;
   letter-spacing: 0.05em;
   @extend .s-xsmall;
@@ -271,7 +271,8 @@ img {
   }
   &.bigger {
     @extend .s-small;
-    padding: 8px $spacing;
+    padding: 5px $spacing;
+    line-height: 2;
   }
   &.black {
     background-color: black;
@@ -946,11 +947,16 @@ body {
 
 //archives
 .posts-flow {
+  opacity: 1;
+  @include transition(opacity .3s .3s);
+  &.hidden {
+    opacity: 0;
+  }
   @extend .d-flex;
   .flex-row {
     align-items: start;
   }
-  .post {
+  .hentry {
     margin-bottom: $double-spacing;
     .entry-title {
       a.no-border {
@@ -1019,6 +1025,35 @@ body {
 //chi siamo
 .staff_sa {
   padding: $half-spacing;
+}
+
+
+//nice-select
+.custom-select {
+  width: 100%;
+}
+
+.nice-select {
+  width: 100% !important;
+  border-radius: 30px !important;
+  border: 1px solid black !important;
+  text-transform: uppercase;
+  color: black;
+  font-family: 'GT Flexa Mono' !important;
+  font-size: 18px;
+  margin-left: $half-spacing;
+  .list {
+    margin-top: $half-spacing !important;
+    width: 100% !important;
+    border-radius: 30px !important;
+    border: 1px solid black !important;
+    max-height: 200px;
+    overflow-y: auto !important;
+  }
+  .option:hover, .option.focus, .option.selected.focus {
+    background-color: white !important;
+    color: $primaryColor;
+  }
 }
 
 
