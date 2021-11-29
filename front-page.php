@@ -169,9 +169,46 @@
     <?php include('cpf-link.php'); ?>
     <?php include('perche-link.php'); ?>
 
-    <div class="countdown container-fluid spacing-b-3 border-top border-bottom">
+    <div class="countdown container-fluid spacing-t-4 spacing-p-b-1 spacing-p-t-1 border-top border-bottom">
       <div class="flex-row d-flex t-center">
-        <p class="d-whole s-huge condensed" id="years"></p>
+        <div class="d-whole">
+          <h3 class="s-big sans italic t-center">Dall'ultimo test nucleare sono passati:</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="countdown container-fluid">
+      <div class="flex-row d-flex t-center">
+        <div class="d-one-twelfth-pad"></div>
+        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+          <span id="years" class="s-huge extended"></span>
+          <span class="sans s-regular">Anni</span>
+        </div>
+        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+          <span id="days" class="s-huge normal"></span>
+          <span class="sans s-regular">Giorni</span>
+        </div>
+        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+          <span id="hours" class="s-huge condensed"></span>
+          <span class="sans s-regular">Ore</span>
+        </div>
+        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+          <span id="minutes" class="s-huge xcondensed"></span>
+          <span class="sans s-regular">Minuti</span>
+        </div>
+        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column">
+          <span id="seconds" class="s-huge xcondensed"></span>
+          <span class="sans s-regular">Secondi</span>
+        </div>
+        <div class="d-one-twelfth-pad"></div>
+      </div>
+    </div>
+
+    <div class="countdown container-fluid spacing-b-4 spacing-p-b-1 spacing-p-t-1 border-top border-bottom">
+      <div class="flex-row d-flex t-center">
+        <div class="d-whole">
+          <span class="s-regular mono t-center">Test eseguito il 3 settembre 2017, da parte della Corea del Nord.</span>
+        </div>
       </div>
     </div>
   

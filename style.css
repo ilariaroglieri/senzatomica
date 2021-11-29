@@ -510,6 +510,11 @@ img {
   .border-bottom.black, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .border-bottom.button, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine input.border-bottom[type="submit"] {
     border-bottom: 1px solid black; }
 
+.border-right {
+  border-right: 1px solid #79fc96; }
+  .border-right.black, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine .border-right.button, .posts-flow .post.posts_type-notizia-sfondo-colorato-senza-immagine input.border-right[type="submit"] {
+    border-right: 1px solid black; }
+
 .hover-primary-color {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;

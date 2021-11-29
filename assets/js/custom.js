@@ -156,7 +156,7 @@ jQuery(document).ready(function($) {
 
   // countdown
   if ( $('body').hasClass('home')) {
-    var countDownDate = new Date("Sep 3, 2017 00:00:00").getTime();
+    var countDownDate = new Date("Sep 4, 2017 04:30:00").getTime();
     var x = setInterval(function() {
       // Get today's date and time
       var now = new Date().getTime();
@@ -165,15 +165,22 @@ jQuery(document).ready(function($) {
       var distance = now - countDownDate;
 
       // Time calculations for days, hours, minutes and seconds
-      // var years = Math.floor(distance / (1000 * 60 * 60));
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var years = 0;
+      if (days > 365) {
+        years = Math.floor(days/365);
+        days = days % 365;
+      }
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
-      document.getElementById("years").innerHTML =  days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
+      document.getElementById("years").innerHTML =  years;
+      document.getElementById("days").innerHTML =  days;
+      document.getElementById("hours").innerHTML =  hours;
+      document.getElementById("minutes").innerHTML =  minutes;
+      document.getElementById("seconds").innerHTML =  seconds;
     }, 1000);
   }
 

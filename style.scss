@@ -325,6 +325,13 @@ img {
   }
 }
 
+.border-right {
+  border-right: 1px solid $primaryColor;
+  &.black {
+    border-right: 1px solid black;
+  }
+}
+
 .hover-primary-color {
   @include transition(all .3s);
   &:hover {
