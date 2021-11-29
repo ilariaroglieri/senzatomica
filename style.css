@@ -63,7 +63,7 @@ Version: 1.0
   font-style: italic; }
 .serif, p, pre, p a, pre a {
   font-family: 'Editorial New';
-  line-height: 1.5; }
+  line-height: 1.2; }
 
 .serif-text, .wysiwyg.serif-text P, .single .text-content p {
   font-family: 'Libre Baskerville', serif; }
@@ -597,9 +597,11 @@ img {
           margin-bottom: 0;
           background-color: #FC9251;
           border-top: 1px solid black;
-          height: calc(((100vh - 27vh - 55px - 120px)/5)*3); }
+          height: calc(((100vh - 27vh - 55px - 120px)/5)*3);
+          height: calc(19vw + 30px); }
           #header div[class*="menu-main"] > ul li.s-cpf a {
             font-size: calc((((100vh - 27vh - 55px - 120px)/5)*3) - 5vh);
+            font-size: 19vw;
             font-style: italic; }
           #header div[class*="menu-main"] > ul li.s-cpf:hover {
             background-color: #79fc96; }
@@ -610,9 +612,11 @@ img {
           background-color: #FABAF0;
           border-top: 1px solid black;
           border-bottom: 1px solid black;
-          height: calc(((100vh - 27vh - 55px - 120px)/5)*2); }
+          height: calc(((100vh - 27vh - 55px - 120px)/5)*2);
+          height: calc(13vw + 30px); }
           #header div[class*="menu-main"] > ul li.s-perche a {
             font-size: calc((((100vh - 27vh - 55px - 120px)/5)*2) - 5vh);
+            font-size: 13vw;
             font-style: italic; }
           #header div[class*="menu-main"] > ul li.s-perche:hover {
             background-color: #79fc96; }

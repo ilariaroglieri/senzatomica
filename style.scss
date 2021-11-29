@@ -423,8 +423,10 @@ img {
           background-color: $orange;
           border-top: 1px solid black;
           height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3);
+          height: calc(19vw + #{$spacing});
           a {
             font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh);
+            font-size: 19vw;
             font-style: italic;
             @extend .condensed;
             @extend .uppercase;
@@ -443,8 +445,10 @@ img {
           border-top: 1px solid black;
           border-bottom: 1px solid black;
           height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2);
+          height: calc(13vw + #{$spacing});
           a {
             font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
+            font-size: 13vw;
             font-style: italic;
             @extend .uppercase;
             @extend .extended;
