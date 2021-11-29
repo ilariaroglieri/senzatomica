@@ -550,6 +550,9 @@ body {
   &.loaded {
     opacity: 1;
   }
+  &.stop-transitions * {
+    transition: none !important;
+  }
 }
 
 .content {
@@ -1074,6 +1077,10 @@ body {
     font-size: 20vw;
   }
 
+  .s-huge {
+    font-size: 15vw;
+  }
+
   .s-cpf {
     font-size: 20vw;
   }
@@ -1176,6 +1183,13 @@ body {
     padding-right: #{$half-spacing};
     padding-left: #{$half-spacing};
   }
+
+  .t-three-twelfth-pad {
+    width: $col*3;
+    padding-right: #{$half-spacing};
+    padding-left: #{$half-spacing};
+  }
+
 
   .colored-box {
     .text-container {

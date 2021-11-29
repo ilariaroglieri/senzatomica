@@ -701,6 +701,8 @@ body {
   transition: opacity 0.5s; }
   body.loaded {
     opacity: 1; }
+  body.stop-transitions * {
+    transition: none !important; }
 
 .content {
   padding-top: 15vh; }
@@ -1140,6 +1142,9 @@ body {
   .s-gigantic {
     font-size: 20vw; }
 
+  .s-huge {
+    font-size: 15vw; }
+
   .s-cpf {
     font-size: 20vw; }
 
@@ -1203,6 +1208,11 @@ body {
 
   .t-half-pad {
     width: 50%;
+    padding-right: 15px;
+    padding-left: 15px; }
+
+  .t-three-twelfth-pad {
+    width: 24.9999%;
     padding-right: 15px;
     padding-left: 15px; }
 

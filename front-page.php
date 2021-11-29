@@ -179,12 +179,12 @@
 
     <div class="countdown container-fluid">
       <div class="flex-row d-flex t-center">
-        <div class="d-one-twelfth-pad"></div>
-        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+        <!-- <div class="d-one-twelfth-pad t-hidden"></div> -->
+        <div class="d-three-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
           <span id="years" class="s-huge extended"></span>
           <span class="sans s-regular">Anni</span>
         </div>
-        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+        <div class="d-three-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
           <span id="days" class="s-huge normal"></span>
           <span class="sans s-regular">Giorni</span>
         </div>
@@ -200,7 +200,7 @@
           <span id="seconds" class="s-huge xcondensed"></span>
           <span class="sans s-regular">Secondi</span>
         </div>
-        <div class="d-one-twelfth-pad"></div>
+        <!-- <div class="d-one-twelfth-pad t-hidden"></div> -->
       </div>
     </div>
 
