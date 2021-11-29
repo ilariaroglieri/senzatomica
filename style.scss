@@ -68,8 +68,8 @@ textarea {
 input[type="submit"] {
   @extend .button;
   @extend .uppercase;
+  font-size: 14px;
   cursor: pointer;
-  // background-color: white;
   box-shadow: none;
   -webkit-appearance: none;
 }
@@ -381,7 +381,7 @@ img {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: -105vh;
+    top: -120vh;
     left: 0;
     z-index:10000;
     background-color: white;
@@ -606,6 +606,8 @@ body {
   display: none;
 }
 
+
+
 //home
 #content-home {
   margin-top: 50vh;
@@ -697,11 +699,11 @@ body {
   width: 0;
   overflow: hidden;
   right: -100%;
-  @include transition(all ease .3s);
+  @include transition(all ease .5s);
   &.visible {
     right: 0;
     width: 50%;
-    @include transition(all ease .3s 3s);
+    @include transition(all ease .6s 3s);
   }
   .slice-content {
     cursor: auto;
@@ -739,9 +741,21 @@ body {
   }
 }
 
+
+.cpf-link {
+  background-color: $orange;
+}
+
+.perche-link {
+  background-color: $pink;
+}
+
 .wysiwyg {
   &.serif-text P {
     @extend .serif-text;
+  }
+  &.sans-text P {
+    @extend .sans;
   }
   &.paragraph-space p {
     margin-bottom: $spacing;
@@ -809,7 +823,9 @@ body {
 .colored-box {
   .title-container {
     // min-height: 100vh;
-    cursor: pointer;
+    cursor: auto;
+    cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
+    cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/open.png") 1x,url("../senzatomica-theme/assets/img/open-2x.png") 2x) 25 50, pointer;
     padding-left: $half-spacing;
     padding-right: $half-spacing;
     .container {
@@ -820,7 +836,7 @@ body {
     }
   }
   .title-svg {
-    cursor: pointer;
+    // cursor: pointer;
     // pointer-events: all;
   }
   .text-container {
@@ -855,9 +871,12 @@ body {
   &.multi {
 
     .title-svg {
-      width: calc(#{$desktop/2 -  #{$spacing}});
+      width: calc(#{$desktop/2 -  #{$double-spacing}});
     }
     .title-container {
+      cursor: auto;
+      cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
+      cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/open.png") 1x,url("../senzatomica-theme/assets/img/open-2x.png") 2x) 25 50, pointer;
       opacity: 1;
       @extend .d-flex;
       @extend .d-column;

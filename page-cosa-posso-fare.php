@@ -46,13 +46,13 @@
 
                 <div class="container-fluid spacing-p-t-3 spacing-p-b-3" style="background-color: <?php echo $color; ?>">
                     <!-- titolo + lista link -->
-                    <div class="d-whole">
+                    <div class="d-whole t-center">
 
                       <?php if( get_row_layout() == 'titolo_lista_link' ): ?>
                         <h4 class="uppercase xcondensed <?php echo $titleSize; ?>"><?= $title; ?></h4>
 
                         <?php if( have_rows('lista_link') ): ?>
-                          <div class="d-flex spacing-p-t-2 button-row <?php echo $listType; ?>">
+                          <div class="d-flex spacing-p-t-2 button-row v-center">
                             <?php while( have_rows('lista_link') ): the_row(); ?>
                               <?php $link = get_sub_field('link'); ?>
                               <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
@@ -82,11 +82,7 @@
         <?php endwhile; ?>
       <?php endif; ?>
 
-      <div class="container-fluid border-top black hover-primary-color t-center spacing-p-b-3 spacing-p-t-3">
-        <div class="d-whole">
-          <a class="s-perche no-border extended uppercase" href="<?php echo get_page_link( get_page_by_title( 'Perché?' )->ID ); ?>" class="button bigger uppercase">Perché?</a>
-        </div>
-      </div>
+      <?php include('perche-link.php'); ?>
 
     </article>
 

@@ -148,6 +148,7 @@ $col: 8.3333%;
 
 .serif {
   font-family: 'Editorial New';
+  line-height: 1.5;
 }
 
 .serif-text {
@@ -172,6 +173,7 @@ $col: 8.3333%;
 
 .condensed {
   font-family: 'Media Sans Condensed';
+  letter-spacing: 0.025em;
 }
 
 .xcondensed {
@@ -205,7 +207,7 @@ $col: 8.3333%;
 
 .s-cpf {
   font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh); 
-  font-size: 21vw; 
+  font-size: 19vw; 
   font-style: italic;
 }
 
@@ -227,7 +229,6 @@ $col: 8.3333%;
 
 .s-regular {
 	font-size: 18px;
-  line-height: 1.5;
 }
 
 .s-small {

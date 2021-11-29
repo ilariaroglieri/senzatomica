@@ -64,7 +64,7 @@
       <div class="summary spacing-t-2 d-flex t-column flex-row">
         <div class="d-two-twelfth t-whole"></div>
         <div class="d-eight-twelfth t-whole">
-          <p class="sans s-regular"><?= $sommario; ?></p>
+          <span class="sans s-regular"><?= $sommario; ?></span>
         </div>
         <div class="d-two-twelfth t-whole"></div>
       </div>
@@ -102,7 +102,13 @@
     <!-- editor content -->
     <div id="main-claim" class="container-fluid border-top">
       <div class="container wysiwyg serif s-medium spacing-t-3 spacing-b-4 paragraph-space">
-          <?php the_content(); ?>
+          <div class="d-flex flex-row t-column">
+            <div class="d-one-twelfth t-whole"></div>
+            <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg paragraph-space spacing-t-3 spacing-b-3">
+              <h3 class="s-medium"><?php the_content(); ?></h3>
+            </div>
+            <div class="d-one-twelfth t-whole"></div>
+          </div>
       </div>
     </div>
 
@@ -152,6 +158,21 @@
           <?php endwhile; ?>
         </div>
       <?php endif; ?>
+    </div>
+
+    <div class="container-fluid d-flex spacing-p-b-3">
+      <div class="container">
+        <h3 class="s-big sans italic t-center"><?php the_field('contribute'); ?></h3>
+      </div>
+    </div>
+
+    <?php include('cpf-link.php'); ?>
+    <?php include('perche-link.php'); ?>
+
+    <div class="countdown container-fluid spacing-b-3 border-top border-bottom">
+      <div class="flex-row d-flex t-center">
+        <p class="d-whole s-huge condensed" id="years"></p>
+      </div>
     </div>
   
   <?php endwhile; else: ?>

@@ -154,6 +154,28 @@ jQuery(document).ready(function($) {
   	}
   });
 
+  // countdown
+  if ( $('body').hasClass('home')) {
+    var countDownDate = new Date("Sep 3, 2017 00:00:00").getTime();
+    var x = setInterval(function() {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = now - countDownDate;
+
+      // Time calculations for days, hours, minutes and seconds
+      // var years = Math.floor(distance / (1000 * 60 * 60));
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("years").innerHTML =  days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    }, 1000);
+  }
 
   // BREAK WORDS IN LETTERS
   $('.variable-type > span').each(function(i, el) {
@@ -294,7 +316,7 @@ jQuery(document).ready(function($) {
     delayBeforeStart: 0,
     direction: 'right',
     duplicated: true,
-    duration: 10000,
+    duration: 18000,
   });
 
   $('.page-keywords').marquee({

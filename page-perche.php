@@ -46,14 +46,14 @@
 
             <div class="colored-box one p-relative">
               <div class="title-container container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
-                <div class="container spacing-p-t-4 spacing-p-b-2">
+                <div class="container spacing-p-t-3 spacing-p-b-3">
                   <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
-                  <p class="button black biggest mono">+</p>
+                  <!-- <p class="button black biggest mono">+</p> -->
                 </div>
               </div>
 
               <div class="text-container hidden p-absolute container-fluid" data-role="single" style="background-color: <?php echo $color; ?>">
-                <div class="container spacing-p-t-4 spacing-p-b-2" data-role="single">
+                <div class="container spacing-p-t-3 spacing-p-b-3" data-role="single">
                   <div class="d-flex flex-row t-column centered">
                     <div class="d-whole">
                       <div class="text-content d-flex start d-column hidden p-relative">
@@ -104,9 +104,9 @@
                             $link = get_sub_field('link'); 
                           ?>
                           <div class="inner-box d-flex d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
-                            <div class="title-container t-center spacing-p-t-4 spacing-p-b-2" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
+                            <div class="title-container t-center spacing-p-t-3 spacing-p-b-3" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
                               <img class="title-svg"src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
-                              <p class="button black biggest mono">+</p>
+                              <!-- <p class="button black biggest mono">+</p> -->
                             </div>
 
                             <div class="text-container" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
@@ -135,9 +135,7 @@
         <?php endwhile; ?>
       <?php endif; ?>
 
-      <div class="container-fluid border-top black hover-primary-color t-center spacing-p-b-3 spacing-p-t-3">
-        <a class="s-cpf no-border condensed uppercase" href="<?php echo get_page_link( get_page_by_title( 'Cosa posso fare?' )->ID ); ?>" class="button bigger uppercase">Cosa posso fare?</a>
-      </div>      
+      <?php include('cpf-link.php'); ?>     
       
     </article>
 

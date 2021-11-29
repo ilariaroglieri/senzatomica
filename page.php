@@ -26,7 +26,7 @@
 
       <!-- contatti page -->
       <?php if( have_rows('membro_senzatomica') ): ?>
-        <div class="container">
+        <div class="container spacing-b-3">
           <div class="d-flex flex-row wrap">
             <?php while( have_rows('membro_senzatomica') ): the_row(); ?>
               <?php
