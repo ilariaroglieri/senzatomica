@@ -682,6 +682,7 @@ body {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    z-index: 1;
     @include transition(all ease 3s);
     div {
       overflow: hidden;
