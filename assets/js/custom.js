@@ -170,7 +170,9 @@ jQuery(document).ready(function($) {
 
   // intro images flickr
   $('.intro-images').on('mousemove',function(){
-    $('.secondary-image').toggleClass('hidden');
+    setTimeout(function() {
+      $('.secondary-image').toggleClass('hidden');
+    }, 50);
   }).on('mouseleave',function() {
     $('.secondary-image').addClass('hidden');
   });
@@ -298,7 +300,7 @@ jQuery(document).ready(function($) {
 
   // divide posts into rows
   function createArchiveRows() {
-    var posts = $('#content-archive-news').find($('.hentry'));
+    var posts = $('#content-archive-news, #content-archive').find($('.hentry'));
     var elements = [];
 
     posts.each(function(i, el) {
@@ -330,7 +332,7 @@ jQuery(document).ready(function($) {
         var post = $('#'+ ids);
         post.attr('data-group', i);
       }
-      $('#content-archive-news .hentry[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
+      $('#content-archive-news, #content-archive').find('.hentry[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
     }
 
 
@@ -359,6 +361,14 @@ jQuery(document).ready(function($) {
     duration: 15000,
   });
 
+  // archive suggested searchs
+  var colors = ['#79fc96','#FABAF0','#FC9251','#BF9EED'];
+  $('.suggested-search').mouseenter(function() {
+    var randomCol = colors[Math.floor(Math.random() * colors.length)];
+    $(this).css({'background-color': randomCol});
+  }).mouseleave(function() {
+    $(this).css({'background-color': 'white'});
+  });
 
   // cosa posso fare
   $('.cpf-selector .button').click(function() {

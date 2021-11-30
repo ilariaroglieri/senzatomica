@@ -36,6 +36,28 @@
 
   </div>
 
+  <?php $themes = get_terms( array(
+      'taxonomy' => 'category',
+      'hide_empty' => true,
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
+      'exclude' => 1
+    ) );
+
+    if ( $themes ) : ?>
+    <div class="suggested-searches container-fluid">
+      <h3 class="d-whole sans s-large t-center spacing-p-t-2 spacing-p-b-2">Ricerche suggerite</h3>
+      <?php foreach( $themes as $theme ) : ?>
+        <div class="suggested-search border-top black">
+          <h3 class="d-whole d-flex" id="term-id-<?php echo $theme->term_id; ?>">
+            <a class="sans s-medium no-border spacing-p-t-1 spacing-p-b-1" href="<?php echo get_category_link($theme); ?>"><?php echo $theme->name; ?></a>
+          </h3>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php endif;
+  wp_reset_postdata(); ?>
+
   <?php else: ?>
 
     <div class="container">

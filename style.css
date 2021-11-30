@@ -488,6 +488,8 @@ img {
       color: black; }
   .button.light, input.light[type="submit"] {
     background-color: white; }
+  .button.no-margin, input.no-margin[type="submit"] {
+    margin: 0; }
   .button:hover, input[type="submit"]:hover, .button.active, input.active[type="submit"] {
     background-color: black;
     color: #79fc96;
@@ -502,9 +504,9 @@ img {
   padding: 8px 15px;
   border: 1px solid #79fc96; }
 
-.border, #sb_instagram #sbi_images div.sbi_item, div.sby_items_wrap div.sby_item {
+.border, #sb_instagram #sbi_images div.sbi_item, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin {
   border: 1px solid #79fc96; }
-  .border.black, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine #sb_instagram #sbi_images div.button.sbi_item, #sb_instagram #sbi_images .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sbi_item, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.sby_items_wrap div.button.sby_item, div.sby_items_wrap .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sby_item, #sb_instagram #sbi_images div.black.sbi_item, div.sby_items_wrap div.black.sby_item {
+  .border.black, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine #sb_instagram #sbi_images div.button.sbi_item, #sb_instagram #sbi_images .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sbi_item, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.button.sby_item.sby_no_margin, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sby_item.sby_no_margin, #sb_instagram #sbi_images div.black.sbi_item, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.black.sby_item.sby_no_margin {
     border: 1px solid black; }
 
 .border-top {
@@ -1130,6 +1132,15 @@ body {
       .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"] {
         margin-left: 30px; }
 
+.suggested-search {
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
+  .suggested-search a {
+    width: 100%; }
+
 .staff_sa {
   padding: 15px; }
 
@@ -1162,11 +1173,13 @@ body {
   justify-content: space-between; }
   #sb_instagram #sbi_images div.sbi_item {
     padding: 15px !important;
-    width: calc(25% - 15px) !important; }
+    width: calc(25% - 23px) !important; }
 
-div.sby_items_wrap {
-  padding: 0 !important; }
-  div.sby_items_wrap div.sby_item {
+[id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap {
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between; }
+  [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin {
     padding: 15px !important;
     width: calc(50% - 15px) !important; }
 
@@ -1336,6 +1349,12 @@ div.sby_items_wrap {
     flex-wrap: wrap; }
     #sb_instagram #sbi_images div.sbi_item {
       width: calc(50% - 15px) !important;
+      margin-bottom: 30px !important; }
+
+  [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap {
+    flex-flow: column; }
+    [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin {
+      width: 100% !important;
       margin-bottom: 30px !important; } }
 @media screen and (max-width: 640px) {
   .desk-only {
@@ -1451,8 +1470,11 @@ div.sby_items_wrap {
       border-right: none;
       border-top: 1px solid black; }
 
-  #sb_instagram #sbi_images div.sbi_item {
-    width: calc(100% - 15px) !important; } }
+  #sb_instagram #sbi_images {
+    flex-flow: column; }
+    #sb_instagram #sbi_images div.sbi_item {
+      width: 100% !important;
+      margin-bottom: 30px; } }
 @media screen and (max-width: 360px) {
   #header {
     padding-top: 30px;

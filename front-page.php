@@ -234,7 +234,7 @@
 
     <div class="container spacing-b-3">
       <p class="button uppercase bigger inactive">Youtube</p>
-      <?php echo do_shortcode('[youtube-feed num=2 showheader=false]'); ?>
+      <?php echo do_shortcode('[youtube-feed num=2 showheader=false itemspacing="15px"] '); ?>
     </div>
   
   <?php endwhile; else: ?>

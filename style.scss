@@ -287,6 +287,9 @@ img {
   &.light {
     background-color: white;
   }
+  &.no-margin {
+    margin: 0;
+  }
   &:hover, &.active { 
     background-color: black;
     color: $primaryColor;
@@ -1043,6 +1046,13 @@ body {
   }
 }
 
+.suggested-search {
+  @include transition(background-color .3s);
+  a {
+    width: 100%;
+  }
+}
+
 //chi siamo
 .staff_sa {
   padding: $half-spacing;
@@ -1085,13 +1095,15 @@ body {
   div.sbi_item {
     @extend .border;
     padding: $half-spacing!important;
-    width: calc(25% - #{$half-spacing}) !important;
+    width: calc(25% - 23px) !important;
   }
 }
 
-div.sby_items_wrap {
+[id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap {
   padding: 0!important;
-  div.sby_item {
+  display: flex;
+  justify-content:space-between;
+  div.sby_item.sby_no_margin {
     @extend .border;
     padding: $half-spacing!important;
     width: calc(50% - #{$half-spacing}) !important;
@@ -1369,6 +1381,14 @@ div.sby_items_wrap {
       margin-bottom: $spacing!important;
     }
   }
+
+  [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap {
+    flex-flow: column;
+    div.sby_item.sby_no_margin {
+      width: 100% !important;
+      margin-bottom: $spacing!important;
+    }
+  }
 }
 
 @media screen and (max-width: $mobile) {
@@ -1533,8 +1553,10 @@ div.sby_items_wrap {
 
   // instagram plugin
   #sb_instagram #sbi_images {
+    flex-flow: column;
     div.sbi_item {
-      width: calc(100% - #{$half-spacing}) !important;
+      width: 100% !important;
+      margin-bottom: $spacing;
     }
   }
 }

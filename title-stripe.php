@@ -1,4 +1,9 @@
 <div class="page-title container-fluid">
-  <h1 class="extended uppercase s-medium"><?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+  <h1 class="extended uppercase s-medium">
+    <?php if (is_archive()): ?>
+      <?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_the_archive_title( '', false ); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php else: ?>
+      <?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif; ?>
   </h1>
 </div>
