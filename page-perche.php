@@ -45,7 +45,7 @@
             ?>
 
             <div class="colored-box one p-relative">
-              <div class="title-container container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
+              <div class="title-container d-flex center container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
                 <div class="container spacing-p-t-3 spacing-p-b-3">
                   <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
                   <!-- <p class="button black biggest mono">+</p> -->
@@ -60,7 +60,7 @@
                         <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
                         <h4 class="title condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
                         <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                        <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
+                        <div class="wysiwyg paragraph-space s-regdemi serif-text"><?= $text; ?></div>
 
                         <?php if ($link): ?>
                           <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>
@@ -103,8 +103,8 @@
                             $text = get_sub_field('testo'); 
                             $link = get_sub_field('link'); 
                           ?>
-                          <div class="inner-box d-flex d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
-                            <div class="title-container t-center spacing-p-t-3 spacing-p-b-3" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
+                          <div class="inner-box d-flex v-center d-half m-whole-pad p-relative" data-color="<?php echo $color; ?>">
+                            <div class="title-container d-flex center t-center spacing-p-t-3 spacing-p-b-3" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>" >
                               <img class="title-svg"src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
                               <!-- <p class="button black biggest mono">+</p> -->
                             </div>
@@ -114,7 +114,7 @@
                                 <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
                                 <h4 class="title condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
                                 <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                                <div class="wysiwyg paragraph-space s-regular serif-text"><?= $text; ?></div>
+                                <div class="wysiwyg paragraph-space s-regdemi serif-text"><?= $text; ?></div>
 
                                 <?php if ($link): ?>
                                   <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>

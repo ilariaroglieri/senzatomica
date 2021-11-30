@@ -196,7 +196,7 @@ p, pre {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 a {
@@ -259,7 +259,7 @@ img {
   border-radius: $spacing;
   border: 1px solid $primaryColor;
   background-color: $primaryColor;
-  // margin: $spacing 0;
+  margin: $spacing 0;
   cursor: pointer;
   letter-spacing: 0.05em;
   @extend .s-xsmall;
@@ -293,6 +293,9 @@ img {
     border: 1px solid black;
   }
   &.active {
+    pointer-events: none;
+  }
+  &.inactive {
     pointer-events: none;
   }
 }
@@ -424,10 +427,10 @@ img {
           background-color: $orange;
           border-top: 1px solid black;
           height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3);
-          height: calc(19vw + #{$spacing});
+          // height: calc(19vw + #{$spacing});
           a {
             font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*3) - 5vh);
-            font-size: 19vw;
+            // font-size: 19vw;
             font-style: italic;
             @extend .condensed;
             @extend .uppercase;
@@ -446,10 +449,10 @@ img {
           border-top: 1px solid black;
           border-bottom: 1px solid black;
           height: calc(((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2);
-          height: calc(13vw + #{$spacing});
+          // height: calc(13vw + #{$spacing});
           a {
             font-size: calc((((100vh - 27vh - 55px - #{$fourfold-spacing})/5)*2) - 5vh);
-            font-size: 13vw;
+            // font-size: 13vw;
             font-style: italic;
             @extend .uppercase;
             @extend .extended;
@@ -768,10 +771,11 @@ body {
 }
 
 .wysiwyg {
-  &.serif-text P {
+  &.serif-text p {
     @extend .serif-text;
+    line-height: 1.4 !important;
   }
-  &.sans-text P {
+  &.sans-text p {
     @extend .sans;
   }
   &.paragraph-space p {
@@ -839,6 +843,7 @@ body {
 // perchè page
 .colored-box {
   .title-container {
+    min-height: 600px;
     // min-height: 100vh;
     cursor: auto;
     cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
@@ -869,7 +874,7 @@ body {
       pointer-events: all;
     }
     .text-content {
-      padding-right: $col;
+      padding-right: $col*2;
       padding-left: $col;
       width: 100%;
       cursor: auto;
@@ -891,6 +896,7 @@ body {
       width: calc(#{$desktop/2 -  #{$double-spacing}});
     }
     .title-container {
+      align-items: center;
       cursor: auto;
       cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
       cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/open.png") 1x,url("../senzatomica-theme/assets/img/open-2x.png") 2x) 25 50, pointer;
@@ -966,6 +972,9 @@ body {
         }
       }
     }
+    .button {
+      margin: $spacing 0;
+    }
     // altezza
     &.posts_height-superlandscape {
       a.img-link {
@@ -974,7 +983,7 @@ body {
     }
     &.posts_height-landscape {
       a.img-link {
-        padding-bottom: 64%;
+        padding-bottom: 58%;
       }
     }
     &.posts_height-quadrata {
@@ -1009,6 +1018,9 @@ body {
         margin-bottom: $spacing;
         a {
           @extend .sans;
+          &:hover {
+            color: white;
+          }
         }
       }
       .button {
@@ -1056,6 +1068,17 @@ body {
   }
 }
 
+// instagram plugin
+#sb_instagram #sbi_images {
+  padding: 0!important;
+  display: flex;
+  justify-content:space-between;
+  div.sbi_item {
+    @extend .border;
+    padding: $half-spacing!important;
+    width: calc(25% - #{$half-spacing}) !important;
+  }
+}
 
 .footer {
   line-height: 1.5;
@@ -1105,6 +1128,7 @@ body {
 }
 
 
+
 @media screen and (max-width: $desktop + $spacing) {
   .s-megagigahuge { 
     font-size: 40vw;
@@ -1147,7 +1171,7 @@ body {
 
 
   #header div[class*="menu-main"]{
-    ul li {
+    & > ul li {
       &.s-cpf {
         a {
           font-size: 20vw;
@@ -1173,6 +1197,10 @@ body {
 }
 
 @media screen and (max-width: $tablet) {
+  html {
+    overflow-x: hidden;
+  }
+  
   .s-huge {
     font-size: 13vw;
   }
@@ -1241,7 +1269,7 @@ body {
     }
   }
 
-  #header {
+  #header.huge {
     padding: $half-spacing 0;
     div[class*="menu-main"] > ul {
       li {

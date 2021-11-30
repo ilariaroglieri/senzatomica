@@ -114,7 +114,7 @@
 
     <?php include('dynamic-stripe.php') ?>
 
-    <div class="container-fluid d-flex v-center spacing-b-3 border-top border-bottom">
+    <div class="container-fluid d-flex v-center spacing-b-3 spacing-p-b-2 border-top border-bottom">
       <?php if( have_rows('magic_wheel') ): ?>
         <div id="question-wheel-container" class="d-whole-pad d-flex center d-column">
           <p class="sans s-medium uppercase spacing-b-2 spacing-p-t-2 ">Gira la ruota</p>
@@ -162,7 +162,7 @@
 
     <div class="container-fluid d-flex spacing-p-b-3">
       <div class="container">
-        <h3 class="s-big sans italic t-center"><?php the_field('contribute'); ?></h3>
+        <h3 class="s-big normal italic t-center"><?php the_field('contribute'); ?></h3>
       </div>
     </div>
 
@@ -210,6 +210,11 @@
           <span class="s-regular mono t-center">Test eseguito il 3 settembre 2017, da parte della Corea del Nord.</span>
         </div>
       </div>
+    </div>
+
+    <div class="container">
+      <p class="button uppercase bigger inactive">Instagram</p>
+      <?php echo do_shortcode('[instagram-feed num=4 cols=4 showfollow=false]'); ?>
     </div>
   
   <?php endwhile; else: ?>

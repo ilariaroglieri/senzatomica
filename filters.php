@@ -13,7 +13,7 @@
   
 
   <div class="filter d-flex d-four-twelfth t-whole spacing-p-b-2">
-    <span class="button bigger uppercase"><?php _e ('Tema','sa_theme'); ?></span>
+    <span class="button bigger uppercase"><?php _e ('Tipologia','sa_theme'); ?></span>
     <div id="theme-select" class="custom-select select-cat d-flex">
       <?php $themes = get_terms( array(
         'taxonomy' => 'post_contents_type',
@@ -35,7 +35,7 @@
   </div>
 
   <div class="filter d-flex d-four-twelfth t-whole spacing-p-b-2">
-    <span class="button bigger uppercase"><?php _e ('Tipologia','sa_theme'); ?></span>
+    <span class="button bigger uppercase"><?php _e ('Tema','sa_theme'); ?></span>
     
     <div id="category-select" class="custom-select select-cat d-flex">
       <?php $cats = get_terms( array(
