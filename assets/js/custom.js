@@ -96,9 +96,6 @@ jQuery(document).ready(function($) {
     var viewportH = window.innerHeight;
     function scaleOnScroll(el, scroll, maxVal, minVal, property, unit) {
       var percentScroll = scroll/(viewportH/3);
-      
-      var minWidth = 1;
-      var maxWidth = .25;
       var val = percentScroll * (maxVal - minVal) + minVal;
 
       if (val < maxVal) {
@@ -111,15 +108,17 @@ jQuery(document).ready(function($) {
     // scroll effect on home
     $(window).scroll(function() {
       var currentScrollPos = Math.round( $(document).scrollTop() );
+      var vh = $(window).height();
       var rows = Math.round(viewportH/20);
       var newRow = 0;
-      var wh = $(window).height();
+
+      console.log(vh * 1.3);
      
       //scale logo and header
-      scaleOnScroll($('#logo svg'), currentScrollPos, (wh * .25), (wh * 1), 'width', 'px');
-      scaleOnScroll($('#header .container'), currentScrollPos, (wh * .05), (wh * .5), 'height', 'px');
+      scaleOnScroll($('#logo svg'), currentScrollPos, (vh * .25), (vh * 1.3), 'width', 'px');
+      scaleOnScroll($('#header .container'), currentScrollPos, (vh * .05), (vh * .35), 'height', 'px');
 
-      // update row below half viewpoer
+      // update row below half viewport
       for (var i = 1; i <= 3; i++) {
         if ( currentScrollPos > rows*i ) {
           newRow = i;
@@ -167,6 +166,13 @@ jQuery(document).ready(function($) {
         $('html, body').removeClass('overflow-hidden');
       }
   	}
+  });
+
+  // intro images flickr
+  $('.intro-images').on('mousemove',function(){
+    $('.secondary-image').toggleClass('hidden');
+  }).on('mouseleave',function() {
+    $('.secondary-image').addClass('hidden');
   });
 
   // countdown

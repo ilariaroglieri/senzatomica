@@ -50,13 +50,15 @@
       <?php
         $subtitle = get_field('sottotitolo');
         $payoff = get_field('payoff');
+        $payoffMobile = get_field('payoff_mobile');
         $sommario = get_field('sommario');
       ?>
 
       <div class="spacing-t-4 d-flex t-column flex-row">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole">
-          <img src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
+          <img class="desk-only" src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
+          <img class="mob-only" src="<?php echo $payoffMobile['url']; ?>" title="<?= $subtitle; ?>" />
         </div>
         <div class="d-one-twelfth t-whole"></div>
       </div>
@@ -64,11 +66,24 @@
       <div class="summary spacing-t-2 d-flex t-column flex-row">
         <div class="d-two-twelfth t-whole"></div>
         <div class="d-eight-twelfth t-whole">
-          <span class="sans s-regular"><?= $sommario; ?></span>
+          <span class="sans s-medium"><?= $sommario; ?></span>
         </div>
         <div class="d-two-twelfth t-whole"></div>
       </div>
     </div>
+
+    <!-- immagine -->
+    <?php
+    $immagini_intro = get_field('immagini_intro');
+    if( $immagini_intro ): ?>
+      <div class="container intro-images p-relative spacing-b-3">
+        <img src="<?php echo esc_url( $immagini_intro['immagine_principale']['url'] ); ?>" alt="<?php echo esc_attr( $immagini_intro['immagine_principale']['alt'] ); ?>" />
+        <img class="secondary-image p-absolute hidden" src="<?php echo esc_url( $immagini_intro['immagine_hover']['url'] ); ?>" alt="<?php echo esc_attr( $immagini_intro['immagine_hover']['alt'] ); ?>" />
+      </div>
+    <?php endif; ?>
+
+
+
 
     <!-- news IN EVIDENZA -->
     <?php if( have_rows('latest_news') ): ?>
@@ -215,6 +230,11 @@
     <div class="container">
       <p class="button uppercase bigger inactive">Instagram</p>
       <?php echo do_shortcode('[instagram-feed num=4 cols=4 showfollow=false]'); ?>
+    </div>
+
+    <div class="container spacing-b-3">
+      <p class="button uppercase bigger inactive">Youtube</p>
+      <?php echo do_shortcode('[youtube-feed num=2 showheader=false]'); ?>
     </div>
   
   <?php endwhile; else: ?>
