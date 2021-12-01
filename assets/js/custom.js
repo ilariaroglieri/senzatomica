@@ -112,11 +112,11 @@ jQuery(document).ready(function($) {
       var rows = Math.round(viewportH/20);
       var newRow = 0;
 
-      console.log(vh * 1.3);
+      console.log(vh * .05);
      
       //scale logo and header
-      scaleOnScroll($('#logo svg'), currentScrollPos, (vh * .25), (vh * 1.3), 'width', 'px');
-      scaleOnScroll($('#header .container'), currentScrollPos, (vh * .05), (vh * .35), 'height', 'px');
+      scaleOnScroll($('#logo svg'), currentScrollPos, (240), (vh * 1.3), 'width', 'px');
+      scaleOnScroll($('#header .container'), currentScrollPos, (55), (vh * .35), 'height', 'px');
 
       // update row below half viewport
       for (var i = 1; i <= 3; i++) {
@@ -368,6 +368,10 @@ jQuery(document).ready(function($) {
     $(this).css({'background-color': randomCol});
   }).mouseleave(function() {
     $(this).css({'background-color': 'white'});
+  });
+
+  $(document).on('click', '.reset-filter', function(ev) {
+    location.reload();
   });
 
   // cosa posso fare

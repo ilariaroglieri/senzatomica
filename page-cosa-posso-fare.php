@@ -55,7 +55,7 @@
                           <div class="d-flex spacing-p-t-2 button-row v-center">
                             <?php while( have_rows('lista_link') ): the_row(); ?>
                               <?php $link = get_sub_field('link'); ?>
-                              <a class="button bigger uppercase" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+                              <a class="button bigger uppercase" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
                             <?php endwhile; ?>
                           </div>
                         <?php endif; ?>

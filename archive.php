@@ -11,7 +11,7 @@
   <div class="container">
     <div class="d-flex flex-row t-column">
       <div class="d-one-twelfth t-whole"></div>
-      <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg wysiwyg paragraph-space spacing-t-3">
+      <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg wysiwyg paragraph-space">
         <?php echo category_description(); ?>
       </div>
       <div class="d-one-twelfth t-whole"></div>

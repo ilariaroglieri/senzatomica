@@ -180,7 +180,7 @@ html, body {
   }
 }
 
-body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -197,6 +197,10 @@ p, pre {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   line-height: 1.2;
+}
+
+h2 {
+  @extend .s-regular;
 }
 
 a {
@@ -363,11 +367,11 @@ img {
   &.hidden {
     top: -100%;
   }
-  .container  {
+  & > .container  {
     height: 6vh;
   }
   &.huge {
-    .container {
+    & > .container {
       align-items: end;
       height: 35vh;
       #logo a svg {
@@ -588,7 +592,7 @@ body {
 // }
 
 .page-keywords {
-  height: 20vh;
+  // height: 20vh;
   // display: flex;
   overflow: hidden;
   white-space: nowrap;
@@ -855,7 +859,7 @@ body {
 // perchè page
 .colored-box {
   .title-container {
-    min-height: 600px;
+    min-height: 650px;
     // min-height: 100vh;
     cursor: auto;
     cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
@@ -1065,6 +1069,12 @@ body {
 }
 
 .nice-select {
+  max-width: 200px;
+  // white-space: normal !important;
+  // overflow-x: hidden;
+}
+
+.nice-select {
   width: 100% !important;
   border-radius: 30px !important;
   border: 1px solid black !important;
@@ -1087,6 +1097,14 @@ body {
   }
 }
 
+ // mailchimp
+.mc4wp-response {
+  @extend .spacing-t-1;
+  p {
+    @extend .mono;
+  }
+}
+
 // instagram plugin
 #sb_instagram #sbi_images {
   padding: 0!important;
@@ -1096,6 +1114,26 @@ body {
     @extend .border;
     padding: $half-spacing!important;
     width: calc(25% - 23px) !important;
+    position: relative;
+    a.sbi_photo {
+      @extend .no-border;
+      &::after {
+        content:'';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primaryColor;
+        opacity: 0;
+        pointer-events: none;
+        @include transition(opacity .3s);
+      }
+      &:hover::after {
+        opacity: .5;
+      }
+    }
   }
 }
 
@@ -1107,6 +1145,21 @@ body {
     @extend .border;
     padding: $half-spacing!important;
     width: calc(50% - #{$half-spacing}) !important;
+    a.sby_video_thumbnail {
+      @extend .no-border;
+      div.sby_thumbnail_hover {
+        background-color: $primaryColor;
+        opacity: 0;
+        @include transition(opacity .3s);
+        color: black !important;
+        div.sby_video_title {
+          @extend .s-regular;
+        }
+      }
+      &:hover div.sby_thumbnail_hover {
+        opacity: .7;
+      }
+    }
   }
 }
 
@@ -1215,6 +1268,17 @@ body {
     }
   }
 
+  .colored-box {
+    .title-container {
+      min-height: 80vh;
+    }
+    &.multi {
+      .title-svg {
+        width: 100%;
+      }
+    }
+  }
+
   .footer .partners .promoters .logo {
     align-items: center;
     & > * {
@@ -1226,11 +1290,15 @@ body {
 
 }
 
-@media screen and (max-width: $tablet) {
-  html {
-    overflow-x: hidden;
+@media screen and (max-width: $tablet-h) {
+  #header {
+    & > .container  {
+      height: 4vh;
+    }
   }
-  
+}
+
+@media screen and (max-width: $tablet) {  
   .s-huge {
     font-size: 13vw;
   }
@@ -1299,8 +1367,10 @@ body {
     }
   }
 
-  #header.huge {
-    padding: $half-spacing 0;
+  #header {
+    &.huge {
+      padding: $half-spacing 0;
+    }
     div[class*="menu-main"] > ul {
       li {
         font-size: 45px;
@@ -1312,6 +1382,15 @@ body {
           align-items: center;
         }
       } 
+    }
+  }
+
+  //archives
+  .posts-flow {
+    .hentry {
+      &.posts_type-notizia-grande-in-evidenza {
+        @extend .t-whole;
+      }
     }
   }
 
@@ -1373,6 +1452,8 @@ body {
     }
   }
 
+
+
   // instagram plugin
   #sb_instagram #sbi_images {
     flex-wrap: wrap;
@@ -1398,6 +1479,10 @@ body {
 
   .mob-only {
     display: inline-block;
+  }
+
+  .s-large {
+    font-size: 35px;
   }
 
   .s-big {
@@ -1449,8 +1534,27 @@ body {
 
   #header {
     background-color: white;
-    div[class*="menu-main"] > ul li {
-      // font-size: 40px;
+    & > .container  {
+      height: 6vh;
+    }
+  }
+
+  .payoff {
+    margin-top: $spacing;
+  }
+
+  .posts-flow .hentry {
+    margin-bottom: $spacing !important;
+    .button {
+      margin: $half-spacing 0;
+    }
+    &.posts_type-notizia-sfondo-colorato-senza-immagine {
+      .entry-title {
+        padding: $half-spacing;
+      }
+      .button {
+        margin: $half-spacing;
+      }
     }
   }
 
@@ -1492,6 +1596,10 @@ body {
   }
 
   .colored-box {
+    .title-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .background {
       display: none;
     }
@@ -1562,6 +1670,18 @@ body {
 }
 
 @media screen and (max-width: $mobile-small) {
+  .s-megagigahuge { 
+    font-size: 40vw;
+  }
+
+  .s-megagiga { 
+    font-size: 26vw;
+  }
+
+  .s-gigantic { 
+    font-size: 20vw;
+  }
+
   #header {
     padding-top: $spacing;
     padding-bottom: $half-spacing;
@@ -1614,4 +1734,18 @@ body {
       }
     }
   }
+
+  .colored-box {
+    .text-container {
+      .text-content {
+        .close {
+          display: inline-block;
+          width: $spacing;
+          top: 2px;
+          right: $col;
+        }
+      }
+    }
+  }
+
 }

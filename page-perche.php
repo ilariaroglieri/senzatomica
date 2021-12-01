@@ -58,9 +58,9 @@
                     <div class="d-whole">
                       <div class="text-content d-flex start d-column hidden p-relative">
                         <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
-                        <h4 class="title condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                        <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                        <div class="wysiwyg paragraph-space s-regdemi serif-text"><?= $text; ?></div>
+                        <h4 class="title sans uppercase s-medium spacing-b-2"><?= $title; ?></h4>
+                        <h5 class="excerpt sans s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                        <div class="wysiwyg paragraph-space s-medium serif"><?= $text; ?></div>
 
                         <?php if ($link): ?>
                           <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>
@@ -112,9 +112,9 @@
                             <div class="text-container" data-role="<?php if ($j == 1): ?>first<?php else: ?>last<?php endif; ?>">
                               <div class="text-content p-relative d-flex start d-column hidden spacing-t-4 spacing-p-b-2">
                                 <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
-                                <h4 class="title condensed s-large uppercase spacing-b-2"><?= $title; ?></h4>
-                                <h5 class="excerpt serif-text s-medium spacing-b-2"><?= $excerpt; ?></h5>
-                                <div class="wysiwyg paragraph-space s-regdemi serif-text"><?= $text; ?></div>
+                                <h4 class="title sans uppercase s-medium spacing-b-2"><?= $title; ?></h4>
+                                <h5 class="excerpt sans s-medium spacing-b-2"><?= $excerpt; ?></h5>
+                                <div class="wysiwyg paragraph-space s-medium serif"><?= $text; ?></div>
 
                                 <?php if ($link): ?>
                                   <a class="button black" href="<?php echo $link['url']; ?>">Leggi di più</a>

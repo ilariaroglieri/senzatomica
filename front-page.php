@@ -42,6 +42,16 @@
               <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
             </div>
           <?php endforeach; ?>
+          <?php foreach( $images as $image ): ?>
+            <div class="grid-item">
+              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+            </div>
+          <?php endforeach; ?>
+          <?php foreach( $images as $image ): ?>
+            <div class="grid-item">
+              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
+            </div>
+          <?php endforeach; ?>
         </div>
       </div>
     <?php endif; ?>
@@ -54,7 +64,7 @@
         $sommario = get_field('sommario');
       ?>
 
-      <div class="spacing-t-4 d-flex t-column flex-row">
+      <div class="payoff spacing-t-4 d-flex t-column flex-row">
         <div class="d-one-twelfth t-whole"></div>
         <div class="d-ten-twelfth t-whole">
           <img class="desk-only" src="<?php echo $payoff['url']; ?>" title="<?= $subtitle; ?>" />
@@ -93,6 +103,8 @@
             <h1 class="extended uppercase s-medium">Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;Ultime Notizie&nbsp;&nbsp;&nbsp;</h1>
           <!-- </div> -->
         </div>
+
+        <?php include('keywords-stripe.php'); ?>
 
         <div id="latest_news" class="container posts-flow spacing-p-t-3">
           <div class="d-flex flex-row wrap">
@@ -228,12 +240,12 @@
     </div>
 
     <div class="container">
-      <p class="button uppercase bigger inactive">Instagram</p>
+      <a class="button uppercase bigger" href="https://www.instagram.com/senzatomica_official/" target="_blank">Instagram</a>
       <?php echo do_shortcode('[instagram-feed num=4 cols=4 showfollow=false]'); ?>
     </div>
 
     <div class="container spacing-b-3">
-      <p class="button uppercase bigger inactive">Youtube</p>
+      <a class="button uppercase bigger" href="https://www.youtube.com/user/senzatomica" target="_blank">Youtube</a>
       <?php echo do_shortcode('[youtube-feed num=2 showheader=false itemspacing="15px"] '); ?>
     </div>
   
