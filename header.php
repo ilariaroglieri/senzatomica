@@ -37,8 +37,8 @@
 
 	<body <?php body_class(); ?>>
 			<div id="header" class="<?php if (is_front_page()):?>huge<?php endif; ?>">
-				<div class="container p-relative d-flex">
-					<div id="logo" class="full-width">
+				<div class="container p-relative d-flex v-center">
+					<div id="logo">
 						<a class="d-flex" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 494.427 109.944">
 							  <g id="Raggruppa_53" data-name="Raggruppa 53" transform="translate(-80.022 -228.009)">

@@ -60,22 +60,6 @@ jQuery(document).ready(function($) {
   // fade in effect on conent
   $('body').addClass('loaded');
 
-  //scroll direction for menu (except home)
-  if (mqMobile.matches) {
-    if ( !($('body').hasClass('home')) ) {
-      var lastScrollTop = 0;
-      $(window).scroll(function(event){
-         var st = $(this).scrollTop();
-         if (st > lastScrollTop){
-            $('#header').addClass('hidden');
-         } else {
-            $('#header').removeClass('hidden');
-         }
-         lastScrollTop = st;
-      });
-    }
-  }
-
   //home
   // shuffle images
   if ( $('body').hasClass('home')) {
@@ -363,7 +347,7 @@ jQuery(document).ready(function($) {
 
   // archive suggested searchs
   var colors = ['#79fc96','#FABAF0','#FC9251','#BF9EED'];
-  $('.suggested-search').mouseenter(function() {
+  $('.suggested-search, .menu li > .sub-menu li a').mouseenter(function() {
     var randomCol = colors[Math.floor(Math.random() * colors.length)];
     $(this).css({'background-color': randomCol});
   }).mouseleave(function() {

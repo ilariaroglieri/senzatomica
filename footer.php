@@ -8,7 +8,7 @@
 				</div>
 				<div class="address d-two-twelfth-pad t-half-pad m-whole-pad">
 					via R. Lambruschini, 52 - Firenze 50134<br/>
-					<a href="mailto:amministrazione@senzatomica.it">Email</a><br/>
+					<a href="mailto:info@senzatomica.it">Email</a><br/>
 					+39 055 4269800
 				</div>
 				<div class="newsletter d-four-twelfth-pad t-whole-pad m-whole-pad">
@@ -50,20 +50,22 @@
 				<div class="promoters d-two-twelfth-pad promoters t-half-pad m-whole-pad">
 					Promossa da:
 
-					<div class="logo d-flex ds-column t-row spacing-t-3">
+					<div class="logo spacing-t-3">
 
-					<?php if (have_rows('promoters','option')): ?>
-       	 		<?php while( have_rows('promoters','option') ) : the_row(); ?>
-       	 			<?php $promoterLogo = get_sub_field('immagine_logo'); ?>
-							<?php if ($promoterLogo['caption']): ?>
-								<a class="no-border" href="<?php echo $promoterLogo['caption']; ?>" target="_blank">
-									<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($promoterLogo['title']); ?>" />
-								</a>
-							<?php else: ?>
-								<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
-							<?php endif; ?>
-						<?php endwhile;
-					endif; ?>
+						<?php if (have_rows('promoters','option')): ?>
+							<div class="flex-row d-flex ds-column t-row">
+		       	 		<?php while( have_rows('promoters','option') ) : the_row(); ?>
+		       	 			<?php $promoterLogo = get_sub_field('immagine_logo'); ?>
+									<?php if ($promoterLogo['caption']): ?>
+										<a class="d-half t-whole no-border" href="<?php echo $promoterLogo['caption']; ?>" target="_blank">
+											<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($promoterLogo['title']); ?>" />
+										</a>
+									<?php else: ?>
+										<img class="d-half t-whole" src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
+									<?php endif; ?>
+								<?php endwhile; ?>
+							</div>
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="patrons d-four-twelfth-pad t-half-pad m-whole-pad">
@@ -80,7 +82,7 @@
 					</div>
 				</div>
 				<div class="sustainers d-four-twelfth-pad t-half-pad m-whole-pad">
-					Progetto sostenuto con i fondi Otto per Mille dell’Istituto Buddista
+					Progetto sostenuto con i fondi Otto per Mille dell'Istituto Buddista Italiano Soka Gakkai
 
 					<?php $logo8 = get_field('istituto_buddista','option'); ?>
 					<div class="logo d-flex spacing-t-3">

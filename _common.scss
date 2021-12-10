@@ -230,6 +230,10 @@ $col: 8.3333%;
   font-size: 30px;
 }
 
+.s-medium-resp { 
+  font-size: 1.5vw;
+}
+
 .s-regdemi { 
   font-size: 21px;
 }
@@ -372,6 +376,10 @@ $col: 8.3333%;
 
 .spacing-b-4 {
   margin-bottom: $triple-spacing;
+}
+
+.spacing-b-5 {
+  margin-bottom: $fourfold-spacing;
 }
 
 .spacing-t-1 {

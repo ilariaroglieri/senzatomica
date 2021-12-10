@@ -1,6 +1,6 @@
 <div class="filters d-flex t-column flex-row spacing-p-t-2">
-  <div class="filter d-flex d-four-twelfth t-whole spacing-p-b-2">
-    <span class="button bigger uppercase no-margin"><?php _e ('Data','sa_theme'); ?></span>
+  <div class="filter d-flex d-column d-four-twelfth t-whole spacing-p-b-2">
+    <span class="button bigger inactive uppercase no-margin"><?php _e ('Data','sa_theme'); ?></span>
     <div id="date-select" class="custom-select select-date d-flex">
 
       <select name="date" id="year">
@@ -12,8 +12,8 @@
   </div>
   
 
-  <div class="filter d-flex d-four-twelfth t-whole spacing-p-b-2">
-    <span class="button bigger uppercase no-margin"><?php _e ('Tipologia','sa_theme'); ?></span>
+  <div class="filter d-flex d-column d-four-twelfth t-whole spacing-p-b-2">
+    <span class="button bigger inactive uppercase no-margin"><?php _e ('Tipologia','sa_theme'); ?></span>
     <div id="theme-select" class="custom-select select-cat d-flex">
       <?php $themes = get_terms( array(
         'taxonomy' => 'post_contents_type',
@@ -34,8 +34,8 @@
     </div>
   </div>
 
-  <div class="filter d-flex d-four-twelfth t-whole spacing-p-b-2">
-    <span class="button bigger uppercase no-margin"><?php _e ('Tema','sa_theme'); ?></span>
+  <div class="filter d-flex d-column d-four-twelfth t-whole spacing-p-b-2">
+    <span class="button bigger inactive uppercase no-margin"><?php _e ('Tema','sa_theme'); ?></span>
     
     <div id="category-select" class="custom-select select-cat d-flex">
       <?php $cats = get_terms( array(

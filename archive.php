@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
+$term = get_queried_object(); ?>
 
 <section class="content" id="content-archive">
 
@@ -8,7 +9,18 @@
 
   <?php include('dynamic-stripe.php') ?>
 
+  <?php $excerpt = get_field('testo_in_evidenza', $term); ?>
   <div class="container">
+    <?php if ($excerpt): ?>
+      <div class="d-flex flex-row t-column">
+        <div class="d-one-twelfth t-whole"></div>
+        <div class="d-ten-twelfth t-whole text-content spacing-b-2">
+          <h3 class="s-big normal italic"><?php echo $excerpt; ?></h3>
+        </div>
+        <div class="d-one-twelfth t-whole"></div>
+      </div>
+    <?php endif; ?>
+
     <div class="d-flex flex-row t-column">
       <div class="d-one-twelfth t-whole"></div>
       <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg wysiwyg paragraph-space">

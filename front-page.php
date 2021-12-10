@@ -22,36 +22,6 @@
               <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
             </div>
           <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
-          <?php foreach( $images as $image ): ?>
-            <div class="grid-item">
-              <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['title']); ?>" />
-            </div>
-          <?php endforeach; ?>
         </div>
       </div>
     <?php endif; ?>
@@ -76,7 +46,7 @@
       <div class="summary spacing-t-2 d-flex t-column flex-row">
         <div class="d-two-twelfth t-whole"></div>
         <div class="d-eight-twelfth t-whole">
-          <span class="sans s-medium"><?= $sommario; ?></span>
+          <span class="sans s-medium-resp"><?= $sommario; ?></span>
         </div>
         <div class="d-two-twelfth t-whole"></div>
       </div>
@@ -91,9 +61,6 @@
         <img class="secondary-image p-absolute hidden" src="<?php echo esc_url( $immagini_intro['immagine_hover']['url'] ); ?>" alt="<?php echo esc_attr( $immagini_intro['immagine_hover']['alt'] ); ?>" />
       </div>
     <?php endif; ?>
-
-
-
 
     <!-- news IN EVIDENZA -->
     <?php if( have_rows('latest_news') ): ?>
@@ -132,7 +99,7 @@
           <div class="d-flex flex-row t-column">
             <div class="d-one-twelfth t-whole"></div>
             <div class="d-ten-twelfth t-whole text-content s-medium wysiwyg paragraph-space spacing-t-3 spacing-b-3">
-              <h3 class="s-medium"><?php the_content(); ?></h3>
+              <h3 class="s-big"><?php the_content(); ?></h3>
             </div>
             <div class="d-one-twelfth t-whole"></div>
           </div>
@@ -141,7 +108,7 @@
 
     <?php include('dynamic-stripe.php') ?>
 
-    <div class="container-fluid d-flex v-center spacing-b-3 spacing-p-b-2 border-top border-bottom">
+    <div class="container-fluid d-flex v-center spacing-b-3 spacing-b-2 border-top border-bottom">
       <?php if( have_rows('magic_wheel') ): ?>
         <div id="question-wheel-container" class="d-whole-pad d-flex center d-column">
           <p class="sans s-medium uppercase spacing-b-2 spacing-p-t-2 ">Gira la ruota</p>
