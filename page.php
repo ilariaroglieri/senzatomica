@@ -25,25 +25,33 @@
       </div>
 
       <!-- contatti page -->
-      <?php if( have_rows('membro_senzatomica') ): ?>
+      <?php if( have_rows('gruppo_senzatomica') ): ?>
         <div class="container spacing-b-3">
-          <div class="d-flex flex-row wrap">
-            <?php while( have_rows('membro_senzatomica') ): the_row(); ?>
-              <?php
-              $img = get_sub_field('ritratto');
-              $name = get_sub_field('nome');
-              $role = get_sub_field('qualifica');
-              ?>
-
-
-              <div class="staff_sa border d-three-twelfth t-half m-whole spacing-b-3">
-                <img class="spacing-b-1" src="<?php echo $img['url']; ?>" alt="<?php echo $name; ?>" />
-                <h4 class="sans s-small"><?= $name; ?></h4>
-                <p class="sans s-small"><?= $role; ?></p>
+          <?php while( have_rows('gruppo_senzatomica') ): the_row(); 
+            $groupName = get_sub_field('nome_gruppo'); ?>
+            <div class="d-flex flex-row">
+              <div class="d-whole spacing-b-1">
+                <h3 class="condensed uppercase s-medium"><?= $groupName; ?></h3>
               </div>
+            </div>
+            <div class="d-flex flex-row wrap">
 
-            <?php endwhile; ?>
-          </div>
+              <?php if( have_rows('membro_senzatomica') ): while( have_rows('membro_senzatomica') ): the_row(); ?>
+                <?php
+                $img = get_sub_field('ritratto');
+                $name = get_sub_field('nome');
+                $role = get_sub_field('qualifica');
+                ?>
+
+                <div class="staff_sa border d-three-twelfth t-half m-whole spacing-b-3">
+                  <img class="spacing-b-1" src="<?php echo $img['url']; ?>" alt="<?php echo $name; ?>" />
+                  <h4 class="sans s-small"><?= $name; ?></h4>
+                  <p class="sans s-small"><?= $role; ?></p>
+                </div>
+
+              <?php endwhile; endif; ?>
+            </div>
+          <?php endwhile; ?>
         </div>
       <?php endif; ?>
 

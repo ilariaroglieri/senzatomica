@@ -813,9 +813,14 @@ body {
   .text-content {
     p {
       @extend .serif-text;
+      line-height: 1.4;
       b {
         font-weight: normal;
-        @extend .sans;
+      }
+      a {
+        @extend .serif-text;
+        @extend .no-border;
+        color: $primaryColor;
       }
     }
     h1, h2, h3, h4 {
@@ -903,8 +908,8 @@ body {
       padding-left: $col;
       width: 100%;
       cursor: auto;
-      cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
-      cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer;
+      cursor: url(../senzatomica-theme/assets/img/close.png) 25 25, auto;
+      cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 25, pointer;
       .close {
         display: none;
         position: absolute;
@@ -1056,6 +1061,19 @@ body {
     &.posts_type-notizia-grande-in-evidenza {
       @extend .d-half;
     }
+  }
+}
+
+
+.category .posts-flow {
+  .hentry.posts_type-notizia-grande-in-evidenza {
+    @extend .d-three-twelfth;
+  }
+}
+
+#content-archive-news .posts-flow {
+  .hentry.posts_type-notizia-grande-in-evidenza {
+    @extend .d-three-twelfth;
   }
 }
 
@@ -1227,11 +1245,11 @@ body {
 
 @media screen and (max-width: $desktop + $spacing) {
   .s-megagigahuge { 
-    font-size: 40vw;
+    font-size: 35vw;
   }
 
   .s-megagiga { 
-    font-size: 30vw;
+    font-size: 27vw;
   }
 
   .s-gigantic { 

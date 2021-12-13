@@ -28,6 +28,7 @@
 				<div class="legals d-flex d-column d-one-twelfth-pad t-center t-half-pad m-whole-pad">
 					<a href="<?php echo get_page_link( get_page_by_title( 'Privacy Policy' )->ID ); ?>">Privacy Policy</a>
 					<a href="<?php echo get_page_link( get_page_by_title( 'Legals' )->ID ); ?>">Legals</a>
+					<a href="<?php echo get_page_link( get_page_by_title( 'Credits' )->ID ); ?>">Credits</a>
 				</div>
 			</div>
 
