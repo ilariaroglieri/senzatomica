@@ -1,4 +1,8 @@
-
+	<div class="container t-center spacing-b-3 spacing-t-3">
+		<a class="backup" href="#">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/back-up.svg" />
+		</a>
+	</div>
 
 	<div class="footer container-fluid d-flex d-column">
 			<div class="info d-flex t-wrap">

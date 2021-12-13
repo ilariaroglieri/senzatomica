@@ -1194,6 +1194,12 @@ body {
   }
 }
 
+.backup {
+  display: inline-block;
+  width: 120px;
+  @extend .no-border;
+}
+
 .footer {
   line-height: 1.5;
   @extend .mono;

@@ -4,7 +4,11 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-      <a href="<?php echo get_page_link( get_page_by_title( 'Notizie' )->ID ); ?>" class="button uppercase">Torna alle Notizie</a>
+      <div class="navigation d-flex space-between">
+        <span class="navi uppercase previous"><?php previous_post_link( '%link','Precedente', false ); ?></span>
+        <a href="<?php echo get_page_link( get_page_by_title( 'Notizie' )->ID ); ?>" class="button uppercase">Torna alle Notizie</a>
+        <span class="navi uppercase next"><?php next_post_link( '%link','Successiva', false ); ?></span>
+      </div>
       <h2 class="serif s-big spacing-b-1"><?php the_title(); ?></h2>
       <p class="caption spacing-b-2"><?php the_date(); ?></p>
       <?php if ( has_post_thumbnail() ) : ?>  
@@ -20,8 +24,8 @@
       </div>
       
       <div class="navigation d-flex space-between">
-          <span class="navi uppercase previous"><?php previous_post_link( '%link','Precedente', false ); ?></span>
-          <span class="navi uppercase next"><?php next_post_link( '%link','Successiva', false ); ?></span>
+        <span class="navi uppercase previous"><?php previous_post_link( '%link','Precedente', false ); ?></span>
+        <span class="navi uppercase next"><?php next_post_link( '%link','Successiva', false ); ?></span>
       </div>
     </article>
 

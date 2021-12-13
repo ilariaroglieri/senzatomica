@@ -433,7 +433,7 @@ a {
   border-bottom: 1px solid transparent; }
   a:hover {
     border-bottom: 1px solid; }
-  a.no-border:hover, #header #logo a:hover, #header div[class*="menu-main"] > ul li .sub-menu li a:hover, #header div[class*="menu-main"] > ul li.s-cpf a:hover, #header div[class*="menu-main"] > ul li.s-perche a:hover, .single .text-content p a:hover, #sb_instagram #sbi_images div.sbi_item a.sbi_photo:hover, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover {
+  a.no-border:hover, #header #logo a:hover, #header div[class*="menu-main"] > ul li .sub-menu li a:hover, #header div[class*="menu-main"] > ul li.s-cpf a:hover, #header div[class*="menu-main"] > ul li.s-perche a:hover, .single .text-content p a:hover, #sb_instagram #sbi_images div.sbi_item a.sbi_photo:hover, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover, a.backup:hover {
     border-bottom: 1px solid transparent; }
 
 ul {
@@ -1111,13 +1111,13 @@ body {
     align-items: start; }
   .posts-flow .hentry {
     margin-bottom: 60px; }
-    .posts-flow .hentry .entry-title a.no-border, .posts-flow .hentry .entry-title #header #logo a, #header #logo .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li .sub-menu li a, #header div[class*="menu-main"] > ul li .sub-menu li .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-cpf a, #header div[class*="menu-main"] > ul li.s-cpf .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-perche a, #header div[class*="menu-main"] > ul li.s-perche .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title .single .text-content p a, .single .text-content p .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #sb_instagram #sbi_images div.sbi_item a.sbi_photo, #sb_instagram #sbi_images div.sbi_item .posts-flow .hentry .entry-title a.sbi_photo, .posts-flow .hentry .entry-title [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin .posts-flow .hentry .entry-title a.sby_video_thumbnail {
+    .posts-flow .hentry .entry-title a.no-border, .posts-flow .hentry .entry-title #header #logo a, #header #logo .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li .sub-menu li a, #header div[class*="menu-main"] > ul li .sub-menu li .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-cpf a, #header div[class*="menu-main"] > ul li.s-cpf .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-perche a, #header div[class*="menu-main"] > ul li.s-perche .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title .single .text-content p a, .single .text-content p .posts-flow .hentry .entry-title a, .posts-flow .hentry .entry-title #sb_instagram #sbi_images div.sbi_item a.sbi_photo, #sb_instagram #sbi_images div.sbi_item .posts-flow .hentry .entry-title a.sbi_photo, .posts-flow .hentry .entry-title [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin .posts-flow .hentry .entry-title a.sby_video_thumbnail, .posts-flow .hentry .entry-title a.backup {
       -webkit-transition: color 0.3s;
       -moz-transition: color 0.3s;
       -ms-transition: color 0.3s;
       -o-transition: color 0.3s;
       transition: color 0.3s; }
-      .posts-flow .hentry .entry-title a.no-border:hover, .posts-flow .hentry .entry-title #header #logo a:hover, #header #logo .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li .sub-menu li a:hover, #header div[class*="menu-main"] > ul li .sub-menu li .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-cpf a:hover, #header div[class*="menu-main"] > ul li.s-cpf .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-perche a:hover, #header div[class*="menu-main"] > ul li.s-perche .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title .single .text-content p a:hover, .single .text-content p .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #sb_instagram #sbi_images div.sbi_item a.sbi_photo:hover, #sb_instagram #sbi_images div.sbi_item .posts-flow .hentry .entry-title a.sbi_photo:hover, .posts-flow .hentry .entry-title [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin .posts-flow .hentry .entry-title a.sby_video_thumbnail:hover {
+      .posts-flow .hentry .entry-title a.no-border:hover, .posts-flow .hentry .entry-title #header #logo a:hover, #header #logo .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li .sub-menu li a:hover, #header div[class*="menu-main"] > ul li .sub-menu li .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-cpf a:hover, #header div[class*="menu-main"] > ul li.s-cpf .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-perche a:hover, #header div[class*="menu-main"] > ul li.s-perche .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title .single .text-content p a:hover, .single .text-content p .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #sb_instagram #sbi_images div.sbi_item a.sbi_photo:hover, #sb_instagram #sbi_images div.sbi_item .posts-flow .hentry .entry-title a.sbi_photo:hover, .posts-flow .hentry .entry-title [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin .posts-flow .hentry .entry-title a.sby_video_thumbnail:hover, .posts-flow .hentry .entry-title a.backup:hover {
         color: #79fc96; }
     .posts-flow .hentry .button, .posts-flow .hentry input[type="submit"] {
       margin: 30px 0; }
@@ -1227,6 +1227,10 @@ body {
       color: black !important; }
     [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover div.sby_thumbnail_hover {
       opacity: .7; }
+
+.backup {
+  display: inline-block;
+  width: 120px; }
 
 .footer {
   line-height: 1.5; }

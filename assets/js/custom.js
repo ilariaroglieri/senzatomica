@@ -345,6 +345,12 @@ jQuery(document).ready(function($) {
     duration: 15000,
   });
 
+  // back to top button
+  $('.backup').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 300);
+    return false;
+  });
+
   // archive suggested searchs
   var colors = ['#79fc96','#FABAF0','#FC9251','#BF9EED'];
   $('.suggested-search, .menu li > .sub-menu li a').mouseenter(function() {
