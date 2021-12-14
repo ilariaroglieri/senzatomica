@@ -913,7 +913,7 @@ body {
     cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
     cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x, url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer;
     height: 100%;
-    width: 100%;
+    width: 50vw;
     padding: 30px;
     position: absolute;
     top: 0;
@@ -1329,7 +1329,7 @@ body {
   .d-flex.t-column-reverse, #header div[class*="menu-main"] > ul.t-column-reverse, #header div[class*="menu-main"] > ul li.t-column-reverse, #header div[class*="menu-main"] > ul li .t-column-reverse.sub-menu, .colored-box .title-container .t-column-reverse.container, .colored-box.multi .t-column-reverse.title-container, .t-column-reverse.posts-flow {
     flex-flow: column-reverse; }
 
-  .t-whole, .posts-flow .hentry.posts_type-notizia-grande-in-evidenza, .posts-flow .post.category-documenti-storici {
+  .t-whole, #content-archive-news .posts-flow .hentry.posts_type-notizia-grande-in-evidenza, .category .posts-flow .hentry.posts_type-notizia-grande-in-evidenza, .posts-flow .post.category-documenti-storici {
     width: calc(100% - 30px);
     margin-left: 15px;
     margin-right: 15px; }
@@ -1457,13 +1457,23 @@ body {
     padding-right: 15px;
     padding-left: 15px; }
 
+  .m-half-pad {
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 15px; }
+
+  .m-one-third-pad {
+    width: 33.333%;
+    padding-right: 15px;
+    padding-left: 15px; }
+
   #header {
     background-color: white; }
     #header > .container {
       height: 6vh;
       justify-content: flex-start; }
     #header .menu-toggle {
-      top: -30px; }
+      top: -15px; }
       #header .menu-toggle span:nth-child(1) {
         top: 30px; }
       #header .menu-toggle span:nth-child(2) {
@@ -1500,12 +1510,10 @@ body {
   .slice-container.visible {
     width: 100%; }
   .slice-container .slice-content {
-    padding: 15px; }
+    padding: 15px;
+    width: 100vw; }
     .slice-container .slice-content .text {
       margin-top: 0; }
-
-  #content-home #image-grid-container #image-grid {
-    grid-template-columns: repeat(4, 1fr); }
 
   .colored-box .title-container {
     padding-left: 0;

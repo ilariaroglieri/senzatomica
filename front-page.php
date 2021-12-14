@@ -172,38 +172,34 @@
     </div>
 
     <div class="countdown container-fluid">
-      <div class="flex-row d-flex t-center">
-        <!-- <div class="d-one-twelfth-pad t-hidden"></div> -->
-        <div class="d-three-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+      <div class="flex-row d-flex t-center wrap">
+        <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
           <span id="years" class="s-huge extended"></span>
           <span class="sans s-regular">Anni</span>
         </div>
-        <div class="d-three-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+        <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
           <span id="days" class="s-huge normal"></span>
           <span class="sans s-regular">Giorni</span>
         </div>
-        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
           <span id="hours" class="s-huge condensed"></span>
           <span class="sans s-regular">Ore</span>
         </div>
-        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column">
+        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
           <span id="minutes" class="s-huge xcondensed"></span>
           <span class="sans s-regular">Minuti</span>
         </div>
-        <div class="d-two-twelfth-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column">
+        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column border-bottom">
           <span id="seconds" class="s-huge xcondensed"></span>
           <span class="sans s-regular">Secondi</span>
         </div>
-        <!-- <div class="d-one-twelfth-pad t-hidden"></div> -->
       </div>
     </div>
 
-    <div class="countdown container-fluid spacing-b-4 spacing-p-b-1 spacing-p-t-1 border-top border-bottom">
-      <div class="flex-row d-flex t-center">
-        <div class="d-whole">
-          <span class="s-regular mono t-center">Test eseguito il 3 settembre 2017, da parte della Corea del Nord.</span>
+    <div class="countdown container-fluid spacing-b-4 spacing-p-b-1 spacing-p-t-1 border-bottom">
+        <div class="d-whole t-center">
+          <span class="s-regular mono">Test eseguito il 3 settembre 2017, da parte della Corea del Nord.</span>
         </div>
-      </div>
     </div>
 
     <div class="container">
