@@ -51,8 +51,8 @@ input[type="email"], input[type="text"] {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  color: red;
-  font-weight: bold;
+  color: black;
+  font-weight: regular;
   font-size: 18px;
   font-family: 'GT Flexa Mono', sans-serif;
   @extend .s-small;
@@ -67,8 +67,9 @@ textarea {
   height: 2em;
   @extend .s-small;
 }
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
   @extend .button;
+  @extend .no-margin;
   @extend .uppercase;
   font-size: 14px;
   cursor: pointer;
@@ -378,6 +379,7 @@ img {
       height: 35vh;
       #logo a svg {
         width: 100%;
+        max-width: calc(100vw - #{$spacing});
       }
     }
   }
@@ -1332,6 +1334,10 @@ body {
     & > .container  {
       height: 4vh;
     }
+  }
+
+  .s-medium-resp {
+    font-size: 16px;
   }
 }
 

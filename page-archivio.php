@@ -3,9 +3,9 @@
 <section class="content" id="content-archive-news">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php include('title-stripe.php') ?>
+    <?php include('title-stripe.php'); ?>
 
-    <?php include('keywords-stripe.php') ?>
+    <?php include('keywords-stripe.php'); ?>
 
     <div class="container">
       <div class="d-flex flex-row t-column">
@@ -30,6 +30,7 @@
 
   <div class="container">
     <?php include('filters.php') ?>
+    <?php include('searchform.php'); ?>
   </div>
 
   <div class="posts-flow hidden container-fluid d-flex wrap spacing-p-t-4">

@@ -284,7 +284,7 @@ jQuery(document).ready(function($) {
 
   // divide posts into rows
   function createArchiveRows() {
-    var posts = $('#content-archive-news, #content-archive').find($('.hentry'));
+    var posts = $('#content-archive-news, #content-archive, #content-search').find($('.hentry'));
     var elements = [];
 
     posts.each(function(i, el) {
@@ -316,7 +316,7 @@ jQuery(document).ready(function($) {
         var post = $('#'+ ids);
         post.attr('data-group', i);
       }
-      $('#content-archive-news, #content-archive').find('.hentry[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
+      $('#content-archive-news, #content-archive, #content-search').find('.hentry[data-group="'+i+'"').wrapAll('<div class="row-container container"><div class="d-flex flex-row"></div></div>');
     }
 
 

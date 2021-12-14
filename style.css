@@ -71,7 +71,7 @@ Version: 1.0
 .sans, #header div[class*="menu-main"] > ul li a, .wysiwyg.sans-text p, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
 
-.mono, a, .button, input[type="submit"], .caption, .mc4wp-response p, .footer {
+.mono, a, .button, input[type="submit"], button[type="submit"], .caption, .mc4wp-response p, .footer {
   font-family: 'GT Flexa Mono'; }
 
 .extended, #header div[class*="menu-main"] > ul li.s-perche a {
@@ -131,13 +131,13 @@ Version: 1.0
 .s-regdemi {
   font-size: 21px; }
 
-.s-regular, h2, .button.biggest, input.biggest[type="submit"], [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail div.sby_thumbnail_hover div.sby_video_title {
+.s-regular, h2, .button.biggest, input.biggest[type="submit"], button.biggest[type="submit"], [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail div.sby_thumbnail_hover div.sby_video_title {
   font-size: 18px; }
 
-.s-small, input[type="email"], input[type="text"], textarea, .button.bigger, input.bigger[type="submit"] {
+.s-small, input[type="email"], input[type="text"], textarea, .button.bigger, input.bigger[type="submit"], button.bigger[type="submit"] {
   font-size: 14px; }
 
-.s-xsmall, .button, input[type="submit"], .caption, .footer {
+.s-xsmall, .button, input[type="submit"], button[type="submit"], .caption, .footer {
   font-size: 11px; }
 
 .d-zero {
@@ -319,8 +319,8 @@ input[type="email"], input[type="text"] {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  color: red;
-  font-weight: bold;
+  color: black;
+  font-weight: regular;
   font-size: 18px;
   font-family: 'GT Flexa Mono', sans-serif; }
 
@@ -333,7 +333,7 @@ textarea {
   font-family: 'GT Flexa Mono', sans-serif;
   height: 2em; }
 
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
   font-size: 14px;
   cursor: pointer;
   box-shadow: none;
@@ -408,7 +408,7 @@ input[type="submit"] {
 .t-center {
   text-align: center; }
 
-.uppercase, input[type="submit"], #header div[class*="menu-main"] > ul li.s-cpf a, #header div[class*="menu-main"] > ul li.s-perche a {
+.uppercase, input[type="submit"], button[type="submit"], #header div[class*="menu-main"] > ul li.s-cpf a, #header div[class*="menu-main"] > ul li.s-perche a {
   text-transform: uppercase; }
 
 /* basic elements */
@@ -467,7 +467,7 @@ img {
   margin-left: -15px;
   position: relative; }
 
-.button, input[type="submit"] {
+.button, input[type="submit"], button[type="submit"] {
   display: inline-block;
   padding: 8px 15px;
   border-radius: 30px;
@@ -481,30 +481,30 @@ img {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
-  .button.biggest, input.biggest[type="submit"] {
+  .button.biggest, input.biggest[type="submit"], button.biggest[type="submit"] {
     padding: 8px 30px; }
-  .button.bigger, input.bigger[type="submit"] {
+  .button.bigger, input.bigger[type="submit"], button.bigger[type="submit"] {
     padding: 5px 30px;
     line-height: 2; }
-  .button.black, input.black[type="submit"], input[type="submit"].suggested-search:last-of-type, #header div[class*="menu-main"] > ul li .sub-menu li.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"], .button.suggested-search:last-of-type {
+  .button.black, input.black[type="submit"], input[type="submit"].suggested-search:last-of-type, button.black[type="submit"], button[type="submit"].suggested-search:last-of-type, #header div[class*="menu-main"] > ul li .sub-menu li.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"], .button.suggested-search:last-of-type {
     background-color: black;
     color: white;
     border: 1px solid black; }
-    .button.black:hover, input.black[type="submit"]:hover, input[type="submit"].suggested-search:hover:last-of-type, #header div[class*="menu-main"] > ul li .sub-menu li.button:hover, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button:hover, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"]:hover, .button.suggested-search:hover:last-of-type, .button.black .active, input.black[type="submit"] .active, input[type="submit"].suggested-search:last-of-type .active, #header div[class*="menu-main"] > ul li .sub-menu li.button .active, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button .active, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"] .active, .button.suggested-search:last-of-type .active {
+    .button.black:hover, input.black[type="submit"]:hover, input[type="submit"].suggested-search:hover:last-of-type, button.black[type="submit"]:hover, button[type="submit"].suggested-search:hover:last-of-type, #header div[class*="menu-main"] > ul li .sub-menu li.button:hover, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button:hover, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"]:hover, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"]:hover, .button.suggested-search:hover:last-of-type, .button.black .active, input.black[type="submit"] .active, input[type="submit"].suggested-search:last-of-type .active, button.black[type="submit"] .active, button[type="submit"].suggested-search:last-of-type .active, #header div[class*="menu-main"] > ul li .sub-menu li.button .active, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button .active, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"] .active, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"] .active, .button.suggested-search:last-of-type .active {
       border: 1px solid white;
       background-color: white;
       color: black; }
-  .button.light, input.light[type="submit"] {
+  .button.light, input.light[type="submit"], button.light[type="submit"] {
     background-color: white; }
-  .button.no-margin, input.no-margin[type="submit"] {
+  .button.no-margin, input[type="submit"], button[type="submit"] {
     margin: 0; }
-  .button:hover, input[type="submit"]:hover, .button.active, input.active[type="submit"] {
+  .button:hover, input[type="submit"]:hover, button[type="submit"]:hover, .button.active, input.active[type="submit"], button.active[type="submit"] {
     background-color: black;
     color: #79fc96;
     border: 1px solid black; }
-  .button.active, input.active[type="submit"] {
+  .button.active, input.active[type="submit"], button.active[type="submit"] {
     pointer-events: none; }
-  .button.inactive, input.inactive[type="submit"] {
+  .button.inactive, input.inactive[type="submit"], button.inactive[type="submit"] {
     pointer-events: none; }
 
 .caption {
@@ -514,22 +514,22 @@ img {
 
 .border, #sb_instagram #sbi_images div.sbi_item, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin {
   border: 1px solid #79fc96; }
-  .border.black, #header div[class*="menu-main"] > ul li .sub-menu li.border, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine #sb_instagram #sbi_images div.button.sbi_item, #sb_instagram #sbi_images .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sbi_item, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.button.sby_item.sby_no_margin, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sby_item.sby_no_margin, .border.suggested-search:last-of-type, #sb_instagram #sbi_images div.suggested-search.sbi_item:last-of-type, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.suggested-search.sby_item.sby_no_margin:last-of-type, #sb_instagram #sbi_images div.black.sbi_item, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.black.sby_item.sby_no_margin {
+  .border.black, #header div[class*="menu-main"] > ul li .sub-menu li.border, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button.border[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine #sb_instagram #sbi_images div.button.sbi_item, #sb_instagram #sbi_images .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sbi_item, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.button.sby_item.sby_no_margin, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine div.button.sby_item.sby_no_margin, .border.suggested-search:last-of-type, #sb_instagram #sbi_images div.suggested-search.sbi_item:last-of-type, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.suggested-search.sby_item.sby_no_margin:last-of-type, #sb_instagram #sbi_images div.black.sbi_item, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.black.sby_item.sby_no_margin {
     border: 1px solid black; }
 
 .border-top, #header div[class*="menu-main"] > ul li .sub-menu li {
   border-top: 1px solid #79fc96; }
-  .border-top.black, #header div[class*="menu-main"] > ul li .sub-menu li, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-top.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-top[type="submit"], .border-top.suggested-search:last-of-type {
+  .border-top.black, #header div[class*="menu-main"] > ul li .sub-menu li, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-top.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-top[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button.border-top[type="submit"], .border-top.suggested-search:last-of-type {
     border-top: 1px solid black; }
 
 .border-bottom, .suggested-search:last-of-type {
   border-bottom: 1px solid #79fc96; }
-  .border-bottom.black, #header div[class*="menu-main"] > ul li .sub-menu li.border-bottom, #header div[class*="menu-main"] > ul li .sub-menu li.suggested-search:last-of-type, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-bottom.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-bottom[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"].suggested-search:last-of-type, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button.suggested-search:last-of-type, .suggested-search:last-of-type {
+  .border-bottom.black, #header div[class*="menu-main"] > ul li .sub-menu li.border-bottom, #header div[class*="menu-main"] > ul li .sub-menu li.suggested-search:last-of-type, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-bottom.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-bottom[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"].suggested-search:last-of-type, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button.border-bottom[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"].suggested-search:last-of-type, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button.suggested-search:last-of-type, .suggested-search:last-of-type {
     border-bottom: 1px solid black; }
 
 .border-right {
   border-right: 1px solid #79fc96; }
-  .border-right.black, #header div[class*="menu-main"] > ul li .sub-menu li.border-right, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-right.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-right[type="submit"], .border-right.suggested-search:last-of-type {
+  .border-right.black, #header div[class*="menu-main"] > ul li .sub-menu li.border-right, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .border-right.button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input.border-right[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button.border-right[type="submit"], .border-right.suggested-search:last-of-type {
     border-right: 1px solid black; }
 
 .hover-primary-color {
@@ -566,7 +566,8 @@ img {
     align-items: end;
     height: 35vh; }
     #header.huge > .container #logo a svg {
-      width: 100%; }
+      width: 100%;
+      max-width: calc(100vw - 30px); }
   #header #logo {
     text-align: center;
     position: relative;
@@ -966,7 +967,7 @@ body {
   margin: 60px 0;
   margin-left: -8.3333%; }
 
-.cpf-selector .button, .cpf-selector input[type="submit"] {
+.cpf-selector .button, .cpf-selector input[type="submit"], .cpf-selector button[type="submit"] {
   margin-left: 15px;
   margin-right: 15px; }
 
@@ -986,10 +987,10 @@ body {
     position: static; }
   .container-section .container {
     min-height: initial; }
-  .container-section .button-row.v-center .button, .container-section #header div[class*="menu-main"] > ul li.button-row .button, #header div[class*="menu-main"] > ul .container-section li.button-row .button, .container-section .button-row.v-center input[type="submit"], .container-section #header div[class*="menu-main"] > ul li.button-row input[type="submit"], #header div[class*="menu-main"] > ul .container-section li.button-row input[type="submit"] {
+  .container-section .button-row.v-center .button, .container-section #header div[class*="menu-main"] > ul li.button-row .button, #header div[class*="menu-main"] > ul .container-section li.button-row .button, .container-section .button-row.v-center input[type="submit"], .container-section #header div[class*="menu-main"] > ul li.button-row input[type="submit"], #header div[class*="menu-main"] > ul .container-section li.button-row input[type="submit"], .container-section .button-row.v-center button[type="submit"], .container-section #header div[class*="menu-main"] > ul li.button-row button[type="submit"], #header div[class*="menu-main"] > ul .container-section li.button-row button[type="submit"] {
     margin-left: 15px;
     margin-right: 15px; }
-  .container-section .button-row.start .button, .container-section .button-row.start input[type="submit"] {
+  .container-section .button-row.start .button, .container-section .button-row.start input[type="submit"], .container-section .button-row.start button[type="submit"] {
     margin-bottom: 0; }
 
 .colored-box .title-container {
@@ -1119,7 +1120,7 @@ body {
       transition: color 0.3s; }
       .posts-flow .hentry .entry-title a.no-border:hover, .posts-flow .hentry .entry-title #header #logo a:hover, #header #logo .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li .sub-menu li a:hover, #header div[class*="menu-main"] > ul li .sub-menu li .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-cpf a:hover, #header div[class*="menu-main"] > ul li.s-cpf .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #header div[class*="menu-main"] > ul li.s-perche a:hover, #header div[class*="menu-main"] > ul li.s-perche .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title .single .text-content p a:hover, .single .text-content p .posts-flow .hentry .entry-title a:hover, .posts-flow .hentry .entry-title #sb_instagram #sbi_images div.sbi_item a.sbi_photo:hover, #sb_instagram #sbi_images div.sbi_item .posts-flow .hentry .entry-title a.sbi_photo:hover, .posts-flow .hentry .entry-title [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail:hover, [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin .posts-flow .hentry .entry-title a.sby_video_thumbnail:hover, .posts-flow .hentry .entry-title a.backup:hover {
         color: #79fc96; }
-    .posts-flow .hentry .button, .posts-flow .hentry input[type="submit"] {
+    .posts-flow .hentry .button, .posts-flow .hentry input[type="submit"], .posts-flow .hentry button[type="submit"] {
       margin: 30px 0; }
     .posts-flow .hentry.posts_height-superlandscape a.img-link {
       padding-bottom: 50%; }
@@ -1144,7 +1145,7 @@ body {
         margin-bottom: 30px; }
         .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a:hover {
           color: white; }
-      .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"] {
+      .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"] {
         margin-left: 30px; }
 
 .suggested-search {
@@ -1307,7 +1308,10 @@ body {
       padding-right: 0; } }
 @media screen and (max-width: 1024px) {
   #header > .container {
-    height: 4vh; } }
+    height: 4vh; }
+
+  .s-medium-resp {
+    font-size: 16px; } }
 @media screen and (max-width: 768px) {
   .s-huge {
     font-size: 13vw; }
@@ -1392,7 +1396,7 @@ body {
   .button-row {
     flex-flow: column;
     justify-content: flex-start; }
-    .button-row .button, .button-row input[type="submit"] {
+    .button-row .button, .button-row input[type="submit"], .button-row button[type="submit"] {
       margin-left: 0;
       margin-right: 0;
       margin-bottom: 0; }
@@ -1424,7 +1428,7 @@ body {
   .s-medium, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .s-regdemi {
     font-size: 21px; }
 
-  .s-regular, h2, .button.biggest, input.biggest[type="submit"], [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail div.sby_thumbnail_hover div.sby_video_title {
+  .s-regular, h2, .button.biggest, input.biggest[type="submit"], button.biggest[type="submit"], [id^=sb_youtube_].sb_youtube.sby_col_2 div.sby_items_wrap div.sby_item.sby_no_margin a.sby_video_thumbnail div.sby_thumbnail_hover div.sby_video_title {
     font-size: 17px; }
 
   .m-hidden {
@@ -1476,11 +1480,11 @@ body {
 
   .posts-flow .hentry {
     margin-bottom: 30px !important; }
-    .posts-flow .hentry .button, .posts-flow .hentry input[type="submit"] {
+    .posts-flow .hentry .button, .posts-flow .hentry input[type="submit"], .posts-flow .hentry button[type="submit"] {
       margin: 15px 0; }
     .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title {
       padding: 15px; }
-    .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"] {
+    .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .button, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine input[type="submit"], .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine button[type="submit"] {
       margin: 15px; }
 
   #question-wheel-container {
@@ -1545,7 +1549,7 @@ body {
       .colored-box .text-container .text-content .wysiwyg.paragraph-space p {
         margin-bottom: 0; }
 
-  .cpf-selector .button, .cpf-selector input[type="submit"] {
+  .cpf-selector .button, .cpf-selector input[type="submit"], .cpf-selector button[type="submit"] {
     margin-top: 0; }
 
   .footer .info, .footer .partners {
