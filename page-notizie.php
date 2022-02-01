@@ -5,7 +5,8 @@ $cptQuery = new WP_Query( array(
   'post_type'         => 'post',
   'posts_per_page'    => -1,
   'order'             => 'DESC',
-  'ignore_sticky_posts' => 1
+  'ignore_sticky_posts' => 1,
+  'category__not_in' => 19,
   ));
 ?>
 
