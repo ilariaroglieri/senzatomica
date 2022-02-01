@@ -128,6 +128,7 @@ input[type="submit"], button[type="submit"] {
 
 .v-hidden {
   opacity: 0 !important;
+  pointer-events: none;
 }
 
 .v-visible {
@@ -388,6 +389,7 @@ img {
     position: relative;
     z-index: 100001;
     height: 100%;
+    width: 100%;
     a {
       height: 100%;
       align-items: flex-end;
@@ -798,24 +800,51 @@ body {
 }
 
 .wysiwyg {
-  &.serif-text p {
+  &.serif-text p,
+  &.serif-text ul li,
+  &.serif-text ol li {
     @extend .serif-text;
     line-height: 1.4 !important;
   }
-  &.sans-text p {
+  &.sans-text p,
+  &.sans-text ol li,
+  &.sans-text ul li {
     @extend .sans;
   }
-  &.paragraph-space p {
+  &.paragraph-space p,
+  &.paragraph-space ul li,
+  &.paragraph-space ol li {
     margin-bottom: $spacing;
+  }
+}
+
+.page {
+  .text-content {
+    p, ul li, ol li {
+      @extend .serif;
+      a {
+        @extend .serif;
+        border-bottom: 1px solid $primaryColor;
+      }
+    }
   }
 }
 
 //single
 .single {
-  .text-content {
+  div[id*='attachment'], .img-caption {
+    width: 100% !important;
+    font-size: 12px !important;
     p {
+      margin-top: $half-spacing;
+      line-height: 1.2;
+      @extend .sans;
+    }
+  }
+  .text-content {
+    p, ul li, ol li {
       @extend .serif-text;
-      line-height: 1.4;
+      line-height: 1.4 !important;
       b {
         font-weight: normal;
       }
@@ -824,6 +853,10 @@ body {
         @extend .no-border;
         color: $primaryColor;
       }
+    }
+    ul, ol {
+      list-style-type: decimal;
+      padding-left: 1em;
     }
     h1, h2, h3, h4 {
       @extend .sans;
@@ -890,8 +923,7 @@ body {
     }
   }
   .title-svg {
-    // cursor: pointer;
-    // pointer-events: all;
+    width: 100%;
   }
   .text-container {
     z-index: 2;
@@ -900,6 +932,7 @@ body {
     height: 0;
     width: 100%;
     overflow:hidden;
+    justify-content: space-between;
     @include transition(height 1s cubic-bezier(0.83, 0, 0.17, 1));
     &.active {
       height: 100%;
@@ -923,12 +956,12 @@ body {
     }
   }
   &.multi {
-
     .title-svg {
       width: calc(#{$desktop/2 -  #{$double-spacing}});
     }
     .title-container {
       align-items: center;
+      justify-content: center;
       cursor: auto;
       cursor: url(../senzatomica-theme/assets/img/open.png) 25 50, auto;
       cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/open.png") 1x,url("../senzatomica-theme/assets/img/open-2x.png") 2x) 25 50, pointer;
@@ -936,7 +969,6 @@ body {
       @extend .d-flex;
       @extend .d-column;
       align-items: center;
-      justify-content: space-between;
       @include transition(all .5s);
       &.active {
         @include transition(none);
@@ -1311,10 +1343,13 @@ body {
     .title-container {
       min-height: 80vh;
     }
+    .title-svg {
+      width: 100%;
+    }
     &.multi {
       .title-svg {
         width: 100%;
-      }
+      } 
     }
   }
 
@@ -1339,6 +1374,15 @@ body {
   .s-medium-resp {
     font-size: 16px;
   }
+
+  #content-home {
+    #image-grid-container {
+      #image-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+
 }
 
 @media screen and (max-width: $tablet) {  
@@ -1428,7 +1472,7 @@ body {
   }
 
   //archives
-  #content-archive-news, .category {
+  #content-archive-news, #content-search, .category {
     .posts-flow {
       .hentry {
         &.posts_type-notizia-grande-in-evidenza {
@@ -1466,14 +1510,6 @@ body {
       }
       .patrons, .sustainers {
         border-top: 1px solid black;
-      }
-    }
-  }
-
-  #content-home {
-    #image-grid-container {
-      #image-grid {
-        grid-template-columns: repeat(6, 1fr);
       }
     }
   }
@@ -1588,11 +1624,24 @@ body {
     padding-left: #{$half-spacing};
   }
 
+  #content-home {
+    #image-grid-container {
+      #image-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
   #header {
     background-color: white;
     & > .container  {
       height: 6vh;
       justify-content: flex-start;
+    }
+    div[class*="menu-main"] > ul {
+      li.s-cpf, li.s-perche {
+        height: 150px;
+      }
     }
     .menu-toggle {
       top: - $half-spacing;

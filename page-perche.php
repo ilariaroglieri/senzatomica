@@ -37,6 +37,7 @@
           <?php if( get_row_layout() == 'riga_box_singolo' ): ?>
             <?php 
               $svg = get_sub_field('immagine_titolo_svg'); 
+              $svgMobile = get_sub_field('immagine_titolo_mobile_svg'); 
               $title = get_sub_field('titolo'); 
               $color = get_sub_field('colore'); 
               $excerpt = get_sub_field('testo_grande'); 
@@ -47,8 +48,8 @@
             <div class="colored-box one p-relative">
               <div class="title-container d-flex center container-fluid t-center" data-role="single" style="background-color: <?php echo $color; ?>">
                 <div class="container spacing-p-t-3 spacing-p-b-3">
-                  <img class="title-svg" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
-                  <!-- <p class="button black biggest mono">+</p> -->
+                  <img class="title-svg desk-only" src="<?php echo $svg['url']; ?>" alt="<?php echo $title; ?>"/>
+                  <img class="title-svg mob-only" src="<?php echo $svgMobile['url']; ?>" alt="<?php echo $title; ?>"/>
                 </div>
               </div>
 
