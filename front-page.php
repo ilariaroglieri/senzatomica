@@ -153,44 +153,110 @@
     <?php include('cpf-link.php'); ?>
     <?php include('perche-link.php'); ?>
 
-    <div class="countdown container-fluid spacing-t-4 spacing-p-b-1 spacing-p-t-1 border-top border-bottom">
-      <div class="flex-row d-flex t-center">
-        <div class="d-whole">
-          <h3 class="s-big sans italic t-center">Dall'ultimo test nucleare sono passati:</h3>
+    <!-- image banner -->
+    <?php 
+      $imageBanner = get_field('banner_immagine'); 
+      $coloreBanner = get_field('background_banner'); 
+    ?>
+
+    <?php if ($imageBanner): ?>
+      <div class="container-fluid d-flex spacing-p-t-3 spacing-p-b-3" style="background-color: <?php echo $coloreBanner; ?>">
+        <div class="container">
+          <img class="title-svg" src="<?php echo $imageBanner['url']; ?>" alt="<?php echo $imageBanner['title'] ?>"/>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
 
-    <div class="countdown container-fluid">
-      <div class="flex-row d-flex t-center wrap">
-        <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
-          <span id="years" class="s-huge extended"></span>
-          <span class="sans s-regular">Anni</span>
-        </div>
-        <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
-          <span id="days" class="s-huge normal"></span>
-          <span class="sans s-regular">Giorni</span>
-        </div>
-        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
-          <span id="hours" class="s-huge condensed"></span>
-          <span class="sans s-regular">Ore</span>
-        </div>
-        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
-          <span id="minutes" class="s-huge xcondensed"></span>
-          <span class="sans s-regular">Minuti</span>
-        </div>
-        <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column border-bottom">
-          <span id="seconds" class="s-huge xcondensed"></span>
-          <span class="sans s-regular">Secondi</span>
+
+    <!-- coppia di countdown -->
+    <?php $showCountdown = get_field('mostra_countdown'); ?>
+
+    <?php if ($showCountdown == 1): ?>
+      <div class="countdown container-fluid spacing-t-4 spacing-p-b-1 spacing-p-t-1 border-top border-bottom">
+        <div class="flex-row d-flex t-center">
+          <div class="d-whole">
+            <h3 class="s-big sans italic t-center">Dal primo test nucleare sono passati:</h3>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="countdown container-fluid spacing-b-4 spacing-p-b-1 spacing-p-t-1 border-bottom">
+      <div class="countdown container-fluid">
+        <div class="flex-row d-flex t-center wrap">
+          <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="FTyears" class="s-huge extended"></span>
+            <span class="sans s-regular">Anni</span>
+          </div>
+          <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="FTdays" class="s-huge normal"></span>
+            <span class="sans s-regular">Giorni</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="FThours" class="s-huge condensed"></span>
+            <span class="sans s-regular">Ore</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="FTminutes" class="s-huge xcondensed"></span>
+            <span class="sans s-regular">Minuti</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column border-bottom">
+            <span id="FTseconds" class="s-huge xcondensed"></span>
+            <span class="sans s-regular">Secondi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown container-fluid spacing-p-b-1 spacing-p-t-1 border-bottom">
         <div class="d-whole t-center">
-          <span class="s-regular mono">Test eseguito il 3 settembre 2017, da parte della Corea del Nord.</span>
+          <span class="s-regular mono">Bomba di Hiroshima</span>
         </div>
-    </div>
+      </div>
+
+      <?php 
+        $testData = get_field('data_ultimo_test_nucleare');
+        $testTime = get_field('ora_ultimo_test_nucleare');
+        $testCaption = get_field('didascalia_test');
+      ?>
+      <div class="countdown container-fluid spacing-p-b-1 spacing-p-t-1 border-bottom">
+        <div class="flex-row d-flex t-center">
+          <div class="d-whole">
+            <h3 class="s-big sans italic t-center">Dall'ultimo test nucleare sono passati:</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown container-fluid">
+        <div class="countdown-test-date d-none"><?= $testData; ?></div>
+        <div class="countdown-test-time d-none"><?= $testTime; ?></div>
+        <div class="flex-row d-flex t-center wrap">
+          <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="years" class="s-huge extended"></span>
+            <span class="sans s-regular">Anni</span>
+          </div>
+          <div class="d-three-twelfth-pad m-half-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="days" class="s-huge normal"></span>
+            <span class="sans s-regular">Giorni</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="hours" class="s-huge condensed"></span>
+            <span class="sans s-regular">Ore</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 border-right d-flex d-column border-bottom">
+            <span id="minutes" class="s-huge xcondensed"></span>
+            <span class="sans s-regular">Minuti</span>
+          </div>
+          <div class="d-two-twelfth-pad m-one-third-pad spacing-p-b-2 spacing-p-t-2 d-flex d-column border-bottom">
+            <span id="seconds" class="s-huge xcondensed"></span>
+            <span class="sans s-regular">Secondi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown container-fluid spacing-b-4 spacing-p-b-1 spacing-p-t-1 border-bottom">
+        <div class="d-whole t-center">
+          <span class="s-regular mono"><?= $testCaption; ?></span>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <div class="container">
       <a class="button uppercase bigger" href="https://www.instagram.com/senzatomica_official/" target="_blank">Instagram</a>

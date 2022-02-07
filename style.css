@@ -1268,13 +1268,15 @@ body {
       .footer .partners > div:last-of-type {
         border-right: none; }
     .footer .partners .partner > * {
-      max-width: 170px;
+      max-width: 250px;
       display: inline-block; }
+    .footer .partners .promoters .logo img, .footer .partners .promoters .logo a {
+      max-width: 120px; }
     .footer .partners .logo.d-flex, .footer .partners #header div[class*="menu-main"] > ul.logo, #header .footer .partners div[class*="menu-main"] > ul.logo, .footer .partners #header div[class*="menu-main"] > ul li.logo, #header div[class*="menu-main"] > ul .footer .partners li.logo, .footer .partners #header div[class*="menu-main"] > ul li .logo.sub-menu, #header div[class*="menu-main"] > ul li .footer .partners .logo.sub-menu, .footer .partners .colored-box .title-container .logo.container, .colored-box .title-container .footer .partners .logo.container, .footer .partners .colored-box.multi .logo.title-container, .colored-box.multi .footer .partners .logo.title-container, .footer .partners .logo.posts-flow {
       padding-right: 0; }
       .footer .partners .logo.d-flex > *, .footer .partners #header div[class*="menu-main"] > ul.logo > *, #header .footer .partners div[class*="menu-main"] > ul.logo > *, .footer .partners #header div[class*="menu-main"] > ul li.logo > *, #header div[class*="menu-main"] > ul .footer .partners li.logo > *, .footer .partners #header div[class*="menu-main"] > ul li .logo.sub-menu > *, #header div[class*="menu-main"] > ul li .footer .partners .logo.sub-menu > *, .footer .partners .colored-box .title-container .logo.container > *, .colored-box .title-container .footer .partners .logo.container > *, .footer .partners .colored-box.multi .logo.title-container > *, .colored-box.multi .footer .partners .logo.title-container > *, .footer .partners .logo.posts-flow > * {
         flex: 1 1 0;
-        max-width: 120px; }
+        max-width: 100px; }
   .footer input[type='submit'] {
     margin: 0 !important;
     margin-left: 30px !important; }
@@ -1307,6 +1309,11 @@ body {
     flex-flow: column; }
   .d-flex.ds-column-reverse, #header div[class*="menu-main"] > ul.ds-column-reverse, #header div[class*="menu-main"] > ul li.ds-column-reverse, #header div[class*="menu-main"] > ul li .ds-column-reverse.sub-menu, .colored-box .title-container .ds-column-reverse.container, .colored-box.multi .ds-column-reverse.title-container, .ds-column-reverse.posts-flow {
     flex-flow: column-reverse; }
+
+  .ds-whole {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px; }
 
   #header div[class*="menu-main"] > ul li.s-cpf a {
     font-size: 20vw; }

@@ -1263,14 +1263,21 @@ body {
       }
     }
     .partner > * {
-      max-width: 170px;
+      max-width: 250px;
       display: inline-block;
+    }
+    .promoters {
+      .logo {
+        img, a {
+          max-width: 120px;
+        }
+      }
     }
     .logo.d-flex {
       padding-right: 0;
       & > * {
         flex:1 1 0;
-        max-width: 120px;
+        max-width: 100px;
         // padding-right: $spacing;
       }
     }
@@ -1321,6 +1328,12 @@ body {
     &.ds-column-reverse {
       flex-flow: column-reverse;
     }
+  }
+
+  .ds-whole {
+    width: calc(100% - #{$spacing});
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
   }
 
 

@@ -62,11 +62,11 @@
 		       	 		<?php while( have_rows('promoters','option') ) : the_row(); ?>
 		       	 			<?php $promoterLogo = get_sub_field('immagine_logo'); ?>
 									<?php if ($promoterLogo['caption']): ?>
-										<a class="d-half t-whole no-border" href="<?php echo $promoterLogo['caption']; ?>" target="_blank">
+										<a class="d-half ds-whole t-half no-border" href="<?php echo $promoterLogo['caption']; ?>" target="_blank">
 											<img src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($promoterLogo['title']); ?>" />
 										</a>
 									<?php else: ?>
-										<img class="d-half t-whole" src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
+										<img class="d-half ds-whole t-half" src="<?php echo $promoterLogo['url']; ?>" alt="<?php echo esc_attr($logo8['title']); ?>"/>
 									<?php endif; ?>
 								<?php endwhile; ?>
 							</div>

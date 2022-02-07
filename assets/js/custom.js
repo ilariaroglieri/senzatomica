@@ -163,7 +163,40 @@ jQuery(document).ready(function($) {
 
   // countdown
   if ( $('body').hasClass('home')) {
-    var countDownDate = new Date("Sep 4, 2017 04:30:00").getTime();
+    //first test
+    var firstCountDownDate = new Date('1945-08-06T12:00:00').getTime();
+    
+    var y = setInterval(function() {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = now - firstCountDownDate;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var years = 0;
+      if (days > 365) {
+        years = Math.floor(days/365);
+        days = days % 365;
+      }
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("FTyears").innerHTML =  years;
+      document.getElementById("FTdays").innerHTML =  days;
+      document.getElementById("FThours").innerHTML =  hours;
+      document.getElementById("FTminutes").innerHTML =  minutes;
+      document.getElementById("FTseconds").innerHTML =  seconds;
+    }, 1000);
+
+    //last test
+    var LTdate = $('.countdown-test-date').text();
+    var LTtime = $('.countdown-test-time').text();
+    var countDownDate = new Date(LTdate+'T'+LTtime).getTime();
+    
     var x = setInterval(function() {
       // Get today's date and time
       var now = new Date().getTime();
