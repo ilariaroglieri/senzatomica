@@ -20,9 +20,45 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11"/>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 		<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/assets/favicon.ico">
-
-
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">	
+
+		<meta property="fb:app_id" content="249433874011586" />
+		<meta property="og:title" content="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="<?php echo get_permalink(); ?>" />
+
+		<?php $genericImage = get_field('immagine_generica_per_i_social','option'); ?>
+		<?php if(!has_post_thumbnail( $post->ID )) { ?> 
+      <meta property="og:image" content="<?php echo $genericImage['url'] ?>'"/>
+    <?php } else { 
+      $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+      <meta property="og:image" content="<?php echo esc_attr( $thumbnail_src[0] ); ?>"/>
+    <?php } ?>
+
+		<meta property="og:description" content="Senzatomica" />
+
+		<!-- Load Facebook SDK for JavaScript -->
+		<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '249433874011586',
+	      cookie     : true,
+	      xfbml      : true,
+	      version    : 'v2.7'
+	    });
+	      
+	    FB.AppEvents.logPageView();   
+	      
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +82,7 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+			<div id="fb-root"></div>
 			<div id="header" class="<?php if (is_front_page()):?>huge<?php endif; ?>">
 				<div class="container p-relative d-flex v-center">
 					<div id="logo">

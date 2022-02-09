@@ -129,15 +129,22 @@
               $title = get_sub_field('titolo_frase'); 
               $quote = get_sub_field('frase'); 
               $author = get_sub_field('firma'); 
+              $img = get_sub_field('img_social_sharing'); 
               $color = get_sub_field('colore'); 
               $j++;
             ?>
 
             <div class="slice-content d-flex d-column" data-slice="slice-<?php echo $j; ?>" style="background-color: <?php echo $color; ?>">
               <img class="close" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/close.svg" alt="close" />
-              <h3 class="title sans s-medium"><?= $title; ?></h3>
-              <p class="text serif s-medium"><?= $quote; ?></p>
+              <h3 class="title sans s-big-resp spacing-b-1"><?= $title; ?></h3>
+              <p class="text serif s-big-resp spacing-t-1"><?= $quote; ?></p>
               <p class="mono s-small"><?= $author; ?></p>
+
+              <!-- SOCIAL SHARING-->
+              <div class="button-row d-flex">
+                <a class="button uppercase share-fb" href="#" data-img="<?= $img['url']; ?>" data-quote="<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>">Share on FB</a>
+                <a class="button uppercase share-tw" target="_blank" href="http://twitter.com/share?text=<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>&url=<?php echo get_permalink(); ?>">Share on Twitter</a>
+              </div>
             </div>
           <?php endwhile; ?>
         </div>

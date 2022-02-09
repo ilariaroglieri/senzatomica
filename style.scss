@@ -756,8 +756,8 @@ body {
   }
   .slice-content {
     cursor: auto;
-    cursor: url(../senzatomica-theme/assets/img/close.png) 25 50, auto;
-    cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 50, pointer;
+    cursor: url(../senzatomica-theme/assets/img/close.png) 25 25, auto;
+    cursor: -webkit-image-set(url("../senzatomica-theme/assets/img/close.png") 1x,url("../senzatomica-theme/assets/img/close-2x.png") 2x) 25 25, pointer;
     height: 100%;
     width: 50vw;
     padding: $spacing;
@@ -771,6 +771,7 @@ body {
     &.active {
       opacity: 1;
       @include transition(opacity .3s 3s);
+      z-index: 100;
     }
     .close {
       display:none;
@@ -786,6 +787,11 @@ body {
     }
     .title {
       max-width: 600px;
+    }
+    .button-row {
+      .button {
+        margin-right: $half-spacing;
+      }
     }
   }
 }
@@ -1565,6 +1571,39 @@ body {
   }
 }
 
+@media screen and (max-width: $tablet) {
+  // spinning wheel
+  #question-wheel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    &.d-half-pad {
+      width: 0;
+      padding: 0;
+    }
+    #question-wheel {
+      height: 80vw;
+      width: 80vw;
+    }
+  }
+
+  .slice-container {
+    &.visible {
+      width: 100%;
+    }
+    .slice-content {
+      padding: $half-spacing;
+      width: 100vw;
+      .text {
+        margin-top: 0;
+        font-size: 30px;
+      }
+      .title {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $mobile) {
   .desk-only {
     display: none;
@@ -1698,33 +1737,6 @@ body {
     }
   }
 
-  // spinning wheel
-  #question-wheel-container {
-    overflow: hidden;
-    white-space: nowrap;
-    &.d-half-pad {
-      width: 0;
-      padding: 0;
-    }
-    #question-wheel {
-      height: 80vw;
-      width: 80vw;
-    }
-  }
-
-  .slice-container {
-    &.visible {
-      width: 100%;
-    }
-    .slice-content {
-      padding: $half-spacing;
-      width: 100vw;
-      .text {
-        margin-top: 0;
-      }
-    }
-  }
-
   .colored-box {
     .title-container {
       padding-left: 0;
@@ -1787,6 +1799,17 @@ body {
         text-align: left;
         border-right: none;
         border-top: 1px solid black;
+      }
+    }
+  }
+
+  .slice-container {
+    .slice-content {
+      .text {
+        font-size: 21px;
+      }
+      .title {
+        font-size: 21px;
       }
     }
   }

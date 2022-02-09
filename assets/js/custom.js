@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
   });
 
   // countdown
-  if ( $('body').hasClass('home')) {
+  if ( $('body').hasClass('home') && ($('.countdown').length > 1)) {
     //first test
     var firstCountDownDate = new Date('1945-08-06T12:00:00').getTime();
     
@@ -291,15 +291,30 @@ jQuery(document).ready(function($) {
     if (prevSlice > 10) {
       prevSlice = prevSlice - 10;
     }
-    
+
     questo.parent().parent().addClass('d-half-pad');
     questo.css('transform','rotate('+ prevRotation + 'deg)');
     $('.slice-container').addClass('visible');
     $('.slice-content').removeClass('active');
     $('.slice-container').find('.slice-content[data-slice="slice-' + prevSlice + '"]').addClass('active');
 
-    // console.log('[data-slide="slice-' + prevSlice + '"]');
+    // social sharing update img
+    var socialImg = $('.slice-container').find('.slice-content[data-slice="slice-' + prevSlice + '"]').find('.social-img').attr('src');
+    $('meta[property="og:image"]').attr('content', socialImg);
   });
+
+  $('.share-fb').click(function(event) {
+    var img = $(this).attr('data-img');
+    var quote = $(this).attr('data-quote');
+    event.preventDefault();
+
+    FB.ui({
+      method: 'share',
+      name: 'name',
+      href: img,
+      quote: quote ,
+    }, function(response){});
+  })
 
   if (mqHoverDevices.matches) {
     $('.slice-content .close').click(function() {
