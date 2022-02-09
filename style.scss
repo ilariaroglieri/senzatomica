@@ -771,7 +771,7 @@ body {
     &.active {
       opacity: 1;
       @include transition(opacity .3s 3s);
-      z-index: 100;
+      z-index: 50;
     }
     .close {
       display:none;
@@ -782,11 +782,11 @@ body {
       width: $spacing;
     }
     .text {
-      max-width: 600px;
+      max-width: 800px;
       margin-top: - $spacing;
     }
     .title {
-      max-width: 600px;
+      max-width: 800px;
     }
     .button-row {
       .button {
@@ -1576,6 +1576,8 @@ body {
   #question-wheel-container {
     overflow: hidden;
     white-space: nowrap;
+    height: calc(100vh - #{$header});
+    justify-content: center;
     &.d-half-pad {
       width: 0;
       padding: 0;
@@ -1599,6 +1601,13 @@ body {
       }
       .title {
         font-size: 30px;
+      }
+      .button-row {
+        flex-flow: row;
+        .button {
+          margin-top: 0;
+          margin-bottom: $half-spacing;
+        }
       }
     }
   }
@@ -1810,6 +1819,7 @@ body {
       }
       .title {
         font-size: 21px;
+        max-width: calc(100vw - 60px);
       }
     }
   }

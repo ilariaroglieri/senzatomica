@@ -19,6 +19,9 @@ $double-spacing: $spacing*2;
 $triple-spacing: $spacing*3;
 $fourfold-spacing: $spacing*4;
 
+//header mobilr
+$header: 85px;
+
 $col: 8.3333%;
 
 // Typography
@@ -153,7 +156,7 @@ $col: 8.3333%;
 }
 
 .serif-text {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'STIX Two Text', serif;
 }
 
 .sans {

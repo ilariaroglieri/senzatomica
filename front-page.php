@@ -141,9 +141,9 @@
               <p class="mono s-small"><?= $author; ?></p>
 
               <!-- SOCIAL SHARING-->
-              <div class="button-row d-flex">
-                <a class="button uppercase share-fb" href="#" data-img="<?= $img['url']; ?>" data-quote="<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>">Share on FB</a>
-                <a class="button uppercase share-tw" target="_blank" href="http://twitter.com/share?text=<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>&url=<?php echo get_permalink(); ?>">Share on Twitter</a>
+              <div class="button-row center d-flex">
+                <a class="button black uppercase share-fb" href="#" data-img="<?= $img['url']; ?>" data-quote="<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>">Share on FB</a>
+                <a class="button black uppercase share-tw" target="_blank" href="http://twitter.com/share?text=<?php echo $quote; echo "\r\n \r\n"; echo $author; ?>&url=<?php echo get_permalink(); ?>">Share on Twitter</a>
               </div>
             </div>
           <?php endwhile; ?>
@@ -167,7 +167,7 @@
     ?>
 
     <?php if ($imageBanner): ?>
-      <div class="container-fluid d-flex spacing-p-t-3 spacing-p-b-3" style="background-color: <?php echo $coloreBanner; ?>">
+      <div class="container-fluid d-flex spacing-p-t-3 spacing-p-b-3 border-top border-bottom black" style="background-color: <?php echo $coloreBanner; ?>">
         <div class="container">
           <img class="title-svg" src="<?php echo $imageBanner['url']; ?>" alt="<?php echo $imageBanner['title'] ?>"/>
         </div>

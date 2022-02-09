@@ -66,7 +66,7 @@ Version: 1.0
   line-height: 1.25em; }
 
 .serif-text, .wysiwyg.serif-text p, .wysiwyg.serif-text ul li, .wysiwyg.serif-text ol li, .single .text-content p, .single .text-content ul li, .single .text-content ol li, .single .text-content p a, .single .text-content ul li a, .single .text-content ol li a {
-  font-family: 'Libre Baskerville', serif; }
+  font-family: 'STIX Two Text', serif; }
 
 .sans, #header div[class*="menu-main"] > ul li a, .wysiwyg.sans-text p, .wysiwyg.sans-text ol li, .wysiwyg.sans-text ul li, .single div[id*='attachment'] p, .single .img-caption p, .single .text-content h1, .single .text-content h2, .single .text-content h3, .single .text-content h4, .posts-flow .hentry.posts_type-notizia-sfondo-colorato-senza-immagine .entry-title a {
   font-family: 'GT Flexa'; }
@@ -941,7 +941,7 @@ body {
       -ms-transition: opacity 0.3s 3s;
       -o-transition: opacity 0.3s 3s;
       transition: opacity 0.3s 3s;
-      z-index: 100; }
+      z-index: 50; }
     .slice-container .slice-content .close {
       display: none;
       position: absolute;
@@ -950,10 +950,10 @@ body {
       cursor: pointer;
       width: 30px; }
     .slice-container .slice-content .text {
-      max-width: 600px;
+      max-width: 800px;
       margin-top: -30px; }
     .slice-container .slice-content .title {
-      max-width: 600px; }
+      max-width: 800px; }
     .slice-container .slice-content .button-row .button, .slice-container .slice-content .button-row input[type="submit"], .slice-container .slice-content .button-row button[type="submit"] {
       margin-right: 15px; }
 
@@ -1450,7 +1450,9 @@ body {
 @media screen and (max-width: 768px) {
   #question-wheel-container {
     overflow: hidden;
-    white-space: nowrap; }
+    white-space: nowrap;
+    height: calc(100vh - 85px);
+    justify-content: center; }
     #question-wheel-container.d-half-pad {
       width: 0;
       padding: 0; }
@@ -1467,7 +1469,12 @@ body {
       margin-top: 0;
       font-size: 30px; }
     .slice-container .slice-content .title {
-      font-size: 30px; } }
+      font-size: 30px; }
+    .slice-container .slice-content .button-row {
+      flex-flow: row; }
+      .slice-container .slice-content .button-row .button, .slice-container .slice-content .button-row input[type="submit"], .slice-container .slice-content .button-row button[type="submit"] {
+        margin-top: 0;
+        margin-bottom: 15px; } }
 @media screen and (max-width: 640px) {
   .desk-only {
     display: none; }
@@ -1613,7 +1620,8 @@ body {
   .slice-container .slice-content .text {
     font-size: 21px; }
   .slice-container .slice-content .title {
-    font-size: 21px; }
+    font-size: 21px;
+    max-width: calc(100vw - 60px); }
 
   #sb_instagram #sbi_images {
     flex-flow: column; }
